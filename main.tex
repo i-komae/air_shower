@@ -1,0 +1,606 @@
+\documentclass[paper=a4,fontsize=11pt]{jlreq}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{cite}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+\title{空気シャワーの縦方向発達の基礎\\[10pt]Heitlerモデル・Heitler--Matthewsモデル・Gaisser--Hillas関数}
+\author{Ichiro KOMAE}
+% \date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Heitler の電磁カスケードモデル}
+本稿では、空気シャワーの縦発達を、大気深さ \(X\) の関数として記述する。
+ここで大気深さとは、シャワー軸に沿って物質の密度$\rho$を距離$x$で積分した量である。
+\begin{equation}
+  X = \int_{0}^{a} \rho \;\mathrm{d}x.
+\end{equation}
+空気シャワーの発達は高度そのものよりも、どれだけの大気を通過したかに注目したほうが理解しやすい。
+そのため、空気シャワーの発達は距離の関数ではなく大気深さ（\(\mathrm{g/cm^2}\)）の関数として記述される\cite{PDGPassage,PDGCosmicRays}。
+
+本稿で現れる \(X\), \(X_0\), \(X_{\max}\), \(\lambda_{\mathrm{int}}\) などの値は、いずれも大気深さの次元を持つ量ある。
+
+\subsection{仮定}
+ここでは Heitler モデルを電磁シャワーに限ったモデルとして導入する。
+ハドロン相互作用 やパイオン生成はまだ考えない。
+そのうえで、電磁シャワーを次のように理想化する。
+\begin{enumerate}
+  \item 1 個の粒子は 1 世代後に 2 個の粒子になる。
+  \item エネルギーは 2 個に等分される。
+  \item 1 世代進むごとに、深さが一定量 \(X_0\) だけ増える。
+  \item 各粒子のエネルギーが臨界エネルギー（critical energy） \(E^\mathrm{crit}\) に達すると、それ以上の増殖は止まる。
+\end{enumerate}
+
+ここで \(X_0\) は放射長、\(E^\mathrm{crit}\) は臨界エネルギーである。
+放射長とは、高エネルギー電子が 制動放射 によってエネルギーを失っていく代表的な長さ尺度であり、
+より具体的には、高エネルギー電子のエネルギーが制動放射によって \(1/e\) 倍程度に減少するまでの物質量として定義される\footnote{高エネルギー光子に対しては、放射長は電子陽電子対生成の長さ尺度としても用いられる。PDG では、光子の平均自由行程は近似的に \(9X_0/7\) であるとされている~\cite{PDGPassage}。}\nobreak\cite{PDGPassage}。
+Heitler モデルでは、この \(X_0\) を 1 世代ごとの深さ増分として用いることで、
+電磁カスケードが深さとともにどの程度の速さで発達するかを表している。
+
+臨界エネルギーは、電子の放射損失と電離損失が同程度になる代表的なエネルギー尺度である。
+空気中では \(E^\mathrm{crit}\) はおよそ \(80\ \mathrm{MeV}\) 程度である~\cite{PDGPassage,PDGCosmicRays}。
+
+
+\subsection{世代数 \(n\) で書いた粒子数と粒子エネルギー}
+一次粒子のエネルギーを \(E_0\) とする。
+\(n\) 世代後の粒子数$N_n$は
+\begin{equation}
+  N_n = 2^n
+\end{equation}
+であり、各粒子のエネルギー$\varepsilon_n$は
+\begin{equation}
+  \varepsilon_n = \frac{E_0}{2^n}
+\end{equation}
+となる。
+
+\subsection{最大世代数 \(n_{\max}\)}
+各粒子のエネルギー$\varepsilon_n$が臨界エネルギー \(E^\mathrm{crit}\) を下回ると、それらの粒子は新たな粒子を生成することができなくなる。
+そのため、シャワーの最大発達のタイミングでは
+\[
+\varepsilon_n = E^\mathrm{crit}
+\]
+となっていると考えられる。
+したがって、最大発達での世代数を$n_\mathrm{max}$とすると
+\begin{equation}
+  \frac{E_0}{2^{n_{\max}}} = E^\mathrm{crit}
+\end{equation}
+より、
+\begin{equation}
+  n_{\max} = \log_2\!\left(\frac{E_0}{E^\mathrm{crit}}\right)
+\end{equation}
+である。
+
+ここで注意すべきことは、世代数 \(n\) 自体は本来離散的な自然数であるのに対して、
+上式の \(n_{\max}\) は停止条件を連続変数として解いた有効な値だという点である。
+Heitler モデルではこのように対数で与えられる世代数を用いて極大位置を見積もるのが本質であり~\cite{Heitler1944,PDGCosmicRays}、
+厳密に離散的に書くなら、増殖が止まる最初の世代は
+\[
+  n_{\mathrm{stop}}=\left\lceil \log_2\!\left(\frac{E_0}{E^\mathrm{crit}}\right) \right\rceil
+\]
+である。
+
+\subsection{最大粒子数 \(N_{\max}\)}
+\(N_n=2^n\) に \(n=n_{\max}\) を代入すると、
+\begin{equation}
+  N_{\max} = 2^{n_{\max}}
+  = 2^{\log_2(E_0/E^\mathrm{crit})}
+  = \frac{E_0}{E^\mathrm{crit}}
+\end{equation}
+となる。
+
+したがって Heitler モデルでは、
+\begin{equation}
+  N_{\max}\propto E_0
+\end{equation}
+である~\cite{Heitler1944,PDGCosmicRays}。
+
+\subsection{シャワー極大の位置 \(X_{\max}\)}
+極大深さは
+\begin{equation}
+  X_{\max}=n_{\max}X_0
+\end{equation}
+だから、
+\begin{equation}
+  X_{\max}
+  = X_0 \log_2\!\left(\frac{E_0}{E^\mathrm{crit}}\right)
+  = \frac{X_0}{\ln 2}\ln\!\left(\frac{E_0}{E^\mathrm{crit}}\right) \label{eq:Xmax}
+\end{equation}
+となる。
+
+
+したがって Heitler モデルでは、
+\begin{equation}
+  X_{\max}\propto \ln E_0
+\end{equation}
+である~\cite{Heitler1944,PDGCosmicRays}。
+
+
+% --- subsection removed as instructed ---
+
+
+以上までは、Heitler モデルを純粋な電磁シャワーのモデルとして扱った。
+ここから先で初めて ハドロン相互作用 を導入し、
+一次陽子や原子核による空気シャワーを考える。
+
+したがって、この先ではじめて平均自由行程や質量数依存といった、ハドロンシャワー に固有の概念を導入する。
+
+\section{Heitler--Matthews モデル}
+
+\subsection{Heitler モデルから何が拡張されるか}
+前節の Heitler モデルでは、1世代進むごとに粒子数は倍に、各粒子のエネルギーは半分になる
+という単純なモデルを考えた。
+Heitler--Matthews モデルでは、この電磁モデルを出発点として、
+そこに ハドロン相互作用 を追加する。
+
+すなわち、ここではじめて一次粒子が大気と衝突し、多数のパイオンを生成する過程を導入する~\cite{Matthews2005,Montanus2013}。
+
+
+この最初の ハドロン相互作用 が起こる深さは、平均自由行程 \(\lambda_{\mathrm{int}}\) によって特徴づけられる。平均自由行程とは、ある粒子が相互作用を起こさずに進む距離あるいは物質量の平均値であり、相互作用確率が指数分布に従うとき、深さ \(X\) まで相互作用せずに到達する確率は
+\begin{equation}
+  P(>X)=\exp\!\left(-\frac{X}{\lambda}\right)
+\end{equation}
+と書ける。このとき \(\lambda\) が平均自由行程である。したがって平均自由行程は、主として「次の相互作用がどこで起こるか」を決める尺度である。
+
+電磁シャワーを記述する Heitler モデルでは、基本的な深さ尺度は放射長 \(X_0\) であり、これは電子や光子の電磁カスケードがどの深さスケールで発達するかを与える。これに対して ハドロンシャワー では、まず一次陽子や原子核が大気と最初に衝突する位置を決める尺度として、平均自由行程 \(\lambda_{\mathrm{int}}\) が必要になる。この違いが、Heitler モデルと Heitler--Matthews モデルの重要な差のひとつである。
+
+最も単純には、1 回の ハドロン相互作用 で合計 \(N_{\mathrm{tot}}\) 個のパイオンが生じ、
+そのうち
+\[
+  N_{\mathrm{ch}}=\frac{2}{3}N_{\mathrm{tot}},
+  \qquad
+  N_{\pi^0}=\frac{1}{3}N_{\mathrm{tot}}
+\]
+がそれぞれ荷電パイオンと中性パイオンであるとする~\cite{Matthews2005}。
+中性パイオンはただちに
+\[
+  \pi^0\to \gamma\gamma
+\]
+と崩壊して電磁成分へ移り、荷電パイオンは ハドロンカスケード を継続する。
+したがって Heitler--Matthews モデルでは、エネルギーは各世代で
+\[
+  E_{\mathrm{had}}\to \frac{2}{3}E_{\mathrm{had}},
+  \qquad
+  E_{\mathrm{em}}\to E_{\mathrm{em}}+\frac{1}{3}E_{\mathrm{had}}
+\]
+のように、ハドロン成分と電磁成分に分かれながら流れる。
+
+\subsection{電磁成分と ハドロン成分の割合}
+Heitler--Matthews モデルでは、空気シャワーの電磁成分と ハドロン成分の割合を、まずエネルギー分配として大まかに見積もることができる。
+1 回の ハドロン相互作用 ごとに、ハドロン成分のエネルギーの約 \(1/3\) が \(\pi^0\) を通じて電磁成分へ移り、残りの約 \(2/3\) が ハドロン成分に残ると考える。
+したがって、\(n\) 世代後の ハドロン成分のエネルギーは
+\begin{equation}
+  E_{\mathrm{had}}(n)=\left(\frac{2}{3}\right)^n E_0
+\end{equation}
+であり、そこまでに電磁成分へ移った累積エネルギーは
+\begin{equation}
+  E_{\mathrm{em}}(n)=E_0-E_{\mathrm{had}}(n)=\left[1-\left(\frac{2}{3}\right)^n\right]E_0
+\end{equation}
+となる。
+したがって、エネルギー割合としては
+\begin{equation}
+  f_{\mathrm{had}}(n)=\left(\frac{2}{3}\right)^n,
+  \qquad
+  f_{\mathrm{em}}(n)=1-\left(\frac{2}{3}\right)^n
+\end{equation}
+と見積もれる~\cite{Matthews2005,Stanev2004}。
+
+たとえば 1 世代後には
+\[
+  f_{\mathrm{em}}=\frac{1}{3},
+  \qquad
+  f_{\mathrm{had}}=\frac{2}{3}
+\]
+であり、2 世代後には
+\[
+  f_{\mathrm{em}}=1-\left(\frac{2}{3}\right)^2=\frac{5}{9}
+\]
+となる。
+したがって、数世代のうちにエネルギーの大部分は電磁成分へ流れる。
+
+ただし、ここで見積もっているのはエネルギー割合であって、ある深さで存在する粒子数の割合ではない。
+粒子数で見ると、\(\pi^0\to\gamma\gamma\) を起点とする電磁カスケードが大量の \(e^\pm\) と \(\gamma\) を作るため、電磁成分が ハドロン成分よりはるかに多数になる。
+したがって Heitler--Matthews モデルでは、
+\begin{itemize}
+  \item エネルギー割合では、各世代で ハドロン成分の約 \(1/3\) が電磁成分へ移る
+  \item 粒子数では、電磁成分が強く優勢になる
+\end{itemize}
+と整理すると分かりやすい。
+
+\subsection{重ね合わせモデルと質量数依存}
+ここで、原子核一次粒子の質量数依存を議論するために、重ね合わせモデルを導入する~\cite{Matthews2005,Montanus2013,Stanev2004}。
+この近似では、全エネルギー \(E_0\) をもつ質量数 \(A\) の原子核を、エネルギー \(E_0/A\) をもつ核子 \(A\) 個が同時に入射したものとして扱う。
+すなわち、原子核 1 個によるシャワーを、より低いエネルギーの核子シャワー \(A\) 本の重ね合わせとして近似する。
+
+最も単純な近似では、質量数$A$の一次宇宙線による空気シャワーの$X_\mathrm{max}$は
+\[
+  X_{\max}^{(A)}(E_0) \simeq X_{\max}^{(p)}\!\left(\frac{E_0}{A}\right)
+\]
+と書ける。
+ここで \(X_{\max}^{(p)}\) は一次宇宙線が陽子である空気シャワーに対する$X_\mathrm{max}$である。
+
+式~\eqref{eq:Xmax} を用いると
+\[
+  X_{\max}^{(p)}(E)=\frac{X_0}{\ln 2}\ln\!\left(\frac{E}{E^\mathrm{crit}}\right)
+\]
+であるから
+\begin{align}
+  X_{\max}^{(A)}(E_0)
+  &\simeq \frac{X_0}{\ln 2}\ln\!\left(\frac{E_0/A}{E^\mathrm{crit}}\right) \\
+  &= \frac{X_0}{\ln 2}\left[\ln\!\left(\frac{E_0}{E^\mathrm{crit}}\right)-\ln A\right] \\
+  &= X_{\max}^{(p)}(E_0)-\frac{X_0}{\ln 2}\ln A
+\end{align}
+となる。
+したがって、同じ全エネルギー \(E_0\) では、質量数が大きいほど \(X_{\max}\) は$\ln A$ に比例して浅くなる。
+
+一方、最大粒子数は
+\[
+  N_{\max}^{(A)}(E_0)
+  \simeq A\times \frac{E_0/A}{E^\mathrm{crit}}
+  = \frac{E_0}{E^\mathrm{crit}}
+\]
+となる。
+したがって、最も単純な近似では \(N_{\max}\) は質量数にほとんど依存しない。
+
+\subsection{電磁成分の見積もりと \(N_e^{\max}\sim E_0/\mathrm{GeV}\)}
+Heitler のモデルでは、最大粒子数$N_{\max}^{\mathrm{em}}$は
+\[
+  N_{\max}^{\mathrm{em}}=\frac{E_0}{E^\mathrm{crit}}
+\]
+であり、空気中の臨界エネルギー \(E^\mathrm{crit}\simeq 0.08\,\mathrm{GeV}\) を代入すると
+\[
+  N_{\max}^{\mathrm{em}}\simeq 12.5\,\frac{E_0}{\mathrm{GeV}}
+\]
+となる。
+しかし Heitler--Matthews モデルでは、エネルギーはまず ハドロンカスケード に入り、
+各世代でその一部だけが \(\pi^0\) を通じて電磁成分へ移る。
+したがって、観測される最大電子数は Heitler のモデルよりかなり小さくなる~\cite{Matthews2005,Stanev2004}。
+
+最大電子数については、空気シャワーの経験的な見積もりとして
+\begin{equation}
+  N_{\max}\simeq 0.6\,\frac{E_0}{\mathrm{GeV}}
+\end{equation}
+がよく用いられる\footnote{係数の正確な値は重要ではない。空気シャワーの最大粒子数は一次粒子のエネルギーを$\mathrm{GeV}$で割った程度であると覚えておけば良い。}\nobreak\cite{Stanev2004}。
+これは Heitler モデルの \(E_0/E^\mathrm{crit}\) をそのまま使ったものではなく、
+ハドロンカスケード を経た後に電磁成分として観測される電子数の半経験的な近似である~\cite{Matthews2005,Montanus2013}。
+
+\subsection{ミューオン数 \(N_\mu\) のスケーリング}
+Heitler--Matthews モデルの重要な追加点は、荷電パイオンが十分低エネルギーになると
+それ以上はハドロン相互での粒子生成を行わず、崩壊してミューオンを作るということである。
+荷電パイオンのエネルギーが臨界エネルギー \(E_\pi^{\mathrm{crit}}\) まで下がると、
+各荷電パイオンは 1 個のミューオンを与えると近似する~\cite{Matthews2005}。
+
+1 世代で荷電パイオンの数は \(N_{\mathrm{ch}}\) 倍になり、
+第$n$世代での各荷電パイオンのエネルギーは
+\[
+  E_n = \frac{E_0}{N_{\mathrm{tot}}^n}
+\]
+と近似できる。
+崩壊が始まる世代数 \(n_c\) は
+\begin{equation}
+  \frac{E_0}{N_{\mathrm{tot}}^{n_c}}=E_\pi^{\mathrm{crit}}
+\end{equation}
+より
+\begin{equation}
+  n_c = \frac{\ln(E_0/E_\pi^{\mathrm{crit}})}{\ln N_{\mathrm{tot}}}
+\end{equation}
+である。
+
+このときミューオン数は、その世代での荷電パイオン数に等しいとみなして
+\begin{align}
+  N_\mu
+  &= N_{\mathrm{ch}}^{n_c} \\
+  &= \left(N_{\mathrm{ch}}\right)^{\ln(E_0/E_\pi^{\mathrm{crit}})/\ln N_{\mathrm{tot}}} \\
+  &= \exp\left( \ln N_{\mathrm{ch}} \right)^{\ln(E_0/E_\pi^{\mathrm{crit}})/\ln N_{\mathrm{tot}}} \\
+  &= \exp\left( \ln\left(\frac{E_0}{E_\pi^{\mathrm{crit}}}\right)\cdot \frac{\ln N_{\mathrm{ch}}}{\ln N_{\mathrm{tot}}} \right)\\
+  &= \left(\frac{E_0}{E_\pi^{\mathrm{crit}}}\right)^{\beta}
+\end{align}
+と書ける。
+ただし
+\begin{equation}
+  \beta = \frac{\ln N_{\mathrm{ch}}}{\ln N_{\mathrm{tot}}}
+\end{equation}
+である。
+
+Matthews の単純化では \(N_{\mathrm{tot}}=10\), \(N_{\mathrm{ch}}=\tfrac{2}{3}N_{\mathrm{tot}}\) として
+\[
+  \beta = \frac{\ln(20/3)}{\ln 10}\simeq 0.82
+\]
+が得られる~\cite{Matthews2005}。
+したがってミューオン数は
+\begin{equation}
+  N_\mu \propto E_0^{\beta},
+  \qquad
+  \beta\simeq 0.82
+\end{equation}
+となり、電子数よりもやや弱い冪でエネルギーとともに増加する。
+
+ \subsection{質量数 \(A\) 依存の更新}
+質量数$A$ の一次粒子に対しては、直前に導入した重ね合わせモデルを用いる~\cite{Matthews2005,Montanus2013,Stanev2004}。
+このときミューオン数は
+\begin{align}
+  N_\mu^{(A)}(E_0)
+  &\simeq A\left(\frac{E_0/A}{E_\pi^{\mathrm{crit}}}\right)^{\beta} \\
+  &= A^{1-\beta}\left(\frac{E_0}{E_\pi^{\mathrm{crit}}}\right)^{\beta}
+\end{align}
+となる~\cite{Matthews2005,Montanus2013}。
+したがって、同じ全エネルギー \(E_0\) の空気シャワーでは、重い原子核ほどミューオン数が多くなる~\cite{Matthews2005,Montanus2013}。
+
+\section{Gaisser--Hillas 関数}
+
+\subsection{式}
+空気シャワーの縦発達全体を表す経験式として、
+Gaisser--Hillas 関数~\cite{GaisserHillas1977}
+
+\begin{equation}
+  N(X)=N_{\max}
+  \left(\frac{X-X_0}{X_{\max}-X_0}\right)^{\frac{X_{\max}-X_0}{\Lambda}}
+  \exp\!\left(\frac{X_{\max}-X}{\Lambda}\right)
+\end{equation}
+がよく用いられる。
+
+\subsection{各パラメータの意味}
+\begin{description}
+  \item[\(N_{\max}\)] プロファイルの最大値。山の高さを決める。
+  \item[\(X_{\max}\)] プロファイルが最大となる深さ。山頂の位置を決める。
+  \item[\(X_0\)] 立ち上がり側の有効な原点。必ずしも物理的な first interaction point とは一致しない。
+  \item[\(\Lambda\)] プロファイルの幅を決める形状パラメータ。大きいほど幅広く、小さいほど鋭い山になる。
+\end{description}
+
+\subsection{各項の直感的意味}
+GH 関数は
+\begin{equation}
+  N(X)=N_{\max}\,R(X)\,D(X)\label{eq:GH}
+\end{equation}
+と分けて読むと分かりやすい。
+ただし
+\begin{eqnarray}
+  R(X)&=&\left(\frac{X-X_0}{X_{\max}-X_0}\right)^\alpha,
+  \qquad
+  D(X)=\exp\!\left(\frac{X_{\max}-X}{\Lambda}\right)\\
+  \alpha&=&\frac{X_{\max}-X_0}{\Lambda} = \textrm{const.}
+\end{eqnarray}
+である。
+
+\paragraph{(1) \(R(X)\): 立ち上がりを与える項}
+\[
+R(X)=\left(\frac{X-X_0}{X_{\max}-X_0}\right)^\alpha
+\]
+は \(X=X_0\) で 0 となり、
+\(X_0<X<X_{\max}\) で 0 から 1 へ増加する。
+したがって、この項が \(X_0\) からの立ち上がりを作る。
+
+ただし、\(X>X_{\max}\) でもこの項自体は増加し続ける。
+また、\(X<X_0\) では底が負になるため、一般には実数として定義できない。
+したがって GH 関数は実質的に \(X>X_0\) の領域で使う関数である。
+
+\paragraph{(2) \(D(X)\): 深い側での減衰を与える項}
+\[
+D(X)=\exp\!\left(\frac{X_{\max}-X}{\Lambda}\right)
+\]
+は \(X\) に関して全域で単調減少する。
+実際、
+\begin{equation}
+  \frac{\mathrm{d}D}{\mathrm{d}X}
+  =-\frac{1}{\Lambda}\exp\!\left(\frac{X_{\max}-X}{\Lambda}\right)
+  =-\frac{1}{\Lambda}D(X)<0
+\end{equation}
+である。
+
+この項は、\(X_{\max}\) を越えた後の指数的減衰を保証する役割を持つ。
+
+\subsection{なぜ \(X=X_{\max}\) で最大になるか}
+式~\eqref{eq:GH}は、単調増加する項$R\left( X \right)$と単調減少する項$D\left( X \right)$との積で構成される。
+この式は、図~\ref{fig:GH}からもわかるように$X = X_\mathrm{max}$ で最大値$N_\mathrm{max}$を取る。
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.75\hsize]{fig/gh.pdf}
+    \caption{Gaisser--Hillas 関数の例}
+    \label{fig:GH}
+\end{figure}
+この増減を正確に理解したければ、式を微分してやればよい。
+
+式~\eqref{eq:GH}の両辺の対数をとると
+\begin{equation}
+  \ln N(X)
+  =
+  \ln N_{\max}
+  + \alpha \ln\!\left(\frac{X-X_0}{X_{\max}-X_0}\right)
+  + \frac{X_{\max}-X}{\Lambda}
+\end{equation}
+である。
+これを \(X\) で微分すると、
+\begin{align}
+  \frac{\mathrm{d}}{\mathrm{d}X}\ln N(X)
+  &=
+  \alpha \frac{\mathrm{d}}{\mathrm{d}X}\ln(X-X_0)
+  + \frac{\mathrm{d}}{\mathrm{d}X}\left(\frac{X_{\max}-X}{\Lambda}\right) \\
+  &=
+  \frac{\alpha}{X-X_0} - \frac{1}{\Lambda}
+\end{align}
+が得られる。ここに
+\[
+\alpha=\frac{X_{\max}-X_0}{\Lambda}
+\]
+を代入して整理すると
+\begin{equation}
+  \frac{\mathrm{d}}{\mathrm{d}X}\ln N(X)
+  =
+  \frac{1}{\Lambda}
+  \left(
+    \frac{X_{\max}-X_0}{X-X_0}-1
+  \right)\label{eq:dGH}
+\end{equation}
+となる。
+ここで
+\[
+\frac{\mathrm{d}}{\mathrm{d}X}\ln N(X)=\frac{1}{N(X)}\frac{\mathrm{d}N}{\mathrm{d}X}
+\]
+であるから、
+\(N(X)>0\) の範囲では \(\ln N\) の増減と \(N\) の増減は同じである。
+
+式~\eqref{eq:GH}および式~\eqref{eq:dGH}より、$N\left( X \right) $ は \(X<X_{\max}\) で単調増加、$X = X_\mathrm{max}$ で最大値$N_\mathrm{max}$を取り、\(X>X_{\max}\) で単調減少することがわかる。
+
+\subsection{直感的理解}
+GH 関数の山型は、
+\begin{itemize}
+  \item \(R(X)\) が作る「立ち上がり」
+  \item \(D(X)\) が保証する「深い側での減衰」
+\end{itemize}
+の積として現れる。
+
+前半では、立ち上がり項の増加が指数項の減少より強く、
+全体として \(N(X)\) は増える。
+後半では、指数項の減少が支配的となり、
+全体として \(N(X)\) は減る。
+その境界が \(X_{\max}\) である。
+
+\section{Heitler モデルと GH 関数の役割の違い}
+Heitler モデルは、まず純粋な電磁シャワーに対して
+\begin{equation}
+  N_{\max}\propto E_0,
+  \qquad
+  X_{\max}\propto \ln E_0
+\end{equation}
+という スケーリングの直感を与える理論モデルである~\cite{Heitler1944,PDGCosmicRays}。
+
+Heitler--Matthews モデルは、その電磁モデルに ハドロンカスケード を加えた拡張であり、
+電子数だけでなくミューオン数や組成依存までを半経験的に記述する~\cite{Matthews2005,Montanus2013}。
+
+一方で GH 関数は、
+\begin{equation}
+  N(X)
+\end{equation}
+という 縦発達曲線全体を実際によく表す経験的関数である~\cite{GaisserHillas1977}。
+
+したがって、役割分担は次のように整理できる。
+\begin{itemize}
+  \item Heitler: 純粋な電磁シャワーに対して、なぜ \(N_{\max}\) や \(X_{\max}\) がそうスケールするかを理解するためのモデル
+  \item Heitler--Matthews: ハドロンシャワー に拡張して、\(N_e\), \(N_\mu\), 組成依存を理解するためのモデル
+  \item Gaisser--Hillas: 実際の縦発達プロファイル全体をフィットするための関数
+\end{itemize}
+と理解するとよい。
+
+
+
+
+\section{まとめ}
+Heitler モデルでは、まず純粋な電磁カスケードだけを考える。
+このとき
+\begin{equation}
+  N_n=2^n,\qquad
+  \varepsilon_n=\frac{E_0}{2^n}
+\end{equation}
+であり、停止条件 \(\varepsilon_n=E^\mathrm{crit}\) から
+\begin{equation}
+  N_{\max}=\frac{E_0}{E^\mathrm{crit}},
+  \qquad
+  X_{\max}=\frac{X_0}{\ln 2}\ln\!\left(\frac{E_0}{E^\mathrm{crit}}\right)
+\end{equation}
+が得られる。
+したがって、Heitler モデルは
+\begin{equation}
+  N_{\max}\propto E_0,
+  \qquad
+  X_{\max}\propto \ln E_0
+\end{equation}
+という電磁シャワーの基本的なスケーリングを与える。
+
+
+このとき基本的な長さ尺度は放射長 \(X_0\) であり、これは電子や光子の電磁カスケードがどの深さスケールで発達するかを与える。質量数 \(A\) の依存や平均自由行程 \(\lambda_{\mathrm{int}}\) は、Heitler の電磁モデルそのものには現れず、後半で ハドロンシャワー を導入して初めて現れる。
+
+また、重ね合わせモデルを Heitler モデルに適用すると
+\begin{equation}
+  X_{\max}^{(A)}(E_0)
+  \simeq X_{\max}^{(p)}(E_0)-\frac{X_0}{\ln 2}\ln A
+\end{equation}
+となって、同じ全エネルギーでは重い核ほど \(X_{\max}\) は浅くなる。
+この \(X_{\max}\) の質量依存性は、Heitler の電磁モデルそのものというより、Heitler 型の対数則と重ね合わせモデルを組み合わせた最も単純な組成依存の見積もりである。
+
+Heitler--Matthews モデルでは、ここに ハドロン相互作用 を加える。
+\(\pi^0\) は電磁成分を、\(\pi^\pm\) は ハドロン成分を担い、
+この拡張によって
+\begin{equation}
+  N_e^{\max}\sim \frac{E_0}{\mathrm{GeV}}
+\end{equation}
+という半経験的なスケールが自然に理解されるようになる。
+また、Heitler--Matthews モデルでは、電磁成分と ハドロン成分のエネルギー割合も大まかに見積もることができる。
+最も単純には、\(n\) 世代後に
+\begin{equation}
+  f_{\mathrm{had}}(n)=\left(\frac{2}{3}\right)^n,
+  \qquad
+  f_{\mathrm{em}}(n)=1-\left(\frac{2}{3}\right)^n
+\end{equation}
+となるので、数世代のうちにエネルギーの大部分は電磁成分へ流れる。
+ただし、粒子数で見ると電磁成分はさらに強く優勢であり、この式はあくまでエネルギー割合の見積もりである。
+さらにミューオン数について
+\begin{equation}
+  N_\mu \propto \left(\frac{E_0}{E_\pi^{\mathrm{crit}}}\right)^{\beta}
+\end{equation}
+が得られ、重ね合わせモデルを用いれば
+\begin{equation}
+  N_\mu^{(A)}(E_0)\propto A^{1-\beta}E_0^{\beta}
+\end{equation}
+となるので、同じ全エネルギーでは重い核ほどミューオン数が多い。
+
+一方、最も単純な重ね合わせモデルでは
+\begin{equation}
+  N_{\max}^{(A)}(E_0)\simeq \frac{E_0}{E^\mathrm{crit}}
+\end{equation}
+であり、\(N_{\max}\) 自体は質量数に強く依存しない。
+
+一方 GH 関数は
+\begin{equation}
+  N(X)=N_{\max}
+  \left(\frac{X-X_0}{X_{\max}-X_0}\right)^{\frac{X_{\max}-X_0}{\Lambda}}
+  \exp\!\left(\frac{X_{\max}-X}{\Lambda}\right)
+\end{equation}
+であり、べき関数の項が \(X_0\) からの立ち上がりを、指数関数の項が \(X_{\max}\) 以深での減衰を与える。
+したがって、Heitler は電磁シャワーの基本スケーリングを理解するモデル、Heitler--Matthews はハドロンシャワーへの拡張モデル、GH 関数は実際の縦発達プロファイルを表す経験式、という役割分担になる。
+
+\begin{thebibliography}{99}
+
+\bibitem{PDGPassage}
+S.~Navas \textit{et al.} (Particle Data Group),
+\href{https://pdg.lbl.gov/2025/reviews/rpp2025-rev-passage-particles-matter.pdf}{``Passage of Particles Through Matter,''}
+in \textit{Review of Particle Physics},
+Phys.\ Rev.\ D \textbf{110}, 030001 (2024), 2025 update.
+
+\bibitem{PDGCosmicRays}
+U.~F.~Katz and A.~Haungs,
+\href{https://pdg.lbl.gov/2025/reviews/rpp2025-rev-cosmic-rays.pdf}{``Cosmic Rays,''}
+in \textit{Review of Particle Physics},
+Particle Data Group review, 2025 update.
+
+\bibitem{Heitler1944}
+W.~Heitler,
+\textit{The Quantum Theory of Radiation},
+2nd ed., Oxford University Press, Oxford, 1944.
+
+\bibitem{Matthews2005}
+J.~Matthews,
+\href{https://www.sciencedirect.com/science/article/abs/pii/S0927650504001598}{``A Heitler model of extensive air showers,''}
+Astropart.\ Phys.\ \textbf{22}, 387--397 (2005).
+
+\bibitem{Montanus2013}
+H.~Montanus,
+\href{https://arxiv.org/abs/1311.0642}{``An extended Heitler--Matthews model for the study of the longitudinal development and the number of muons in cosmic ray air showers,''}
+arXiv:1311.0642 [astro-ph.HE].
+
+\bibitem{Stanev2004}
+T.~Stanev,
+\href{https://link.springer.com/book/10.1007/978-3-540-85148-6}{\textit{High Energy Cosmic Rays}},
+2nd ed., Springer, Berlin, 2004.
+
+\bibitem{GaisserHillas1977}
+T.~K.~Gaisser and A.~M.~Hillas,
+\href{https://ui.adsabs.harvard.edu/abs/1977ICRC....8..353G/abstract}{``Reliability of the Method of Constant Intensity Cuts for Reconstructing the Average Development of Vertical Showers,''}
+in \textit{Proceedings of the 15th International Cosmic Ray Conference (Plovdiv)},
+Vol.~8, pp.~353--357, 1977.
+
+\end{thebibliography}
+
+\end{document}
