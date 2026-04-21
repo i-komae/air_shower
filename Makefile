@@ -4,6 +4,9 @@ MAIN := main
 BUILD_DIR := build
 CACHE_DIR := $(BUILD_DIR)/texmf-cache
 VAR_DIR := $(BUILD_DIR)/texmf-var
+CWD := $(abspath .)
+BIBS := $(wildcard *.bib)
+BST := jhep.bst
 
 LATEXMK := latexmk
 MAKEINDEX_STYLE := $(abspath styles/index.ist)
@@ -13,7 +16,7 @@ LATEXMK_FLAGS := -f -lualatex -synctex=1 -interaction=nonstopmode -file-line-err
 LATEXMK_FORCE_FLAGS := -f -gg -lualatex -synctex=1 -interaction=nonstopmode -file-line-error -output-directory=$(BUILD_DIR) $(LATEXMK_MAKEINDEX_FLAG)
 OPEN_PDF := sh src/open_pdf.sh
 
-SOURCES := $(MAIN).tex $(wildcard .latexmkrc) $(wildcard chapters/*.tex) $(wildcard assets/figures/*) $(wildcard styles/*)
+SOURCES := $(MAIN).tex $(BIBS) $(BST) $(wildcard .latexmkrc) $(wildcard chapters/*.tex) $(wildcard fig/*) $(wildcard assets/figures/*) $(wildcard styles/*)
 
 .PHONY: all pdf clean distclean
 
@@ -21,7 +24,7 @@ open: $(MAIN).pdf
 	$(OPEN_PDF) $(MAIN).pdf
 
 all: | $(BUILD_DIR) $(CACHE_DIR) $(VAR_DIR)
-	TEXMFCACHE=$(CACHE_DIR) TEXMFVAR=$(VAR_DIR) $(LATEXMK) $(LATEXMK_FORCE_FLAGS) $(MAIN).tex
+	BIBINPUTS=$(CWD):$(BIBINPUTS) BSTINPUTS=$(CWD):$(BSTINPUTS) TEXMFCACHE=$(CACHE_DIR) TEXMFVAR=$(VAR_DIR) $(LATEXMK) $(LATEXMK_FORCE_FLAGS) $(MAIN).tex
 	cp $(BUILD_DIR)/$(MAIN).pdf $(MAIN).pdf
 	cp $(BUILD_DIR)/$(MAIN).synctex.gz .
 	$(OPEN_PDF) $(MAIN).pdf
@@ -34,7 +37,7 @@ $(MAIN).pdf: $(BUILD_DIR)/$(MAIN).pdf
 	$(OPEN_PDF) $@
 
 $(BUILD_DIR)/$(MAIN).pdf: $(SOURCES) | $(BUILD_DIR) $(CACHE_DIR) $(VAR_DIR)
-	TEXMFCACHE=$(CACHE_DIR) TEXMFVAR=$(VAR_DIR) $(LATEXMK) $(LATEXMK_FLAGS) $(MAIN).tex
+	BIBINPUTS=$(CWD):$(BIBINPUTS) BSTINPUTS=$(CWD):$(BSTINPUTS) TEXMFCACHE=$(CACHE_DIR) TEXMFVAR=$(VAR_DIR) $(LATEXMK) $(LATEXMK_FLAGS) $(MAIN).tex
 
 $(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)
