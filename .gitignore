@@ -2,3 +2,5 @@ venv
 main.synctex.gz
 build
 .DS_Store
+cropburn_all.sh
+fig/_original_pdf_backup/
