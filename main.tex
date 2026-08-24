@@ -54,7 +54,7 @@
 本章では、宇宙線の発見から超高エネルギー宇宙線の現代的観測までを概観し、エネルギースペクトル、質量組成、到来方向を統一的に解釈するための基礎を整える。
 特に、銀河宇宙線の最高エネルギー端と銀河系外成分の立ち上がりが重なり得る second knee 領域に重点を置く。
 その解釈には、宇宙線源における加速、銀河・銀河間空間での伝搬、元素ごとの最高到達エネルギーを結び付ける必要がある。
-以下では、観測史上の最初の報告と、後続の高精度または多観測量による代表測定を区別する。前者は着想と発見の成立を示し、後者は特徴量の精密化と物理解釈の検証を担うためである。
+以下では、観測史上の最初の報告と、後続の高精度測定や複数の観測量を組み合わせた代表的な測定を区別する。前者は着想と発見の成立を示し、後者は特徴量の精密化と物理解釈の検証を担うためである。
 
 宇宙線とは、宇宙空間から地球へ到来する高エネルギー粒子である。
 一次宇宙線の多くは陽子やヘリウム原子核であり、より重い原子核も含まれる。
@@ -67,17 +67,17 @@
 しかし、Theodor Wulf によるエッフェル塔上での測定や Domenico Pacini による水中測定は、地表起源だけでは電離を説明できないことを示唆していた~\cite{Carlson2012,HessTranslation2018}。
 
 Victor Franz Hess は 1911--1912 年に 7 回の気球飛行を行い、厚い金属壁をもつ電離箱で高度ごとの電離率を測定した~\cite{Hess1912,HessTranslation2018}。
-図~\ref{fig:hess_altitude}は、Hess が報告した高度区間ごとの平均値を再構成したものである。
+図~\ref{fig:hess_altitude}は、1912 年の飛行経路と、第 7 回飛行で測定された電離率の高度依存を示す。
 二つの装置はいずれも高度約 \(1\ \mathrm{km}\) までは地上値と同程度かやや低い値を示すが、\(2\ \mathrm{km}\) を超えると増加へ転じ、\(4.0\)--\(5.2\ \mathrm{km}\) ではそれぞれ \(34.4\) および \(27.2\ \mathrm{ions\,cm^{-3}\,s^{-1}}\) に達した。
-地上値はそれぞれ \(16.3\) および \(11.8\ \mathrm{ions\,cm^{-3}\,s^{-1}}\) であったため、高高度では地上の約 2 倍に増加したことになる。
+地上値はそれぞれ \(16.3\) および \(11.8\ \mathrm{ions\,cm^{-3}\,s^{-1}}\) であり、高高度の値は地上の約 2 倍であった。
 第 7 回飛行では最高高度 \(5350\ \mathrm{m}\) に到達し、日食時を含む測定に有意な昼夜差や太陽遮蔽の効果は見いだされなかった。
 Hess はこれらの結果から、強い透過力をもつ放射線が上方から大気へ入射していると結論した~\cite{Hess1912,HessTranslation2018}。
 この結論の本質は、高度上昇に伴う吸収成分の減少だけでなく、それを上回る上方起源成分の増加を同じ測定で示した点にある。
 
 \begin{figure}[htb]
   \centering
-  \includegraphics[width=0.78\hsize]{fig/hess-altitude.pdf}
-  \caption{Hess の気球実験で得られた高度区間別の平均電離率。横方向の誤差棒は測定値の統計誤差ではなく、原論文の高度区間を表す。Hess (1912) の平均値表に基づいて本稿で作成した~\cite{Hess1912,HessTranslation2018}。}
+  \includegraphics[width=0.88\hsize]{fig/hess-2018-fig3.pdf}
+  \caption{Hess が 1912 年に行った 7 回の気球飛行の経路（左）と、Hess の第 7 回飛行および Kolh\"orster の飛行で測定された電離率の高度依存（右）。右図では地上の電離率が差し引かれている。De Angelis and Arcaro b. Schultz (2018) の Fig.~3 より引用~\cite{HessTranslation2018}。}
   \label{fig:hess_altitude}
 \end{figure}
 
@@ -528,10 +528,18 @@ Hillas 図では、横軸に天体または加速領域の大きさ、縦軸に�
 \end{equation}
 であり、スペクトル指数はその前後で \(2.7413\) から \(3.128\) へ増加した~\cite{LHAASOKnee2024}。
 同解析では \(\langle\ln A\rangle\) が \(0.3\ \mathrm{PeV}\) から約 \(3\ \mathrm{PeV}\) まで減少し、knee より上で増加へ転じた。
-これは全粒子 knee が軽成分の変化と結び付くことを高統計で示すが、どの核種のどのスペクトル構造が全粒子 knee を形成するかは、元素選別を行う測定と照合しなければ決まらない。
+この結果は、全粒子 knee が軽成分の変化と結び付くことを高い統計精度で示している。ただし、どの核種のどのスペクトル構造が全粒子 knee を形成するかは、元素選別を行う測定と照合しなければ決まらない。
+図~\ref{fig:lhaaso_knee_mass}では、全粒子スペクトルの急峻化と \(\langle\ln A\rangle\) の増加への転換が同じエネルギー領域に現れている。
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.56\hsize]{fig/lhaaso-knee-2024-fig3.pdf}
+  \caption{LHAASO-KM2A が測定した全粒子エネルギースペクトル（上）と平均対数質量 \(\langle\ln A\rangle\)（下）。灰色帯は系統的不確かさ、青線は折れ曲がりを含む適合結果を表す。LHAASO Collaboration (2024) の Fig.~3 より引用~\cite{LHAASOKnee2024}。}
+  \label{fig:lhaaso_knee_mass}
+\end{figure}
 
 \subsection{軽成分と陽子スペクトル}
-元素別測定の歴史では、発見の優先権と現在の精度を区別する必要がある。
+元素別測定の歴史では、初報の歴史的意義と現在の測定精度を区別する必要がある。
 EAS-TOP は電磁成分とミューオン成分の相関から、knee 付近で組成が重くなることを示し、ヘリウム成分の \((3.5\pm0.3)\ \mathrm{PeV}\) 付近の折れ曲がりが全粒子 knee に寄与する可能性を報告した~\cite{EASTOPComposition2004}。
 KASCADE は電子数とミューオン数の二次元分布から五つの元素群のスペクトルを再構成し、全粒子 knee が主として軽元素群の減少に由来することを初めて系統的に示した~\cite{KASCADEComposition2005}。
 ただし、KASCADE が再構成した元素群の絶対フラックスと折れ曲がり位置は QGSJET と SIBYLL で異なり、元素群分解の結果はハドロン相互作用模型に依存した。
@@ -546,9 +554,17 @@ LHAASO は 2025 年、電磁粒子数、ミューオン数、チェレンコフ�
 得られたスペクトルは単純な一回の折れ曲がりではなく、約 \(0.34\ \mathrm{PeV}\) で硬化し、\(3.3\ \mathrm{PeV}\) 付近で再び折れ曲がった後に急減する三つの冪則領域をもつ。
 EPOS-LHC を用いた適合では冪指数が \(-2.71\) から \(-2.51\)、さらに \(-3.5\) へ変化した。
 したがって、この測定を「従来の陽子成分が 3 PeV で単純に終端した」と要約するのは適切ではなく、LHAASO は PeV 領域に加わる別成分の存在も解釈として提示している~\cite{LHAASOProton2025}。
+図~\ref{fig:lhaaso_proton_spectrum}は、陽子スペクトルの硬化と、その後の広い急峻化をフラックスと局所冪指数の双方で示している。
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.66\hsize]{fig/lhaaso-proton-2025-fig2.pdf}
+  \caption{LHAASO が測定した陽子エネルギースペクトル（上）と局所冪指数（下）。赤点は測定値、灰色帯は系統的不確かさを表す。実線は三つの冪則成分による適合、破線は二つの冪則成分と指数関数的カットオフによる適合である。LHAASO Collaboration (2025) の Fig.~2 より引用~\cite{LHAASOProton2025}。}
+  \label{fig:lhaaso_proton_spectrum}
+\end{figure}
 
 表~\ref{tab:knee_measurement_history}は、初報・先行報告と、その後の代表的な精密測定を区別してまとめたものである。
-同じ knee という語が使われていても、全粒子、p+He、純陽子、模型で分けた元素群は異なる観測量であり、特徴エネルギーを直接同一視できない。
+同じ knee という語が使われていても、全粒子、p+He、純陽子、ハドロン相互作用模型に基づいて分離した元素群は異なる観測量であり、特徴エネルギーを直接同一視できない。
 
 \begin{table}[htb]
   \centering
@@ -590,15 +606,16 @@ EPOS-LHC を用いた適合では冪指数が \(-2.71\) から \(-2.51\)、さ�
 \end{equation}
 と書けば、\(E\ll Z\mathcal{R}_c\) では指数 \(\gamma\)、\(E\gg Z\mathcal{R}_c\) では指数 \(\gamma+\Delta\gamma\) となる。
 \(\epsilon\) は折れ曲がりの鋭さを表す。
-図~\ref{fig:peters_cycle}は式~\eqref{eq:peters_component}を用いた模式図であり、各元素群の規格化は観測データへの適合によって定めたものではない。
+図~\ref{fig:peters_cycle}は、剛性に比例する元素別カットオフを仮定した H\"orandel の poly-gonato モデルを示す。
+この図では、直接観測から外挿した元素群スペクトルの和を全粒子スペクトルへ適合し、元素群ごとの連続的な終端が knee から second knee に至る構造を形成する様子を表している~\cite{Horandel2003}。
 LHAASO の陽子スペクトルに見られる \(3.3\ \mathrm{PeV}\) の急峻化を基準剛性と仮定すれば、鉄の対応エネルギーは約 \(8.6\times10^{16}\ \mathrm{eV}\) となり、KASCADE-Grande が報告した重成分の折れ曲がりと数値的に整合する~\cite{KASCADEGrandeHeavyKnee2011,LHAASOProton2025}。
 この対応は Peters の剛性スケーリングを支持する重要な観測的手掛かりであるが、単一の普遍的な剛性カットオフを証明するものではない。
 ARGO-YBJ/LHAASO 試作機の p+He knee は約 \(0.7\ \mathrm{PeV}\) にあり、LHAASO の陽子スペクトル自体も硬化と急峻化を含む複合構造を示すためである~\cite{ARGOYBJLHAASOLightKnee2015,LHAASOProton2025}。
 
 \begin{figure}[htb]
   \centering
-  \includegraphics[width=0.80\hsize]{fig/peters-cycle.pdf}
-  \caption{剛性に比例する折れ曲がりを仮定した Peters cycle の模式図。\(\mathcal{R}_c=3\ \mathrm{PV}\)、\(\gamma=2.70\)、\(\Delta\gamma=0.45\) とし、各元素群の規格化は任意に設定した。LHAASO を含む個別実験データへのフィットではない~\cite{Peters1961,Horandel2003}。}
+  \includegraphics[width=0.92\hsize]{fig/horandel-2003-fig11.pdf}
+  \caption{剛性依存カットオフを仮定した poly-gonato モデルによる全粒子スペクトルと元素群別寄与。左は全元素群でカットオフ後の指数 \(\gamma_c\) を共通とした場合、右は指数変化 \(\Delta\gamma\) を共通とした場合である。凡例の数字は核電荷 \(Z\) の範囲を表す。H\"orandel (2003) の Fig.~11 より引用~\cite{Horandel2003}。}
   \label{fig:peters_cycle}
 \end{figure}
 
@@ -613,7 +630,7 @@ Peters cycle を検証するには、元素別スペクトル、平均質量、�
 second knee 領域ではフラックスが低いため、空気シャワーによる間接観測が必要である。同時に、質量推定におけるハドロン相互作用模型への依存が顕在化する。
 歴史的には、Akeno と Fly's Eye が \(4\)--\(7\times10^{17}\ \mathrm{eV}\) 付近の緩やかな急峻化を示し、この構造が second knee と呼ばれるようになった~\cite{AkenoSpectrum1992,FlysEyeSpectrum1994,Horandel2003}。
 ただし、初期測定では統計量とエネルギー分解能が限られ、実験によって急峻化の有意度と位置が異なった。
-その後の高統計測定では \(8\times10^{16}\)--\(10^{17}\ \mathrm{eV}\) にも明瞭な構造が報告されているため、現在の文献で second knee が指すエネルギーには解析と命名による幅がある。
+その後の大統計による測定では \(8\times10^{16}\)--\(10^{17}\ \mathrm{eV}\) にも明瞭な構造が報告されているため、現在の文献で second knee が指すエネルギーには解析と命名による幅がある。
 この事情から、「最初の発見」を一つの数値だけで定義するより、初期の全粒子スペクトルの兆候と、後年の高有意度・成分別測定を区別する方が適切である。
 
 KASCADE-Grande は観測面積を拡張し、\(10^{16}\)--\(10^{18}\ \mathrm{eV}\) の荷電粒子数とミューオン数を測定した~\cite{KASCADEGrandeDetector2010}。
@@ -624,9 +641,27 @@ KASCADE-Grande は観測面積を拡張し、\(10^{16}\)--\(10^{18}\ \mathrm{eV}
 付近に有意な急峻化が見いだされた。これは second knee 領域で重成分 knee を成分別に初めて同定した結果であり、Peters cycle における鉄群終端の代表的な根拠になった~\cite{KASCADEGrandeHeavyKnee2011}。
 一方、ミューオンの少ない軽成分では \(\log_{10}(E/\mathrm{eV})=17.08\pm0.08\) 付近に硬化が報告された~\cite{KASCADEGrandeLightAnkle2013}。
 重成分の急減と軽成分の硬化が近接したエネルギーに現れることは、この領域が単純な「鉄 knee」だけではなく、別の銀河成分または銀河系外軽成分の立ち上がりを含む可能性を示す。
+図~\ref{fig:kascade_grande_components}は、同じ実験で得られた重成分の急峻化と軽成分の硬化を示す。
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.49\hsize]{fig/kascade-grande-heavy-2011-fig4.pdf}\hfill
+  \includegraphics[width=0.49\hsize]{fig/kascade-grande-light-2013-fig5.pdf}
+  \caption{KASCADE-Grande が再構成した質量群別エネルギースペクトル。左は全粒子、電子に乏しい重成分、電子に富む軽成分の比較であり、重成分は約 \(8\times10^{16}\ \mathrm{eV}\) で急峻化する。右は軽成分スペクトルであり、約 \(10^{17.08}\ \mathrm{eV}\) に硬化が見られる。左は KASCADE-Grande Collaboration (2011) の Fig.~4、右は同 Collaboration (2013) の Fig.~5 より引用~\cite{KASCADEGrandeHeavyKnee2011,KASCADEGrandeLightAnkle2013}。}
+  \label{fig:kascade_grande_components}
+\end{figure}
 
 TALE は、低エネルギー側で大気チェレンコフ光、高エネルギー側で大気蛍光を用いることにより、約 \(2\ \mathrm{PeV}\) から \(2\ \mathrm{EeV}\) までを一つの望遠鏡系で測定した。
 そのスペクトルには \(\log_{10}(E/\mathrm{eV})\simeq16.22\) の硬化と \(10^{17.1}\ \mathrm{eV}\) 付近の急峻化が認められ、後者が second knee に対応する~\cite{TALESpectrum2018}。
+図~\ref{fig:tale_second_knee}では、同一解析のエネルギースケール上で二つの折れ曲がりが示されている。
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.72\hsize]{fig/tale-spectrum-2018-fig20.pdf}
+  \caption{TALE 単眼解析による \(2\ \mathrm{PeV}\) から \(2\ \mathrm{EeV}\) の全粒子エネルギースペクトル。赤線は折れ曲がりを含む適合、灰色帯は系統的不確かさを表す。TALE Collaboration (2018) の Fig.~20 より引用~\cite{TALESpectrum2018}。}
+  \label{fig:tale_second_knee}
+\end{figure}
+
 Tunka-133 の大気チェレンコフ観測と IceTop/IceCube の地表・氷中同時観測も、PeV から EeV にわたるスペクトルおよび組成変化を測定している~\cite{TunkaSpectrum2020,IceTopComposition2019}。
 Pierre Auger Observatory の高密度 \(750\ \mathrm{m}\) 地表アレイは \(10^{17}\ \mathrm{eV}\) 近傍まで閾値を下げ、独立の検出方式で second knee の急峻化を確認した~\cite{AugerSecondKnee2021}。
 
@@ -1247,6 +1282,15 @@ Heitler--Matthews モデルが示すように、地上ミューオン数は一�
 ミューオンパズルとは、単に観測値が陽子予測より大きいという主張ではなく、独立に制限された質量組成で期待される値よりもミューオン指標が系統的に大きいという問題である。
 
 このメタ解析では、約 \(10\ \mathrm{PeV}\) より上でデータと LHC 後の相互作用模型との差がエネルギーとともに増大し、その傾きは EPOS-LHC と QGSJetII-04 の双方に対して有意であった~\cite{DembinskiMuon2019}。
+図~\ref{fig:muon_meta_analysis}は、質量組成から期待される \(z_{\mathrm{mass}}\) を差し引いた \(\Delta z=z-z_{\mathrm{mass}}\) が、両模型に対してエネルギーとともに増加することを示す。
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.92\hsize]{fig/dembinski-muon-2019-fig10.pdf}
+  \caption{八つの空気シャワー実験によるミューオン測定を共通尺度で比較したメタ解析。縦軸は質量組成の期待値を差し引いた \(\Delta z=z-z_{\mathrm{mass}}\)、横軸は一次エネルギーである。左は EPOS-LHC、右は QGSJetII-04 に対する比較を示す。直線は実験内の系統的不確かさの相関を変えた適合であり、KASCADE-Grande と EAS-MSU の点はエネルギースケールを相互較正していない。Dembinski et al. (2019) の Fig.~10 より引用~\cite{DembinskiMuon2019}。}
+  \label{fig:muon_meta_analysis}
+\end{figure}
+
 Auger の \(6\)--\(16\ \mathrm{EeV}\) のハイブリッド事象では、縦方向発達をデータに合わせても、地表のハドロン由来信号を EPOS-LHC に対して \(1.33\pm0.16\) 倍、QGSJetII-04 に対して \(1.61\pm0.21\) 倍に増やす必要があった~\cite{AugerHadronic2016}。
 レビューでは、不一致が顕在化するシャワーエネルギーを約 \(40\ \mathrm{PeV}\) と見積もると、核子間重心系エネルギーは LHC と同程度の約 \(8\ \mathrm{TeV}\) に対応すると整理されている~\cite{AlbrechtMuonPuzzle2022}。
 核子間重心系エネルギーが LHC の到達範囲にあっても、空気シャワーでは加速器が十分に制約しない超前方領域の粒子生成が各世代で繰り返される。このため、衝突エネルギーだけでは模型の信頼性を保証できない。

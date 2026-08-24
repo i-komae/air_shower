@@ -19,7 +19,7 @@ PYTHON := venv/bin/python
 MPL_CACHE_DIR := $(BUILD_DIR)/matplotlib
 XDG_CACHE_DIR := $(BUILD_DIR)/xdg-cache
 MATPLOTLIB_ENV := MPLBACKEND=Agg MPLCONFIGDIR=$(MPL_CACHE_DIR) XDG_CACHE_HOME=$(XDG_CACHE_DIR)
-GENERATED_FIGURES := fig/gh.pdf fig/hess-altitude.pdf fig/peters-cycle.pdf
+GENERATED_FIGURES := fig/gh.pdf
 
 SOURCES := $(MAIN).tex $(BIBS) $(BST) $(wildcard .latexmkrc) $(wildcard chapters/*.tex) $(wildcard fig/*) $(wildcard assets/figures/*) $(wildcard styles/*)
 
@@ -43,12 +43,6 @@ $(BUILD_DIR)/$(MAIN).pdf: $(SOURCES) $(GENERATED_FIGURES) | $(BUILD_DIR) $(CACHE
 	BIBINPUTS=$(CWD):$(BIBINPUTS) BSTINPUTS=$(CWD):$(BSTINPUTS) TEXMFCACHE=$(CACHE_DIR) TEXMFVAR=$(VAR_DIR) $(LATEXMK) $(LATEXMK_FLAGS) $(MAIN).tex
 
 fig/gh.pdf: src/gh.py | $(MPL_CACHE_DIR) $(XDG_CACHE_DIR)
-	$(MATPLOTLIB_ENV) $(PYTHON) $<
-
-fig/hess-altitude.pdf: src/hess_altitude.py | $(MPL_CACHE_DIR) $(XDG_CACHE_DIR)
-	$(MATPLOTLIB_ENV) $(PYTHON) $<
-
-fig/peters-cycle.pdf: src/peters_cycle.py | $(MPL_CACHE_DIR) $(XDG_CACHE_DIR)
 	$(MATPLOTLIB_ENV) $(PYTHON) $<
 
 $(BUILD_DIR):
