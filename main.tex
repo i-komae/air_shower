@@ -50,19 +50,18 @@
 
 \mainmatter
 
-\chapter{宇宙線と空気シャワーの基礎}\label{chap:air_shower}
+\chapter{宇宙線の観測と起源}\label{chap:cosmic_rays}
 本章では、宇宙線の発見から超高エネルギー宇宙線の現代的観測までを概観し、エネルギースペクトル、質量組成、到来方向を統一的に解釈するための基礎を整える。
 特に、銀河宇宙線の最高エネルギー端と銀河系外成分の立ち上がりが重なり得る second knee 領域に重点を置く。
-この領域では一次宇宙線を直接検出できないため、空気シャワーの電磁成分、ミューオン成分、縦方向発達から一次粒子のエネルギーと質量を推定しなければならない。
-したがって、宇宙線源における加速と銀河・銀河間空間での伝搬だけでなく、ハドロン相互作用模型に由来する系統的不確かさまでを同じ枠組みで理解する必要がある。
+その解釈には、宇宙線源における加速、銀河・銀河間空間での伝搬、元素ごとの最高到達エネルギーを結び付ける必要がある。
+以下では、観測史上の最初の報告と、後続の高精度または多観測量による代表測定を区別する。前者は着想と発見の成立を示し、後者は特徴量の精密化と物理解釈の検証を担うためである。
 
-\section{宇宙線の観測と起源}\label{sec:cosmic_rays}
 宇宙線とは、宇宙空間から地球へ到来する高エネルギー粒子である。
 一次宇宙線の多くは陽子やヘリウム原子核であり、より重い原子核も含まれる。
 これらが地球大気に入射して相互作用を起こすと、多数の二次粒子を含む空気シャワーが形成される。
 したがって、空気シャワーを理解するには、まず一次宇宙線のエネルギー、核種、到来頻度を把握しておく必要がある~\cite{PDGCosmicRays,Stanev2004}。
 
-\subsection{宇宙線研究の成立}
+\section{宇宙線研究の成立}
 20 世紀初頭、密閉した検電器が放電する現象は、地殻中の放射性物質が放つ \(\gamma\) 線によるものと考えられていた。
 この仮説が正しければ、電離率は放射線源である地表から離れるにつれて低下するはずである。
 しかし、Theodor Wulf によるエッフェル塔上での測定や Domenico Pacini による水中測定は、地表起源だけでは電離を説明できないことを示唆していた~\cite{Carlson2012,HessTranslation2018}。
@@ -93,7 +92,7 @@ Millikan の論文では、この放射は high-frequency rays として扱わ�
 1962 年には Volcano Ranch で \(10^{20}\ \mathrm{eV}\) 級の事象が記録され、地上アレイによって極端に希少な粒子を研究できることが実証された~\cite{Linsley1963}。
 現代の Telescope Array（TA）と Pierre Auger Observatory は、地表検出器と大気蛍光望遠鏡を組み合わせ、エネルギー、質量組成、到来方向を相補的に測定している~\cite{PDGCosmicRays,AugerTA2023ArrivalDirections}。
 
-\subsection{エネルギースペクトル}\label{subsec:cosmic_ray_spectrum}
+\section{エネルギースペクトル}\label{subsec:cosmic_ray_spectrum}
 宇宙線の微分フラックス \(J(E)\) は、広いエネルギー範囲でおおよそ冪関数
 \begin{equation}
   J(E)
@@ -119,7 +118,7 @@ Millikan の論文では、この放射は high-frequency rays として扱わ�
 これらの名称は全粒子スペクトルの形状を表す観測的な用語であり、特定の物理機構をあらかじめ意味するものではない。
 また、実験間の絶対エネルギースケールには十数パーセント程度の系統的不確かさがあるため、折れ曲がり位置の比較では統計誤差だけでなくエネルギースケールも考慮する必要がある~\cite{AugerTAEnergyScale2019,TALESpectrum2018}。
 
-\subsection{観測手法と主要実験}\label{subsec:cosmic_ray_experiments}
+\section{観測手法と主要実験}\label{subsec:cosmic_ray_experiments}
 一次宇宙線を検出器へ直接入射させる直接観測では、磁気スペクトロメータやカロリメータによって粒子の電荷とエネルギーを測定できる。
 衛星・気球実験である AMS-02、CREAM、DAMPE、CALET などは、GeV からサブ PeV 領域における元素別スペクトルを高精度で測定している~\cite{AMSProton2015,CREAM2011,DAMPEProton2019,CALETProton2022}。
 直接観測は質量分解能に優れる一方、検出器の受容面積と飛翔時間が限られるため、急激にフラックスが低下する PeV 以上では十分な統計量を得にくい。
@@ -140,6 +139,7 @@ Millikan の論文では、この放射は high-frequency rays として扱わ�
     実験 & 主な範囲 & 検出方式 & second knee 研究での特徴 \\
     \hline
     KASCADE-Grande & \(10^{16}\)--\(10^{18}\ \mathrm{eV}\) & シンチレータ、ミューオン検出器 & 電子・荷電粒子成分とミューオン成分から軽・重成分を分離 \\
+    LHAASO & \(10^{14}\)--\(10^{17}\ \mathrm{eV}\) & シンチレータ、ミューオン検出器、水チェレンコフ検出器、広視野チェレンコフ望遠鏡 & 全粒子・平均質量と、選別した陽子スペクトルを knee をまたいで測定 \\
     IceTop/IceCube & PeV--EeV & 氷上タンク、氷中光検出器 & 地表電磁成分と高エネルギーミューオン束を同時測定 \\
     Tunka-133 & \(6\times10^{15}\)--\(10^{18}\ \mathrm{eV}\) & 広角大気チェレンコフ光 & 光量と時間幅からエネルギーと縦方向発達を推定 \\
     TALE & \(2\times10^{15}\)--EeV & チェレンコフ光、蛍光、地表アレイ & second knee をまたぐスペクトルと組成を同一サイトで測定 \\
@@ -152,7 +152,7 @@ Millikan の論文では、この放射は high-frequency rays として扱わ�
 たとえば地表信号をエネルギーへ変換する際には大気状態、検出器較正、不可視エネルギー補正が必要であり、質量推定にはハドロン相互作用模型が必要になる。
 異なる検出原理と観測高度をもつ実験を比較することは、統計量を増やすだけでなく、共通の模型依存性を識別するためにも不可欠である。
 
-\subsection{非熱的加速が必要になる理由}\label{subsec:acceleration_need}
+\section{非熱的加速が必要になる理由}\label{subsec:acceleration_need}
 宇宙線がどの天体でどのように加速されるかは、エネルギースペクトルや質量組成を解釈するうえで中心的な問題である。
 熱的な粒子分布だけでは PeV から EeV 領域の粒子を説明できない。
 たとえば \(10^{15}\ \mathrm{eV}\) の陽子は、温度に換算すれば \(10^{19}\ \mathrm{K}\) 以上に対応するため、通常の熱平衡プラズマからそのまま出てくる粒子とは考えにくい。
@@ -162,13 +162,15 @@ Millikan の論文では、この放射は high-frequency rays として扱わ�
 衝撃波などの加速領域では粒子の源スペクトルが作られるが、銀河磁場中の拡散、エネルギー損失、相互作用、脱出によって地球で観測されるスペクトルは変化する。
 そのため、観測スペクトルの冪指数をそのまま加速源の冪指数と同一視してはならない~\cite{Gabici2019,PDGCosmicRays}。
 
-\subsection{磁気散乱による粒子加速}\label{subsec:fermi_acceleration}
-Enrico Fermi が提案した粒子加速の基本は、荷電粒子が運動する磁場構造と何度も相互作用し、そのたびに少しずつエネルギーを変えるという考え方である~\cite{Fermi1949,Drury1983,Stanev2004}。
+\section{磁気散乱による粒子加速}\label{subsec:fermi_acceleration}
+Enrico Fermi は 1949 年、運動する磁気雲との確率的相互作用による 2 次加速を提案した~\cite{Fermi1949}。
+現在の宇宙線加速論で中心的な 1 次の拡散衝撃波加速は、1970 年代末に複数の研究者によって独立に定式化され、Bell および Blandford--Ostriker の論文が代表的な原典となっている~\cite{Bell1978,BlandfordOstriker1978,Drury1983}。
+両者に共通する基本は、荷電粒子が運動する磁場構造と何度も相互作用し、そのたびに少しずつエネルギーを変えることである。
 ここでいう磁場構造とは、乱流磁場、磁化した雲、衝撃波の上流・下流にある磁気不規則性などである。
 理想磁気流体近似では、局所的なプラズマ静止系で電場はほぼ消えるため、粒子はその系では磁場で向きを変えられるだけで、散乱そのものではエネルギーを失わない。
 にもかかわらず観測者の系でエネルギーが変わるのは、散乱体が観測者に対して運動しており、散乱の前後で異なる慣性系へのローレンツ変換が入るからである。
 
-\subsubsection{散乱体との一回の相互作用}
+\subsection{散乱体との一回の相互作用}
 散乱体が \(x\) 方向に速度 \(u\) で動いているとする。
 \(\beta_u=u/c\)、ローレンツ因子を \(\Gamma_u=(1-\beta_u^2)^{-1/2}\) とし、粒子は相対論的で \(v\simeq c\) とする。
 散乱前の粒子エネルギーを観測者系で \(E_1\)、粒子方向と散乱体速度のなす角を \(\theta_1\) とし、\(\mu_1=\cos\theta_1\) とおく。
@@ -204,7 +206,7 @@ Enrico Fermi が提案した粒子加速の基本は、荷電粒子が運動す�
 したがって、粒子が散乱体に正面から近づく場合には \(\theta_1>\pi/2\)、すなわち \(\mu_1<0\) となり、平均的にエネルギーを得やすい。
 逆に、粒子が散乱体に後ろから追いつく場合にはエネルギーを失いやすい。
 
-\subsubsection{2 次フェルミ加速}
+\subsection{2 次フェルミ加速}
 乱流中の磁化した雲のように、散乱体がいろいろな方向へほぼ等方的に動いている場合を考える。
 粒子の入射方向が等方的でも、衝突頻度は相対速度に比例するため、\(\mu_1=\cos\theta_1\) で表した入射方向に対する散乱確率は \(1-\beta_u\mu_1\) に比例する。
 この重みを付けて平均すると
@@ -231,7 +233,7 @@ Enrico Fermi が提案した粒子加速の基本は、荷電粒子が運動す�
 これが 2 次フェルミ加速である。
 平均的なエネルギー増加が散乱体速度の 2 乗に比例するため、乱流中の再加速としては重要でも、単独で最高エネルギー宇宙線を短時間で作る機構としては効率が低い。
 
-\subsubsection{1 次フェルミ加速}
+\subsection{1 次フェルミ加速}
 これに対し、衝撃波では上流と下流のプラズマが衝撃波面に向かって系統的に流れ込む。
 粒子は上流と下流の磁気不規則性で散乱されながら衝撃波面を何度も横切り、各側のプラズマ静止系ではほぼ等方化される。
 衝撃波静止系で上流速度を \(u_1\)、下流速度を \(u_2\) とし、圧縮比を
@@ -336,7 +338,7 @@ Enrico Fermi が提案した粒子加速の基本は、荷電粒子が運動す�
 強い非相対論的衝撃波では、断熱指数 \(5/3\) の気体に対して \(r\simeq4\) となるため、\(s\simeq2\) が得られる。
 これは加速源でのスペクトルであり、地球で観測されるスペクトルは銀河内拡散やエネルギー依存の脱出によってさらに変化する。
 
-\subsubsection{源スペクトルから観測スペクトルへの変化}
+\subsection{源スペクトルから観測スペクトルへの変化}
 観測される冪則を理解するには、加速と伝搬を分けて記述する必要がある。
 最も単純な leaky-box 型の定常模型で、単位体積・単位エネルギー当たりの粒子数を \(n(E)\)、注入率を \(Q(E)\)、銀河からの脱出時間を \(\tau_{\mathrm{esc}}(E)\) とすると、輸送方程式は
 \begin{equation}
@@ -369,7 +371,7 @@ Enrico Fermi が提案した粒子加速の基本は、荷電粒子が運動す�
 それでも、加速領域における「一定割合の利得と一定確率の逃走」と、銀河内伝搬における「剛性依存の滞在時間」というスケール不変な過程が組み合わさることで、広いエネルギー範囲に冪則が現れることを端的に示している。
 スペクトルの折れ曲がりは、この近似的なスケール不変性が加速限界、伝搬様式の変化、または異なる起源成分の重なりによって破れる場所と解釈できる。
 
-\subsubsection{到達可能エネルギーの制限}
+\subsection{到達可能エネルギーの制限}
 最後に、ここで得た冪指数は「加速される粒子が十分な回数だけ衝撃波を往復できる」という仮定のもとでの結果である。
 実際にどこまで高いエネルギーに到達できるかは、加速時間と損失時間・脱出時間の競合で決まる。
 拡散係数を上流・下流で \(\kappa_1\), \(\kappa_2\) とすると、非相対論的な拡散衝撃波加速の代表的な加速時間は
@@ -387,7 +389,7 @@ Enrico Fermi が提案した粒子加速の基本は、荷電粒子が運動す�
 したがって、衝撃波が存在するだけでは十分ではなく、磁場の強さ、乱流による散乱効率、加速領域の大きさ、天体の寿命、放射損失や相互作用損失を同時に満たす必要がある。
 この条件を大まかに整理するために、次節でラーモア半径と Hillas 条件を導入する。
 
-\subsection{磁気剛性とラーモア半径}\label{subsec:rigidity_larmor}
+\section{磁気剛性とラーモア半径}\label{subsec:rigidity_larmor}
 宇宙線の運動を考えるときは、エネルギー \(E\) だけでなく電荷 \(Ze\) が重要になる。
 同じエネルギーでも、陽子と鉄原子核では磁場による曲がり方が異なるからである。
 この曲がりやすさを表す量が磁気剛性（rigidity）
@@ -437,7 +439,7 @@ Enrico Fermi が提案した粒子加速の基本は、荷電粒子が運動す�
 一方、同じエネルギーの鉄原子核では半径は約 \(1/26\) になる。
 この \(Z\) 依存性が、knee 付近の構造や最高エネルギーでの質量組成を議論するときの基礎になる~\cite{PDGCosmicRays,Gabici2019}。
 
-\subsection{閉じ込め条件と起源天体図}\label{subsec:hillas_condition}
+\section{閉じ込め条件と起源天体図}\label{subsec:hillas_condition}
 粒子を加速するには、少なくとも粒子が加速領域からすぐに逃げないことが必要である。
 加速領域の代表的な大きさを \(L\)、磁場を \(B\) とすると、閉じ込めの必要条件は
 \begin{equation}
@@ -511,8 +513,63 @@ Hillas 図では、横軸に天体または加速領域の大きさ、縦軸に�
 \end{figure}
 \FloatBarrier
 
-\subsection{knee と Peters cycle}\label{subsec:peters_cycle}
-全粒子スペクトルの knee は単一の核種の折れ曲がりではなく、異なる電荷をもつ成分の和として理解する必要がある。
+\section{knee の発見史と元素別構造}\label{subsec:knee_observations}
+\subsection{全粒子 knee の発見と精密測定}
+宇宙線スペクトルの knee は、1958 年に Moscow State University の Kulikov と Khristiansen が空気シャワーのサイズ分布に見いだした折れ曲がりとして最初に報告された。
+英訳論文は 1959 年に刊行されており、\(10^6\)--\(10^7\) 個の粒子を含むシャワーの領域でサイズ分布の傾きが変化する可能性を論じている~\cite{KulikovKhristiansen1959}。
+この観測は一次宇宙線のエネルギースペクトルを元素別に測ったものではなく、電磁成分から構成したシャワーサイズ分布の折れ曲がりであった。
+その後、Akeno は電子数とミューオン数から独立に再構成したスペクトルが整合することを示し、\(10^{15.67}\ \mathrm{eV}\) 付近でスペクトル指数が約 2.62 から 3.02 へ変化すると報告した~\cite{AkenoSpectrum1984}。
+さらに、電磁、ミューオン、ハドロン、大気チェレンコフ光という異なるシャワー成分と観測高度で類似の急峻化が確認されたため、knee は単一検出器の応答変化ではなく、一次宇宙線スペクトルに由来する構造とみなされるようになった~\cite{KASCADEDetector2003,PDGCosmicRays}。
+
+近年の代表的な高精度測定として、LHAASO-KM2A は \(0.3\)--\(30\ \mathrm{PeV}\) の全粒子スペクトルと平均対数質量を同時に測定した。
+折れ曲がりエネルギーは
+\begin{equation}
+  E_k=3.67\pm0.05_{\mathrm{stat}}\pm0.15_{\mathrm{sys}}\ \mathrm{PeV}
+\end{equation}
+であり、スペクトル指数はその前後で \(2.7413\) から \(3.128\) へ増加した~\cite{LHAASOKnee2024}。
+同解析では \(\langle\ln A\rangle\) が \(0.3\ \mathrm{PeV}\) から約 \(3\ \mathrm{PeV}\) まで減少し、knee より上で増加へ転じた。
+これは全粒子 knee が軽成分の変化と結び付くことを高統計で示すが、どの核種のどのスペクトル構造が全粒子 knee を形成するかは、元素選別を行う測定と照合しなければ決まらない。
+
+\subsection{軽成分と陽子スペクトル}
+元素別測定の歴史では、発見の優先権と現在の精度を区別する必要がある。
+EAS-TOP は電磁成分とミューオン成分の相関から、knee 付近で組成が重くなることを示し、ヘリウム成分の \((3.5\pm0.3)\ \mathrm{PeV}\) 付近の折れ曲がりが全粒子 knee に寄与する可能性を報告した~\cite{EASTOPComposition2004}。
+KASCADE は電子数とミューオン数の二次元分布を展開し、五つの元素群のスペクトルと、軽い元素群から順に減少する組成変化を初めて系統的に示した~\cite{KASCADEComposition2005}。
+ただし、KASCADE が再構成した元素群の絶対フラックスと折れ曲がり位置は QGSJET と SIBYLL で異なり、元素群分解の結果はハドロン相互作用模型に依存した。
+
+陽子とヘリウムを合わせた軽成分については、ARGO-YBJ と LHAASO 広視野チェレンコフ望遠鏡の試作機によるハイブリッド観測が、\(0.7\ \mathrm{PeV}\) 付近で p+He スペクトルが急峻化することを 2015 年に報告した~\cite{ARGOYBJLHAASOLightKnee2015}。
+この結果は全粒子 knee より低い位置に軽成分 knee を置き、数 PeV まで軽成分が保たれるとした他の解析とは一致しなかった。
+純陽子に近い試料では、GRAPES-3 が \(50\ \mathrm{TeV}\)--\(1.3\ \mathrm{PeV}\) のミューオン多重度分布を用い、\(166\ \mathrm{TeV}\) 付近の陽子スペクトル硬化を初めて有意に報告した~\cite{GRAPES3Proton2024}。
+これは最終的な陽子カットオフの位置を定める結果ではなく、knee より低いエネルギーですでに陽子スペクトルが単一冪ではないことを示す。
+
+LHAASO は 2025 年、電磁粒子数、ミューオン数、チェレンコフ像を同時に用いて、\(0.15\)--\(12\ \mathrm{PeV}\) にわたる高純度陽子試料を初めて同定したと報告した~\cite{LHAASOProton2025}。
+陽子純度は \(1\ \mathrm{PeV}\) で約 90\%、エネルギー分解能は \(0.158\ \mathrm{PeV}\) 以上で 15\% より良いと評価されている。
+得られたスペクトルは単純な一回の折れ曲がりではなく、約 \(0.34\ \mathrm{PeV}\) で硬化し、\(3.3\ \mathrm{PeV}\) 付近で再び折れ曲がった後に急減する三つの冪領域をもつ。
+EPOS-LHC を用いた適合では指数が \(-2.71\) から \(-2.51\)、さらに \(-3.5\) へ変化した。
+したがって、この測定を「従来の陽子成分が 3 PeV で単純に終端した」と要約するのは適切ではなく、LHAASO は PeV 領域に加わる別成分の存在も解釈として提示している~\cite{LHAASOProton2025}。
+
+表~\ref{tab:knee_measurement_history}は、発見または先行報告と、その後の代表的な精密測定を区別してまとめたものである。
+同じ knee という語が使われていても、全粒子、p+He、純陽子、模型で分けた元素群は異なる観測量であり、特徴エネルギーを直接同一視できない。
+
+\begin{table}[htb]
+  \centering
+  \footnotesize
+  \caption{knee に関係する主要な観測史。初出は結果が最初に公表された意義を、後続測定は元素分離、統計量、分解能、相補的観測量によって物理解釈を進めた意義を示す。}
+  \label{tab:knee_measurement_history}
+  \begin{tabular}{@{}p{0.18\hsize}p{0.25\hsize}p{0.27\hsize}p{0.22\hsize}@{}}
+    \hline
+    観測対象 & 発見・先行報告 & 代表的な後続測定 & 現在の解釈上の注意 \\
+    \hline
+    全粒子 knee & MSU がシャワーサイズ分布の折れ曲がりを初報告~\cite{KulikovKhristiansen1959} & Akeno の電子・ミューオン整合測定~\cite{AkenoSpectrum1984}、LHAASO の \(3.67\ \mathrm{PeV}\) 精密測定~\cite{LHAASOKnee2024} & 発見時の量は一次エネルギーではなくシャワーサイズである \\
+    knee の組成変化 & EAS-TOP がミューオン相関から重質量化を報告~\cite{EASTOPComposition2004} & KASCADE が元素群スペクトルの順序的減少を初めて系統的に再構成~\cite{KASCADEComposition2005} & 元素群分解は相互作用模型に依存する \\
+    p+He knee & ARGO-YBJ/LHAASO 試作機が \(0.7\ \mathrm{PeV}\) 付近の急峻化を報告~\cite{ARGOYBJLHAASOLightKnee2015} & LHAASO の全粒子・平均質量測定~\cite{LHAASOKnee2024}と純陽子測定~\cite{LHAASOProton2025}が PeV 領域を再検証 & 混合軽成分と純陽子を区別する必要がある \\
+    陽子の硬化と knee & GRAPES-3 が \(166\ \mathrm{TeV}\) 付近の硬化を初めて有意に報告~\cite{GRAPES3Proton2024} & LHAASO が高純度陽子を \(0.15\)--\(12\ \mathrm{PeV}\) で測定~\cite{LHAASOProton2025} & 陽子スペクトルには硬化と急峻化の複数構造がある \\
+    \hline
+  \end{tabular}
+\end{table}
+\FloatBarrier
+
+\section{Peters cycle と knee--second knee の接続}\label{subsec:peters_cycle}
+全粒子スペクトルは異なる電荷をもつ成分の和である。
 加速限界または銀河からの脱出が磁気剛性 \(\mathcal{R}\) で決まるなら、核種 \(Z\) の折れ曲がりエネルギーは
 \begin{equation}
   E_{k,Z}\simeq Z\mathcal{R}_c
@@ -534,34 +591,37 @@ Hillas 図では、横軸に天体または加速領域の大きさ、縦軸に�
 と書けば、\(E\ll Z\mathcal{R}_c\) では指数 \(\gamma\)、\(E\gg Z\mathcal{R}_c\) では指数 \(\gamma+\Delta\gamma\) となる。
 \(\epsilon\) は折れ曲がりの鋭さを表す。
 図~\ref{fig:peters_cycle}は式~\eqref{eq:peters_component}を用いた模式図であり、規格化は観測データへのフィットではない。
-陽子の knee を \(3\)--\(4\ \mathrm{PeV}\) とすれば、鉄の対応する折れ曲がりは \(26\) 倍の \(8\times10^{16}\)--\(10^{17}\ \mathrm{eV}\) に現れるため、second knee を銀河系内鉄成分の終端とみなす解釈が自然に導かれる~\cite{Peters1961,Horandel2003,KASCADEGrandeHeavyKnee2011,LHAASOKnee2024}。
+LHAASO の陽子スペクトルに見られる \(3.3\ \mathrm{PeV}\) の急峻化を基準剛性と仮定すれば、鉄の対応エネルギーは約 \(8.6\times10^{16}\ \mathrm{eV}\) となり、KASCADE-Grande が報告した重成分の折れ曲がりと数値的に整合する~\cite{KASCADEGrandeHeavyKnee2011,LHAASOProton2025}。
+この対応は Peters scaling を支持する重要な観測的手掛かりであるが、単一の普遍的な剛性カットオフを証明するものではない。
+ARGO-YBJ/LHAASO 試作機の p+He knee は約 \(0.7\ \mathrm{PeV}\) にあり、LHAASO の陽子スペクトル自体も硬化、盛り上がり、急峻化からなる複合構造を示すためである~\cite{ARGOYBJLHAASOLightKnee2015,LHAASOProton2025}。
 
 \begin{figure}[htb]
   \centering
   \includegraphics[width=0.80\hsize]{fig/peters-cycle.pdf}
-  \caption{剛性に比例する折れ曲がりを仮定した Peters cycle の模式図。\(\mathcal{R}_c=3\ \mathrm{PV}\)、\(\gamma=2.70\)、\(\Delta\gamma=0.45\) とし、元素群の規格化は説明のために選んだ。実験データへのフィットではない~\cite{Peters1961,Horandel2003}。}
+  \caption{剛性に比例する折れ曲がりを仮定した Peters cycle の模式図。\(\mathcal{R}_c=3\ \mathrm{PV}\)、\(\gamma=2.70\)、\(\Delta\gamma=0.45\) とし、元素群の規格化は説明のために選んだ。LHAASO を含む個別実験データへのフィットではない~\cite{Peters1961,Horandel2003}。}
   \label{fig:peters_cycle}
 \end{figure}
 
 剛性依存の順序性は、折れ曲がりの原因が加速限界であっても、銀河磁場からの脱出であっても現れ得る。
 前者では式~\eqref{eq:hillas_condition}により最大エネルギーが \(Z\) に比例し、後者では同じ剛性の粒子が同じ拡散係数をもつためである。
 したがって、全粒子スペクトルの形だけでは両者を区別できない。
-元素別スペクトル、平均質量、異方性、近傍 PeVatron の最高エネルギーを組み合わせる必要がある。
+Peters cycle を検証するには、元素別スペクトル、平均質量、異方性、近傍 PeVatron の最高エネルギーを組み合わせ、複数の電荷群で折れ曲がりが \(Z\) に比例するかを調べる必要がある。
 また、相互作用断面積や粒子生成の変化によって空気シャワーの再構成量に折れ曲がりが生じる可能性も論理的にはあるが、異なる検出手法で類似の構造が観測されているため、少なくとも単一の検出器効果だけで knee 系列を説明することは難しい~\cite{PDGCosmicRays}。
 \FloatBarrier
 
-\subsection{second knee 領域の観測}\label{subsec:second_knee_observations}
+\section{second knee 領域の観測}\label{subsec:second_knee_observations}
 second knee 領域ではフラックスが低いため空気シャワー観測が必須であり、同時に質量推定のハドロン相互作用模型依存性が顕在化する。
-KASCADE は電子数とミューオン数の二次元分布を応答行列で展開し、元素群別スペクトルを求めた。
-解析は全粒子 knee が主として軽い成分の減少から生じることを示した一方、得られる元素比とスペクトル形状は QGSJET と SIBYLL の選択によって変化した~\cite{KASCADEDetector2003,KASCADEComposition2005}。
-この結果は、複数のシャワー成分を同時測定する利点と、相互作用模型が完全でなければ組成を一意に復元できない限界を同時に示している。
+歴史的には、Akeno と Fly's Eye が \(4\)--\(7\times10^{17}\ \mathrm{eV}\) 付近の緩やかな急峻化を示し、この構造が second knee と呼ばれるようになった~\cite{AkenoSpectrum1992,FlysEyeSpectrum1994,Horandel2003}。
+ただし、初期測定では統計量とエネルギー分解能が限られ、実験によって急峻化の有意度と位置が異なった。
+その後の高統計測定では \(8\times10^{16}\)--\(10^{17}\ \mathrm{eV}\) にも明瞭な構造が報告されているため、現在の文献で second knee が指すエネルギーには解析と命名による幅がある。
+この事情から、「最初の発見」を一つの数値だけで定義するより、初期の全粒子スペクトルの兆候と、後年の高有意度・成分別測定を区別する方が適切である。
 
 KASCADE-Grande は観測面積を拡張し、\(10^{16}\)--\(10^{18}\ \mathrm{eV}\) の荷電粒子数とミューオン数を測定した~\cite{KASCADEGrandeDetector2010}。
 ミューオンに富む重成分では
 \begin{equation}
   \log_{10}(E/\mathrm{eV})=16.92\pm0.04
 \end{equation}
-付近に有意な急峻化が見いだされ、Peters cycle における重核成分の knee と整合する~\cite{KASCADEGrandeHeavyKnee2011}。
+付近に有意な急峻化が見いだされた。これは second knee 領域で重成分 knee を成分別に初めて同定した結果であり、Peters cycle における鉄群終端の代表的な根拠になった~\cite{KASCADEGrandeHeavyKnee2011}。
 一方、ミューオンの少ない軽成分では \(\log_{10}(E/\mathrm{eV})=17.08\pm0.08\) 付近に硬化が報告された~\cite{KASCADEGrandeLightAnkle2013}。
 重成分の減少と軽成分の再増加が近接したエネルギーに現れることは、この領域が単純な「鉄 knee」だけではなく、別の銀河成分または銀河系外軽成分の立ち上がりを含む可能性を示す。
 
@@ -579,7 +639,7 @@ Pierre Auger Observatory の高密度 \(750\ \mathrm{m}\) 地表アレイは \(1
     \hline
     実験・解析 & 特徴的エネルギー & 主な観測結果 \\
     \hline
-    LHAASO & \(3.67\ \mathrm{PeV}\) & 全粒子 knee と、knee 上側での平均質量増加を高統計で測定~\cite{LHAASOKnee2024} \\
+    Akeno・Fly's Eye & \(4\)--\(7\times10^{17}\ \mathrm{eV}\) & 全粒子スペクトルに second knee の初期的な兆候を報告~\cite{AkenoSpectrum1992,FlysEyeSpectrum1994} \\
     KASCADE-Grande & \(8.3\times10^{16}\ \mathrm{eV}\) & ミューオンに富む重成分のスペクトルが急峻化~\cite{KASCADEGrandeHeavyKnee2011} \\
     KASCADE-Grande & \(1.2\times10^{17}\ \mathrm{eV}\) & ミューオンの少ない軽成分が硬化~\cite{KASCADEGrandeLightAnkle2013} \\
     TALE & 約 \(10^{17.1}\ \mathrm{eV}\) & チェレンコフ・蛍光スペクトルに second knee を観測~\cite{TALESpectrum2018} \\
@@ -594,8 +654,10 @@ Pierre Auger Observatory の高密度 \(750\ \mathrm{m}\) 地表アレイは \(1
 第三は相互作用模型に由来する質量分類であり、電子・ミューオン比または \(X_{\max}\) を陽子と鉄の混合比へ変換する際に影響する。
 second knee の物理解釈には、単一実験の全粒子スペクトルだけでなく、異なる観測量による元素群別スペクトルと質量指標の整合性が必要である。
 
-\subsection{銀河系内外遷移の模型}\label{subsec:galactic_transition}
+\section{銀河系内外遷移の模型}\label{subsec:galactic_transition}
 second knee から ankle までの範囲では、銀河系内成分がどこで終わり、銀河系外成分がどこから卓越するかについて複数の模型が存在する。
+ankle の硬化は Volcano Ranch の Linsley が 1963 年に初めて報告し、すでに銀河成分と銀河系外成分の交差という解釈を提示していた~\cite{LinsleyAnkle1963}。
+現在は Auger と TA が大露出で位置と形状を精密化しているが、ankle が成分交差、対生成 dip、または源から放出される複数成分の重なりのいずれで生じるかは確定していない~\cite{AugerSpectrum2020,AugerTAEnergyScale2019}。
 観測される全粒子フラックスを
 \begin{equation}
   J(E)=J_{\mathrm{G}}(E)+J_{\mathrm{XG}}(E)
@@ -625,7 +687,7 @@ Pierre Auger Observatory の \(5\ \mathrm{EeV}\) 以上のスペクトルと \(X
 複数種類の銀河源と銀河系外源が重なる現実的な状況では、second knee、軽成分の ankle、全粒子 ankle が異なる遷移段階を表す可能性がある。
 識別には、全粒子スペクトルだけでなく、元素群別スペクトル、\(X_{\max}\) 分布、ミューオン数、銀河座標に対する異方性を同時に説明する必要がある~\cite{PDGCosmicRays,Cristofari2023}。
 
-\subsection{超高エネルギー宇宙線の伝搬と観測}\label{subsec:uhecr_propagation}
+\section{超高エネルギー宇宙線の伝搬と観測}\label{subsec:uhecr_propagation}
 銀河系外を伝搬する超高エネルギー宇宙線は、宇宙膨張による断熱損失に加え、背景光子との相互作用でエネルギーと核種を変える。
 陽子では電子陽電子対生成に加え、十分高いエネルギーで
 \begin{equation}
@@ -636,19 +698,20 @@ Pierre Auger Observatory の \(5\ \mathrm{EeV}\) 以上のスペクトルと \(X
   \end{cases}
 \end{equation}
 という光パイオン生成が起こる。
-Greisen、Zatsepin、Kuzmin は、宇宙マイクロ波背景放射の存在により、数 \(10^{19}\ \mathrm{eV}\) 以上の陽子フラックスが遠方源に対して抑制されることを指摘した~\cite{Greisen1966,ZatsepinKuzmin1966}。
+Greisen、Zatsepin、Kuzmin は 1966 年、宇宙マイクロ波背景放射の存在により、数 \(10^{19}\ \mathrm{eV}\) 以上の陽子フラックスが遠方源に対して抑制されることを指摘した~\cite{Greisen1966,ZatsepinKuzmin1966}。
 原子核では、宇宙赤外・可視背景放射と宇宙マイクロ波背景放射による光核分解が重要であり、伝搬中に質量数 \(A\) が減少する~\cite{KoteraOlinto2011}。
 
-Auger と TA は最高エネルギー側の強いフラックス抑制を観測している~\cite{AugerSpectrum2020,PDGCosmicRays}。
+予言から約 40 年後、HiRes は 2008 年に最高エネルギー側の抑制を初めて \(5\sigma\) で報告し、Auger も同年に独立の大統計地表アレイで抑制を確認した~\cite{HiResGZK2008,AugerSuppression2008}。
+現在は Auger と TA が抑制の形状を精密測定している~\cite{AugerSpectrum2020,AugerTAEnergyScale2019,PDGCosmicRays}。
 しかし、スペクトル抑制だけでは、伝搬中の GZK 効果と起源天体の最大剛性を一意に分離できない。
 前者なら相互作用距離と近傍宇宙の物質分布、後者なら元素ごとの \(Z\) 依存カットオフが主要因になるため、質量組成、到来方向、宇宙生成ニュートリノと \(\gamma\) 線の上限を合わせて検証する必要がある。
 
-到来方向について、Auger は \(8\ \mathrm{EeV}\) 以上で銀河中心方向と一致しない大規模双極子異方性を観測しており、このエネルギー領域で銀河系外起源が卓越することを支持している~\cite{AugerDipole2017}。
+到来方向について、Auger は 2017 年、\(8\ \mathrm{EeV}\) 以上で銀河中心方向と一致しない大規模双極子異方性を初めて高い統計的有意度で観測し、このエネルギー領域で銀河系外起源が卓越することを支持した~\cite{AugerDipole2017}。
 一方、個々の天体との対応は銀河・銀河間磁場による偏向と限られた統計量のため確立していない~\cite{AugerTA2023ArrivalDirections}。
 Auger と TA のスペクトル比較では、各実験の系統誤差内のエネルギー再尺度化によって共通視野の一致が改善するが、最高エネルギー側には残差がある~\cite{AugerTAEnergyScale2019}。
 したがって、second knee から最高エネルギーまでの一貫した起源像を構築するには、北天と南天の露出差およびエネルギースケール差を明示的に扱う必要がある。
 
-\subsection{エネルギー領域ごとの起源像}\label{subsec:source_by_energy}
+\section{エネルギー領域ごとの起源像}\label{subsec:source_by_energy}
 宇宙線の主要な起源候補は、エネルギー領域によって異なる。
 低エネルギーから knee 付近までは銀河系内起源が主要成分と考えられ、超新星残骸の衝撃波、星団風やスーパーバブル、パルサー関連天体などが候補になる~\cite{Gabici2019,PDGCosmicRays}。
 特に超新星残骸は、衝撃波加速を自然に実現し、銀河宇宙線のエネルギー密度を維持するのに必要なエネルギー供給量も満たし得る。
@@ -683,7 +746,7 @@ UHECR の最近のレビューでは、約 \(5\ \mathrm{EeV}\) より上で単�
   \end{tabular}
 \end{table}
 
-\subsection{質量組成}\label{subsec:cosmic_ray_composition}
+\section{質量組成}\label{subsec:cosmic_ray_composition}
 宇宙線の起源や伝搬を議論するには、エネルギースペクトルだけでなく質量組成も重要である。
 平均的な質量組成は、しばしば
 \begin{equation}
@@ -691,6 +754,8 @@ UHECR の最近のレビューでは、約 \(5\ \mathrm{EeV}\) より上で単�
 \end{equation}
 で表される。
 ここで \(A\) は一次宇宙線の質量数であり、陽子では \(\ln A=0\)、鉄では \(\ln A\simeq \ln 56\) である。
+Fly's Eye は 1993 年、スペクトル構造と \(X_{\max}\) から推定した組成変化の相関を早期に報告し、HiRes/MIA は後に \(X_{\max}\) とミューオン密度を同時に用いるハイブリッド測定を行った~\cite{FlysEyeComposition1993,HiResMIA2001}。
+その後、Auger は \(10^{17.8}\ \mathrm{eV}\) 以上の \(X_{\max}\) 分布を大統計で測定し、平均だけでなく分布幅まで用いて組成を制限した~\cite{AugerXmax2014}。
 図~\ref{fig:tale_lna}は、TALE ハイブリッド検出器による \(10^{16.5}\ \mathrm{eV}\) から \(10^{18.5}\ \mathrm{eV}\) の範囲での質量組成測定を、他実験の結果と比較したものである~\cite{TALEMassComposition2026}。
 
 \begin{figure}[htb]
@@ -708,7 +773,12 @@ UHECR の最近のレビューでは、約 \(5\ \mathrm{EeV}\) より上で単�
 剛性依存の銀河成分終端であれば、元素群ごとの折れ曲がりが \(Z\) の順に現れ、平均組成は重くなると期待される。
 一方、銀河系外軽成分が立ち上がれば、軽成分スペクトルの硬化、\(X_{\max}\) の深部化、異方性の位相または振幅の変化が伴い得る。
 このため模型の検証には、\(J(E)\)、元素群別フラックス、\(\langle X_{\max}\rangle\)、\(\sigma(X_{\max})\)、ミューオン数、到来方向分布を同一のエネルギースケールで比較する必要がある。
-次節以降では、これらの観測量と一次粒子のエネルギー・質量を結び付ける空気シャワー物理を導入する。
+次章では、これらの観測量と一次粒子のエネルギー・質量を結び付ける空気シャワー物理を導入する。
+
+\chapter{空気シャワーの物理と観測}\label{chap:air_shower}
+second knee 以上のエネルギーでは一次宇宙線を直接検出できないため、空気シャワーの電磁成分、ミューオン成分、縦方向発達から一次粒子のエネルギーと質量を推定する。
+本章では、電磁カスケードとハドロンカスケードの基本模型を導入し、縦方向発達、横方向分布、シャワー曲面を観測量へ結び付ける。
+特に、質量組成推定を制限するハドロン相互作用模型への依存とミューオンパズルを整理する。
 
 \section{空気シャワーとは何か}\label{sec:air_shower_overview}
 エネルギーの高い宇宙線が地球大気に入射すると、大気中の原子核との相互作用によって多数の二次粒子が生成される。
@@ -1164,6 +1234,8 @@ Matthews の単純模型と同様に \(N_{\mathrm{ch}}=10\)、\(N_{\mathrm{tot}}
 Heitler--Matthews 模型が示すように、地上ミューオン数は一次エネルギーと質量の双方に感度をもつ。
 現実の解析では、LHC で較正されたハドロン相互作用模型を空気シャワーシミュレーションへ外挿するが、複数の実験で、\(X_{\max}\) などから許容される質量組成を仮定しても観測ミューオン量を十分に再現できないことが分かっている。
 この系統的な不一致をミューオンパズル、または muon deficit problem と呼ぶ~\cite{DembinskiMuon2019,AlbrechtMuonPuzzle2022}。
+不一致の兆候は複数の先行実験に分散していたが、Auger は 2015 年に UHECR シャワーの平均ミューオン数を初めてハイブリッド測定し、現行模型の予測を上回ることを組成情報と同時に示した~\cite{AugerMuon2015}。
+その後の八実験による共通尺度のメタ解析は、実験固有の異常ではなく、エネルギーとともに増大する共通問題として位置づけた~\cite{DembinskiMuon2019}。
 
 異なる実験と相互作用模型を比較するため、平均ミューオン数を
 \begin{equation}
@@ -1188,7 +1260,7 @@ Heitler--Matthews 模型が示すように、地上ミューオン数は一次�
 であるため、\(X_{\max}\) から得た \(z_{\mathrm{mass}}\) とミューオン観測から得た \(z\) を比較できる。
 ミューオンパズルとは、単に観測値が陽子予測より大きいという主張ではなく、独立に制限された質量組成で期待される値よりもミューオン指標が系統的に大きいという問題である。
 
-八つの空気シャワー実験を共通のエネルギースケールへ換算したメタ解析では、約 \(10\ \mathrm{PeV}\) より上でデータと LHC 後の相互作用模型との差がエネルギーとともに増大し、その傾きは EPOS-LHC と QGSJetII-04 の双方に対して有意であった~\cite{DembinskiMuon2019}。
+このメタ解析では、約 \(10\ \mathrm{PeV}\) より上でデータと LHC 後の相互作用模型との差がエネルギーとともに増大し、その傾きは EPOS-LHC と QGSJetII-04 の双方に対して有意であった~\cite{DembinskiMuon2019}。
 Auger の \(6\)--\(16\ \mathrm{EeV}\) のハイブリッド事象では、縦方向発達をデータに合わせても、地表のハドロン由来信号を EPOS-LHC に対して \(1.33\pm0.16\)、QGSJetII-04 に対して \(1.61\pm0.21\) 倍へ増やす必要があった~\cite{AugerHadronic2016}。
 レビューでは、不一致が顕在化するシャワーエネルギーを約 \(40\ \mathrm{PeV}\) と見積もると、核子間重心系エネルギーは LHC と同程度の約 \(8\ \mathrm{TeV}\) に対応すると整理されている~\cite{AlbrechtMuonPuzzle2022}。
 それでも空気シャワーでは、加速器が十分に制約しない超前方領域の粒子生成が各世代で繰り返されるため、LHC 到達エネルギーであることだけでは模型の信頼性を保証しない。
@@ -1323,6 +1395,7 @@ F(X)=\exp\!\left(\frac{X_{\max}-X}{\Lambda}\right)
 \subsection{大気蛍光とチェレンコフ光による縦方向発達の観測}\label{subsec:fluorescence}
 空気シャワー中の荷電粒子は、大気中の窒素分子を励起し、紫外の蛍光光を放出させる。
 大気蛍光望遠鏡はこの光を追跡し、シャワー軸に沿った縦方向発達を再構成する~\cite{PDGCosmicRays,Stanev2004,TALEMassComposition2026}。
+Fly's Eye はこの手法を UHECR のスペクトルと縦方向発達の測定へ本格的に適用し、HiRes がステレオ観測と高分解能化を進め、Auger は地表検出器とのハイブリッド較正を大露出観測へ接続した~\cite{FlysEyeSpectrum1994,HiResGZK2008,AugerXmax2014}。
 観測される蛍光光量は、厳密には粒子数 \(N(X)\) そのものではなく、その深さにおけるエネルギー付与 \(\mathrm{d}E/\mathrm{d}X\) と直接結びついている。
 縦方向プロファイルは GH 関数でよく記述できるため、実際の解析ではプロファイルを GH 関数でフィットし、\(X_{\max}\) やシャワーサイズを表すパラメータを求めることが多い~\cite{GaisserHillas1977,PDGCosmicRays}。
 
