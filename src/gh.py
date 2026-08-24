@@ -9,8 +9,8 @@ output_path = script_dir / ".." / "fig" / "gh.pdf"
 # matplotlib の設定
 # =========================
 plt.rcParams.update({
-    "text.usetex": True,
-    "font.family": "cm",
+    "text.usetex": False,
+    "font.family": "serif",
     "mathtext.fontset": "cm",
     "font.size": 14,
     "axes.grid": False,
@@ -70,4 +70,4 @@ ax.set_ylim(0, N_max*1.5)
 
 ax.legend()
 plt.tight_layout()
-plt.savefig(output_path)
+plt.savefig(output_path, metadata={"CreationDate": None, "ModDate": None})
