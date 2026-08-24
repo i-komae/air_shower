@@ -37,14 +37,14 @@ X = np.linspace(X0 + 1.0, 1500.0, 2000)
 
 # 各項
 R = ((X - X0) / (X_max - X0)) ** alpha
-D = np.exp((X_max - X) / Lambda)
+F = np.exp((X_max - X) / Lambda)
 
 # Gaisser--Hillas 関数
-N = N_max * R * D
+N = N_max * R * F
 
-# 重ね描きしやすいように R, D を N_max でスケーリング
+# 重ね描きしやすいように R, F を N_max でスケーリング
 R_scaled = N_max * R
-D_scaled = N_max * D
+F_scaled = N_max * F
 
 # =========================
 # プロット
@@ -54,8 +54,8 @@ fig, ax = plt.subplots(figsize=(7.2, 4.8))
 ax.plot(X, N, label=r"$N(X)$", linewidth=2.0, color='k')
 ax.plot(X, R_scaled, linestyle=":", linewidth=1.0,
         label=r"$N_{\max} R(X)$")
-ax.plot(X, D_scaled, linestyle="-.", linewidth=1.0,
-        label=r"$N_{\max} D(X)$")
+ax.plot(X, F_scaled, linestyle="-.", linewidth=1.0,
+        label=r"$N_{\max} F(X)$")
 
 # 極大位置の目安
 ax.axvline(X_max, linestyle="--", linewidth=1.0,
