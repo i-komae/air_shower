@@ -1,0 +1,14 @@
+{
+  "missing_references": [],
+  "missing_citations": [],
+  "duplicate_labels": [],
+  "duplicate_bib_keys": [],
+  "missing_figures": [],
+  "build/main.log": [],
+  "build/main.blg": [],
+  "diff_check": "",
+  "pdf_pages": 56,
+  "main_pdf_sha256": "1470bfdb0f549aed1fca318153a076e320f7b2eb853d346c8188c5f2220aa55c",
+  "visual_review": "56ページを確認し、最後の変更が影響した13ページを再描画・目視確認しました。追加4図と比較表は拡大して確認しました。",
+  "build": "make pdfが終了コード0で完了しました。"
+}

@@ -54,22 +54,11 @@
 宇宙線は、宇宙空間から地球へ到来する高エネルギーの荷電粒子である。一次宇宙線の主成分は陽子とヘリウム原子核であり、より重い原子核も含まれる。
 一次宇宙線が大気中の原子核と相互作用すると、多数の二次粒子からなる空気シャワーが発生する。地表での粒子密度と到来時刻、大気中での発光量と縦方向発達から、一次宇宙線のエネルギー、質量組成、到来方向を推定する~\cite{PDGCosmicRays,Stanev2004}。
 
-本章では、宇宙線研究の成立から現在の観測までをたどり、エネルギースペクトルと質量組成、到来方向、粒子の加速と伝搬を説明する。
+本章では、全粒子エネルギースペクトルの軟化である second knee を中心に、観測された特徴と加速・伝搬による解釈を整理する。Second knee は鉄成分の軟化や銀河系内成分の終端と関係する可能性があるが、これらと同義ではない。スペクトル、質量組成、異方性による制約を合わせ、TALE の地表検出器による測定の目的へつなげる。
 
 \section{宇宙線研究の成立}
-20 世紀初頭、密閉容器内に蓄えた電荷の減少から、空気のわずかな電離が知られていた。検電器は、放電の速さから容器内の電離率を求める装置である。
-当時は、地殻中の放射性物質が放つ \(\gamma\) 線が電離の主因と考えられていた。この仮説に従えば、地殻から離れるほど電離率は低下する。
-Theodor Wulf は 1910 年、エッフェル塔上で地上の 87\% に相当する電離率を測定した。高度約 \(300\ \mathrm{m}\) は当時の見積もりで大気中の約 4 吸収長に相当し、放射線が地殻だけから来るなら、電離率は地上の数パーセントまで低下するはずであった~\cite{Carlson2012}。
-Domenico Pacini は 1911 年、水面下約 \(3\ \mathrm{m}\) で電離率が水面上より約 20\% 低下することを観測した。水による遮蔽で電離率が下がったことから、電離を生じさせる放射線の一部は上方から入射すると結論した~\cite{Carlson2012,HessTranslation2018}。
-
-Victor Franz Hess は 1912 年に 7 回の気球飛行を行い、内部の圧力を一定に保つ密閉型の Wulf 検電器で高度ごとの電離率を測定した。
-第 7 回飛行の測定には、電離箱を厚さ \(3\ \mathrm{mm}\) の金属壁で囲った 2 台を用いた。\(\alpha\) 線と \(\beta\) 線はこの壁を透過できないため、検電器は主として透過力の強い放射線に応答した~\cite{Hess1912,HessTranslation2018}。
-図~\ref{fig:hess_altitude}は、1912 年の飛行経路と、第 7 回飛行で測定された電離率の高度依存を示す。
-2 台の検電器で測定した電離率は、高度約 \(1\ \mathrm{km}\) までは離陸前の値と同程度か、やや低かった。\(2\ \mathrm{km}\) を超えると増加し、\(4.0\)--\(5.2\ \mathrm{km}\) ではそれぞれ \(34.4\) と \(27.2\ \mathrm{ions\,cm^{-3}\,s^{-1}}\) に達した。
-離陸前に地上で測定した値は \(16.3\) と \(11.8\ \mathrm{ions\,cm^{-3}\,s^{-1}}\) であり、高高度ではいずれも約 2 倍となった。
-部分日食中に行われた第 1 回飛行では、太陽が月に隠されても電離率は低下せず、夜間の飛行にも昼間との明確な差はなかった。Hess はこの結果から、太陽を放射線の直接の放射源から除外した。
-最高高度 \(5350\ \mathrm{m}\) に達した第 7 回飛行では、高度とともに電離率が増加する傾向が明確となり、Hess は強い透過力をもつ放射線が上方から大気へ入射していると結論した~\cite{Hess1912,HessTranslation2018}。
-この観測は宇宙線の発見とされている。Hess はその業績により、1936 年のノーベル物理学賞を受賞した~\cite{Carlson2012,NobelHess1936}。
+20 世紀初頭、検電器の放電から空気のわずかな電離が知られ、その主因は地殻中の放射性物質が放つ放射線と考えられていた。しかし、Wulf の塔上での測定と Pacini の水中での遮蔽実験は、地殻からの放射だけでは説明できない寄与を示した~\cite{Carlson2012,HessTranslation2018}。
+Victor Franz Hess は 1912 年に 7 回の気球飛行を行い、検電器で電離率の高度依存を測定した。図~\ref{fig:hess_altitude}に示す第 7 回飛行では、高度約 \(2\ \mathrm{km}\) を超えると電離率が増え、高高度では地上の約 2 倍に達した。Hess は、透過力の強い放射線が上方から大気へ入射していると結論した~\cite{Hess1912,HessTranslation2018}。この観測は宇宙線の発見とされ、Hess は 1936 年のノーベル物理学賞を受賞した~\cite{Carlson2012,NobelHess1936}。
 
 \begin{figure}[htb]
   \centering
@@ -78,7 +67,7 @@ Victor Franz Hess は 1912 年に 7 回の気球飛行を行い、内部の圧�
   \label{fig:hess_altitude}
 \end{figure}
 
-この透過性放射を宇宙起源の高周波電磁波と考えた Robert Andrews Millikan は、1925 年の \textit{Science} 論文で cosmic rays という名称を初めて用いた~\cite{Millikan1925,Carlson2012}。
+この透過性放射を宇宙起源の高周波電磁波と考えた Robert Andrews Millikan は、1925 年の \textit{Science} 論文で cosmic rays という名称を用いた~\cite{Millikan1925,Carlson2012}。
 
 Jacob Clay は 1927 年に緯度効果を観測し、地磁気の影響を受ける荷電粒子が放射線に含まれることを示した。
 1929 年、Walther Bothe と Werner Kolh\"orster は、上下に並べた 2 本の Geiger--M\"uller 計数管の間に厚さ \(4\ \mathrm{cm}\) の金板を置いた。金板を挿入しても同時計数率はわずかしか減少しなかった。この結果から、\(\gamma\) 線が物質中で作る Compton 電子ではなく、金板を通過する荷電粒子によって計数管が同時に作動したと結論した~\cite{Carlson2012}。
@@ -99,7 +88,7 @@ John Linsley は Volcano Ranch 実験において、一次エネルギーが \(1
   \frac{\mathrm{d}N}{\mathrm{d}E\,\mathrm{d}A\,\mathrm{d}t\,\mathrm{d}\Omega}
   \propto E^{-\gamma}
 \end{equation}
-に従って減少する。ただし、単一のべき乗則で全エネルギー範囲を記述できるわけではない。図~\ref{fig:cosmic_ray_spectrum}に示すように、knee、second knee、ankle（くるぶし）、高エネルギー側のサプレッションといった折れ曲がりが見られる~\cite{PDGCosmicRays}。
+に従って減少する。ここでは正のスペクトル指数 \(\gamma\) を用い、その増加を軟化、減少を硬化と呼ぶ。ただし、単一のべき乗則で全エネルギー範囲を記述できるわけではない。図~\ref{fig:cosmic_ray_spectrum}に示すように、knee、second knee、ankle（くるぶし）、高エネルギー側のサプレッションといった折れ曲がりが見られる~\cite{PDGCosmicRays}。
 
 \begin{figure}[htb]
   \centering
@@ -112,26 +101,38 @@ John Linsley は Volcano Ranch 実験において、一次エネルギーが \(1
 スペクトルの折れ曲がりには、起源天体における加速限界、銀河系からの脱出、宇宙背景放射との相互作用などが関係する~\cite{PDGCosmicRays,Stanev2004}。
 
 微分強度はエネルギーとともに急減する。そこで、折れ曲がりを見やすくするため、図の縦軸には \(J(E)\) にエネルギーの 3 乗を掛けた \(E^3J(E)\) を用いることが多い。
-代表的な構造は、約 \(4\times10^{15}\ \mathrm{eV}\) の knee、約 \(10^{17}\ \mathrm{eV}\) の second knee、約 \(5\times10^{18}\ \mathrm{eV}\) の ankle、および約 \(5\times10^{19}\ \mathrm{eV}\) 以上のサプレッションである~\cite{PDGCosmicRays,LHAASOKnee2024,TALESpectrum2018,AugerSecondKnee2021,AugerSpectrum2020}。
+代表的な構造は、約 \(4\times10^{15}\ \mathrm{eV}\) の knee、\(10^{17}\ \mathrm{eV}\) から数 \(10^{17}\ \mathrm{eV}\) に報告される second knee、約 \(5\times10^{18}\ \mathrm{eV}\) の ankle、および約 \(5\times10^{19}\ \mathrm{eV}\) 以上のサプレッションである~\cite{PDGCosmicRays,LHAASOKnee2024,TALESpectrum2018,Horandel2003,AugerSpectrum2020}。
 これらの名称は全粒子スペクトルの形状を表す観測的な用語であり、特定の物理機構をあらかじめ意味するものではない。
-検出器信号から一次エネルギーを求める較正には、実験ごとに十数パーセントの系統的不確かさがある。報告される折れ曲がりのエネルギーには、統計誤差に加えて、このエネルギースケールの不確かさが含まれる~\cite{AugerTAEnergyScale2019,TALESpectrum2018}。
+折れ曲がりの位置には、解析に用いる関数とエネルギースケールの不確かさが関係する。位置の自由な推定値と固定した値を区別し、統計誤差と系統誤差を分けて比較する必要がある~\cite{AugerTAEnergyScale2019,TALESpectrum2018}。Second knee の具体的な測定結果は第\ref{subsec:second_knee_observations}節にまとめる。
 
 \subsection{質量組成}\label{subsec:cosmic_ray_composition}
 質量組成は、エネルギースペクトルとは異なる観測量から、宇宙線の起源と伝搬を制約する。
-質量組成を 1 つの量で表す場合には、\(\ln A\) の平均
+質量数を \(A\)、同じエネルギーにおける核種 \(i\) の割合を \(f_i\) とすると、質量組成を表す量の一つとして
 \begin{equation}
-  \langle \ln A\rangle
+  \langle\ln A\rangle=\sum_i f_i\ln A_i,
+  \qquad f_i\geq0,\qquad \sum_i f_i=1
+  \label{eq:mean_lnA}
 \end{equation}
-を用いる。ここで \(A\) は一次宇宙線の質量数であり、陽子では \(\ln A=0\)、鉄では \(\ln A=\ln 56\simeq4.03\) である。
+を用いる。これは質量数の自然対数を核種の割合で平均した量であり、平均質量数の対数 \(\ln\langle A\rangle\) とは一般に異なる。陽子では \(\ln A=0\)、鉄では \(\ln A=\ln56\simeq4.03\) である。空気シャワーが最も発達する大気深さを \(X_{\max}\) といい、その分布から相互作用モデルを介して組成を推定する。
 Fly's Eye は 1993 年、エネルギースペクトルの形が変わる領域で \(X_{\max}\) のエネルギー依存も変化することを報告した~\cite{FlysEyeComposition1993}。
 その後、HiRes の大気蛍光望遠鏡と Michigan Muon Array（MIA）を組み合わせた HiRes--MIA 実験は、2001 年に同じ空気シャワーの \(X_{\max}\) と地表ミューオン密度を測定した~\cite{HiResMIA2001}。
 Pierre Auger Observatory は 2014 年、\(10^{17.8}\ \mathrm{eV}\) 以上の \(X_{\max}\) 分布を測定し、平均と標準偏差の両方から質量組成を制約した~\cite{AugerXmax2014}。
-図~\ref{fig:tale_lna}は、TALE ハイブリッド検出器による \(10^{16.5}\)--\(10^{18.5}\ \mathrm{eV}\) の測定結果を、Auger などの高統計測定と比較している~\cite{TALEMassComposition2026}。
+TALE ハイブリッド検出器は \(10^{16.5}\)--\(10^{18.5}\ \mathrm{eV}\) の \(X_{\max}\) 分布を測定し、その平均のエネルギー依存に折れ曲がりを見いだした~\cite{TALEMassComposition2026}。この測定量と、核種ごとのモンテカルロシミュレーション（MC）の分布への適合から求める組成とは区別される。
+図~\ref{fig:tale_hybrid_elongation}に示す平均 \(X_{\max}\) の折れ曲がりは、\(\log_{10}(E/\mathrm{eV})=17.13\pm0.04_{\mathrm{stat}}{}^{+0.05}_{-0.03}{}_{\mathrm{sys}}\) に得られている。その前後のエロンゲーションレートは、\(\log_{10}E\) の単位変化あたり \(23.3\pm5.6\) から \(97.6\pm4.5\ \mathrm{g\,cm^{-2}}\) へ増加する。ここで示した傾きの誤差は統計誤差であり、この変化から核種割合を求めるには相互作用モデルの予測が必要となる。
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.68\hsize]{fig/tale-hybrid-2026-fig14.pdf}
+  \caption{TALE Hybrid による平均 \(X_{\max}\) のエネルギー依存。点と誤差棒は測定値と統計誤差、破線は単一のエロンゲーションレート、マゼンタ線は折れ曲がりをもつ直線のフィットを示す。全粒子スペクトルの折れ曲がりとは異なる測定量である。R. U. Abbasi et al., ``Cosmic ray mass composition measurement in the energy range from \(10^{16.5}\) eV to \(10^{18.5}\) eV observed with the TALE hybrid detector'', Phys. Rev. D 113, 062003 (2026), DOI:10.1103/vrky-dxn7, Fig.~14（arXiv:2603.14804v1）より転載~\cite{TALEMassComposition2026}。\href{https://creativecommons.org/licenses/by/4.0/}{CC BY 4.0}。図の内容は変更していない。}
+  \label{fig:tale_hybrid_elongation}
+\end{figure}
+
+図~\ref{fig:tale_lna}は、同じ解析から推定された \(\langle\ln A\rangle\) を他実験と比較している。平均的に組成が軽くなり始めることは、重い成分が消失したことや、銀河系外成分が優勢になったことを、それだけで意味するわけではない。
 
 \begin{figure}[htb]
   \centering
   \includegraphics[width=0.85\hsize]{fig/TALE-Hybrid-lnA.pdf}
-  \caption{宇宙線の \(\langle\ln A\rangle\)。TALE ハイブリッド質量組成測定の Fig.~22 より引用~\cite{TALEMassComposition2026}。}
+  \caption{各実験で推定された \(\langle\ln A\rangle\) の比較。黒丸は TALE ハイブリッド解析の結果で、QGSJetII-04 に基づく核種割合から求めている。灰色帯は同解析の系統的不確かさを表す。他実験に用いたハドロン相互作用モデルは凡例に記されており、同一モデルで統一した比較ではない。TALE ハイブリッド質量組成測定の Fig.~22 より引用~\cite{TALEMassComposition2026}。}
   \label{fig:tale_lna}
 \end{figure}
 
@@ -143,30 +144,29 @@ Pierre Auger Observatory は 2014 年、\(10^{17.8}\ \mathrm{eV}\) 以上の \(X
 衛星・気球実験である AMS-02、CREAM、DAMPE、CALET などは、GeV からサブ PeV 領域における核種別のエネルギースペクトルを高精度で測定している~\cite{AMSProton2015,CREAM2011,DAMPEProton2019,CALETProton2022}。
 直接観測では核種を個別に識別できる一方、検出器の受容面積と飛翔時間が限られるため、強度が急減する PeV 以上では十分な統計量を得にくい。
 
-間接観測では、一次宇宙線が大気中に作る空気シャワーを測定する。
-地表アレイは荷電粒子密度、粒子到来時刻、ミューオン数を高い稼働率で観測し、大気チェレンコフ望遠鏡と大気蛍光望遠鏡はシャワーの縦方向発達を光学的に測定する。
-電波観測は、地磁気効果と Askaryan 効果による MHz 帯の電波放射からシャワーエネルギーと \(X_{\max}\) を再構成する手法として発展している~\cite{PDGCosmicRays}。
-蛍光観測は発光量を通じて大気中のエネルギー損失をほぼカロリメトリックに測定できるが、月のない晴天時に限られるため稼働率は低い。
-地表検出器と光学検出器を組み合わせるハイブリッド観測は、蛍光測定で定めたエネルギースケールを大統計の地表事象へ移す役割を担う。
+間接観測では、一次宇宙線が大気中に作る空気シャワーを測定する。地表アレイは、検出器に入射する粒子の信号と到来時刻を高い稼働率で記録する。信号に含まれる電磁成分とミューオン成分の割合は、検出器の材質、観測高度、天頂角、シャワー軸からの距離によって異なる。
+光学観測にも複数の方法がある。結像型の望遠鏡は蛍光やチェレンコフ光の像と時間変化から縦方向発達を再構成する。TALE ではチェレンコフ光を多く含む事象も利用する。一方、Tunka-133 は地表に配置した非結像型の光検出器でチェレンコフ光の密度と時間情報を測る~\cite{TALESpectrum2018,TALEMassComposition2026,TunkaSpectrum2020}。蛍光観測は大気へのエネルギー付与をほぼカロリメトリックに測れるが、空の明るさや気象条件に制約され、地表観測より稼働率が低い。運用条件は装置と解析ごとに定められる。
+電波観測は、地磁気効果と Askaryan 効果による MHz 帯の電波放射を利用する方法である~\cite{PDGCosmicRays}。検出器、観測量、エネルギーへの換算を区別して、代表的な実験を表~\ref{tab:cosmic_ray_experiments}に示す。較正方法の詳細は第\ref{sec:energy_calibration}節で述べる。
 
 \begin{table}[htb]
   \centering
   \small
-  \caption{Second knee から超高エネルギー領域を担う代表的な空気シャワー実験。エネルギー範囲は解析ごとに異なるため概略を示す。}
+  \caption{Knee から超高エネルギー領域を測定する代表的な実験の検出器、主要な観測量、エネルギー換算。観測量の選択と較正範囲は各解析に依存する。}
   \label{tab:cosmic_ray_experiments}
-  \begin{tabular}{@{}p{0.18\hsize}p{0.19\hsize}p{0.25\hsize}p{0.28\hsize}@{}}
+  \begin{tabular}{@{}p{0.16\hsize}p{0.22\hsize}p{0.24\hsize}p{0.25\hsize}@{}}
     \hline
-    実験 & 主な範囲 & 検出方式 & second knee 研究での特徴 \\
+    実験 & 検出器 & 主要な観測量 & エネルギー換算・較正 \\
     \hline
-    KASCADE-Grande & \(10^{16}\)--\(10^{18}\ \mathrm{eV}\) & シンチレータ、ミューオン検出器 & 電子数とミューオン数の比で試料を分け、軽い原子核と重い原子核のスペクトルを測定 \\
-    LHAASO & \(10^{14}\)--\(10^{17}\ \mathrm{eV}\) & シンチレータ、ミューオン検出器、水チェレンコフ検出器、広視野チェレンコフ望遠鏡 & 全粒子・平均質量と、選別した陽子スペクトルを knee をまたいで測定 \\
-    IceTop/IceCube & PeV--EeV & 氷上タンク、氷中光検出器 & 地表電磁成分と高エネルギーミューオン束を同時測定 \\
-    Tunka-133 & \(6\times10^{15}\)--\(10^{18}\ \mathrm{eV}\) & 広角大気チェレンコフ光 & 光量と時間幅からエネルギーと縦方向発達を推定 \\
-    TALE & \(2\times10^{15}\)--EeV & チェレンコフ光、蛍光、地表アレイ & second knee をまたぐスペクトルと組成を同一サイトで測定 \\
-    Pierre Auger & \(10^{17}\ \mathrm{eV}\) 以上 & 水チェレンコフ地表検出器、蛍光望遠鏡 & 高密度アレイから最高エネルギーまでを共通のエネルギースケールで接続 \\
+    KASCADE-Grande & シンチレータとミューオン検出器 & 荷電粒子数 \(N_{\mathrm{ch}}\) とミューオン数 \(N_\mu\) & 両観測量と MC の関係を用いる~\cite{KASCADEGrandeHeavyKnee2011} \\
+    LHAASO & 地表粒子・ミューオン検出器と広視野チェレンコフ望遠鏡など & 粒子数、ミューオン数、チェレンコフ像 & 検出器の組合せごとに MC と較正を用いる~\cite{LHAASOKnee2024,LHAASOProton2025} \\
+    IceTop/IceCube & 氷上タンクと氷中光検出器 & 電磁・ミューオン成分を含む地表信号と氷中ミューオン束 & MC に基づきスペクトルと組成を再構成する~\cite{IceTopComposition2019} \\
+    Tunka-133 & 非結像型チェレンコフ光検出器 & 光密度 \(Q(200)\) と光パルスの時間情報 & MC の換算関係と QUEST に基づく規格化を用いる~\cite{TunkaSpectrum2020} \\
+    TALE & 蛍光・チェレンコフ望遠鏡と地表シンチレータ & 光量と縦方向発達、地表信号、到来時刻 & 光学解析では縦発達の積分と不可視エネルギー補正を用いる~\cite{TALESpectrum2018,TALEMassComposition2026} \\
+    Pierre Auger & 水チェレンコフ地表検出器と蛍光望遠鏡 & 地表信号と蛍光によるエネルギー付与 & 天頂角補正後の信号を FD 尺度へ較正する~\cite{AugerSecondKnee2021} \\
     \hline
   \end{tabular}
 \end{table}
+\FloatBarrier
 
 地表アレイと光学検出器は、粒子密度、到来時刻、光量、縦方向発達などを測定し、そこから一次粒子のエネルギーと質量を再構成する。
 エネルギーの再構成には、大気状態、検出器の較正、不可視エネルギーの補正が関係する。質量の推定結果は、シミュレーションに用いるハドロン相互作用モデルによっても変化する。
@@ -252,7 +252,7 @@ Enrico Fermi は 1949 年、運動する磁気雲との確率的相互作用に�
 平均的なエネルギー増加が散乱体速度の 2 乗に比例するため、2 次フェルミ加速は乱流中の再加速に寄与する一方、単独で宇宙線を最高エネルギーまで短時間で加速する機構としては効率が低い。
 
 \subsection{1 次フェルミ加速}
-これに対し、衝撃波では上流と下流のプラズマが衝撃波面に向かって系統的に流れ込む。
+衝撃波静止系では、上流のプラズマは衝撃波へ流入し、下流のプラズマは衝撃波から流れ去る。両者は同じ向きに流れるが、その速さは \(u_1>u_2>0\) を満たす。
 粒子は上流と下流の磁気不規則性で散乱されながら衝撃波面を何度も横切り、各側のプラズマ静止系ではほぼ等方化される。
 衝撃波静止系で上流速度を \(u_1\)、下流速度を \(u_2\) とし、圧縮比を
 \begin{equation}
@@ -356,7 +356,7 @@ Enrico Fermi は 1949 年、運動する磁気雲との確率的相互作用に�
 
 \subsection{源スペクトルから観測スペクトルへの変化}
 観測されるべき乗則は、加速領域で作られる源スペクトルと伝搬中の変化によって決まる。
-最も単純な leaky-box 型の定常モデルで、単位体積・単位エネルギー当たりの粒子数を \(n(E)\)、注入率を \(Q(E)\)、銀河からの脱出時間を \(\tau_{\mathrm{esc}}(E)\) とすると、輸送方程式は
+単一核種を対象とし、連続的なエネルギー損失、核破砕、二次粒子生成を省いた leaky-box 型モデルを考える。単位体積・単位エネルギー当たりの粒子数を \(n(E)\)、単位時間当たりの注入率を \(Q(E)\)、銀河からの脱出時間を \(\tau_{\mathrm{esc}}(E)\) とすると、輸送方程式は
 \begin{equation}
   \frac{\partial n}{\partial t}
   =Q(E)-\frac{n(E)}{\tau_{\mathrm{esc}}(E)}
@@ -368,7 +368,7 @@ Enrico Fermi は 1949 年、運動する磁気雲との確率的相互作用に�
   n(E)=Q(E)\tau_{\mathrm{esc}}(E)
 \end{equation}
 である。
-注入スペクトルを \(Q(E)\propto E^{-s}\)、拡散係数を \(D(\mathcal{R})\propto\mathcal{R}^{\delta}\) とする。
+運動量を \(p\)、核電荷を \(Ze\)、光速を \(c\) とし、リジディティを \(\mathcal R=pc/(Ze)\) と定義する。\(e\) は電気素量であり、リジディティは電位の次元をもつ。注入スペクトルを \(Q(E)\propto E^{-s}\)、拡散係数を \(D(\mathcal{R})\propto\mathcal{R}^{\delta}\) とする。
 銀河ハローの代表的な高さを \(H\) とすれば、拡散脱出時間は
 \begin{equation}
   \tau_{\mathrm{esc}}
@@ -413,10 +413,10 @@ Enrico Fermi は 1949 年、運動する磁気雲との確率的相互作用に�
 \end{equation}
 である。
 ここで \(p\) は運動量である。
-高エネルギーでは \(E\simeq pc\) なので、同じ \(E\) なら \(Z\) の大きい原子核ほど \(\mathcal{R}\) は小さく、磁場で曲げられやすい。
+高エネルギーでは \(E\simeq pc\simeq Ze\mathcal R\) である。\(E\) を eV、\(\mathcal R\) を V で表した数値の関係は \(E[\mathrm{eV}]\simeq Z\mathcal R[\mathrm V]\) となる。同じ \(E\) なら \(Z\) の大きい原子核ほど \(\mathcal{R}\) は小さく、磁場で曲げられやすい。
 
 一様磁場中で、磁場に垂直な運動量成分を \(p_{\perp}\) とする。
-ガウス単位系ではローレンツ力は \((Ze/c)\boldsymbol{v}\times\boldsymbol{B}\) であり、円運動の向心力条件は
+以下の磁場を含む式にはガウス単位系を用いる。この単位系ではローレンツ力は \((Ze/c)\boldsymbol{v}\times\boldsymbol{B}\) であり、円運動の向心力条件は
 \begin{equation}
   \frac{Ze}{c}v_{\perp}B
   =
@@ -512,9 +512,9 @@ Hillas 図では、\(\eta\sim1\) とした楽観的な必要条件を
 ただし Hillas 条件は必要条件であって十分条件ではない。
 起源天体の候補は、Hillas 条件に加えて、天体の寿命に対する加速時間、シンクロトロン放射や光核反応による損失、粒子の脱出、および到来方向・質量組成との整合性によって制限される~\cite{KoteraOlinto2011,GlobusBlandford2023}。
 
-図~\ref{fig:hillas_plot}は、代表的な候補天体の大きさと磁場強度を 2 軸に取り、式~\eqref{eq:hillas_condition}の閉じ込め条件を示す Hillas 図である。図中の横軸 \(R\) は本稿の \(L\) に相当する。
-一定の最大エネルギーに対応する \(BL=\mathrm{const.}\) の線は、両軸を対数で表すと傾き \(-1\) の直線になる。特定のエネルギーまで陽子を加速できる天体は、その直線より \(BL\) の大きい側に分布する。
-鉄原子核では \(Z=26\) であるため、同じ \(B\) と \(L\) でも陽子の約 26 倍のエネルギーまで閉じ込められる。ただし、この図が示すのは閉じ込めの必要条件であり、実際の最大エネルギーは加速時間やエネルギー損失によっても制限される。
+図~\ref{fig:hillas_plot}は、代表的な候補天体の大きさと磁場強度を 2 軸に取り、式~\eqref{eq:hillas_condition}に対応する必要条件を示す Hillas 図である。図中の横軸 \(R\) は本稿の \(L\) に相当する。
+一定の電荷と \(\beta\) に対するエネルギーの上限を示す \(BL=\mathrm{const.}\) の線は、両軸を対数で表すと傾き \(-1\) の直線になる。特定のエネルギーの陽子についてこの必要条件を満たす候補天体は、その直線より \(BL\) の大きい側に分布する。
+鉄原子核では \(Z=26\) であるため、同じ \(B\) と \(L\) に対する閉じ込めの上限は陽子の約 26 倍になる。ただし、この図が示すのは閉じ込めの必要条件であり、実際の最大エネルギーは加速時間やエネルギー損失によっても制限される。
 
 \begin{figure}[htb]
   \centering
@@ -563,16 +563,18 @@ ARGO-YBJ と LHAASO 広視野チェレンコフ望遠鏡の試作機によるハ
 LHAASO は 2025 年、電磁粒子数、ミューオン数、チェレンコフ像を同時に用いて、\(0.15\)--\(12\ \mathrm{PeV}\) にわたる高純度陽子試料を同定したと報告した~\cite{LHAASOProton2025}。
 陽子純度は \(1\ \mathrm{PeV}\) で約 90\%、エネルギー分解能は \(0.158\ \mathrm{PeV}\) 以上で 15\% 未満と評価されている。
 得られたスペクトルには 2 つの折れ曲がりがあり、3 つのべき乗則領域に分かれる。約 \(0.34\ \mathrm{PeV}\) で傾きが緩やかになり、\(3.3\ \mathrm{PeV}\) 付近から急減する。
-EPOS-LHC を用いた適合ではスペクトル指数が \(-2.71\) から \(-2.51\)、さらに \(-3.5\) へ変化した。
-LHAASO の陽子スペクトルは、\(3\ \mathrm{PeV}\) の単一のカットオフでは記述できない。同研究は、PeV 領域に別の陽子成分が加わる可能性を解釈の 1 つとして示している~\cite{LHAASOProton2025}。
+EPOS-LHC を用いた適合では、本稿の \(J\propto E^{-\gamma}\) の定義に従うスペクトル指数 \(\gamma\) は \(2.71\) から \(2.51\)、さらに \(3.5\) へ変化した。原図の局所スペクトル指数は \(\mathrm d\ln J/\mathrm d\ln E=-\gamma\) を表すため、符号が逆になる。
+Knee より低いエネルギーにも硬化があり、knee だけでは全域の形状を説明できない。一方、高い側の軟化を滑らかな折れ曲がりと指数関数的カットオフのどちらで記述するかは、同研究の統計とエネルギー範囲だけでは決定されていない~\cite{LHAASOProton2025}。
 図~\ref{fig:lhaaso_proton_spectrum}は、陽子スペクトルの傾きがいったん緩やかになった後に急になる様子を、強度と局所スペクトル指数によって示している。
 
 \begin{figure}[htb]
   \centering
   \includegraphics[width=0.66\hsize]{fig/lhaaso-proton-2025-fig2.pdf}
-  \caption{LHAASO が測定した陽子エネルギースペクトル（上）と局所スペクトル指数（下）。赤点は測定値、灰色帯は系統的不確かさを表す。実線は 3 つのべき乗則成分による適合、破線は 2 つのべき乗則成分と指数関数的カットオフによる適合である。LHAASO Collaboration (2025) の Fig.~2 より引用~\cite{LHAASOProton2025}。}
+  \caption{LHAASO が測定した陽子エネルギースペクトル（上）と局所スペクトル指数（下）。赤点は測定値、灰色帯は系統的不確かさを表す。実線は二つの折れ曲がりをもつ一つの関数による適合で、三つの漸近的なべき乗区間を表す。破線は低い側の折れ曲がりと高い側の指数関数的カットオフを組み合わせた適合である。LHAASO Collaboration (2025) の Fig.~2 より引用~\cite{LHAASOProton2025}。}
   \label{fig:lhaaso_proton_spectrum}
 \end{figure}
+
+LHAASO は、同じエネルギー尺度で求めた陽子・ヘリウムの合計フラックスから陽子を差し引き、\(0.16\)--\(13\ \mathrm{PeV}\) のヘリウムスペクトルも測定した~\cite{LHAASOHelium2026}。EPOS-LHC に基づく結果では、\(1.05\pm0.05_{\mathrm{stat}}{}^{+0.22}_{-0.13}{}_{\mathrm{sys}}\ \mathrm{PeV}\) 付近に硬化、\(7.6\pm0.7_{\mathrm{stat}}\pm0.3_{\mathrm{sys}}\ \mathrm{PeV}\) 付近に軟化がある。フィットでは平滑化幅を固定し、位置を自由に求めている。陽子の選別と混入補正も更新しており、両核種の結果は統計的・系統的に独立ではない。また、別の相互作用モデルでは軟化位置が約 \(6.3\)--\(6.4\ \mathrm{PeV}\) となるため、EPOS-LHC で示した系統誤差だけを模型間の差全体と解釈することはできない。
 
 \FloatBarrier
 
@@ -580,10 +582,10 @@ LHAASO の陽子スペクトルは、\(3\ \mathrm{PeV}\) の単一のカット�
 全粒子スペクトルは異なる電荷をもつ成分の和である。
 加速限界または銀河からの脱出がリジディティ \(\mathcal{R}\) で決まるなら、核種 \(Z\) の折れ曲がりエネルギーは
 \begin{equation}
-  E_{k,Z}\simeq Z\mathcal{R}_c
+  E_{k,Z}\simeq Ze\mathcal{R}_c
   \label{eq:peters_scaling}
 \end{equation}
-と電荷に比例する。
+と電荷に比例する。ここで \(\mathcal R_c\) は同じ源集団または伝搬過程に共通と仮定する特徴剛性である。
 このため、陽子、ヘリウム、CNO 群、中間質量核、鉄群の各スペクトルが順次急峻化し、質量組成はエネルギーとともに重くなる。
 各核種のスペクトルが電荷の順に折れ曲がるこの変化を Peters cycle と呼ぶ~\cite{Peters1961,Horandel2003}。
 
@@ -592,15 +594,15 @@ LHAASO の陽子スペクトルは、\(3\ \mathrm{PeV}\) の単一のカット�
   J_Z(E)
   =a_Z E^{-\gamma}
   \left[
-    1+\left(\frac{E}{Z\mathcal{R}_c}\right)^{\epsilon}
+    1+\left(\frac{E}{Ze\mathcal{R}_c}\right)^{\epsilon}
   \right]^{-\Delta\gamma/\epsilon}
   \label{eq:peters_component}
 \end{equation}
-と書けば、\(E\ll Z\mathcal{R}_c\) では指数 \(\gamma\)、\(E\gg Z\mathcal{R}_c\) では指数 \(\gamma+\Delta\gamma\) となる。
-\(\epsilon\) は折れ曲がりの鋭さを表す。
+と書けば、\(E\ll Ze\mathcal{R}_c\) では指数 \(\gamma\)、\(E\gg Ze\mathcal{R}_c\) では指数 \(\gamma+\Delta\gamma\) となる。
+\(a_Z\) は核種ごとの規格化、\(\Delta\gamma>0\) は指数の増加量、\(\epsilon>0\) は折れ曲がりの鋭さを表す。
 図~\ref{fig:peters_cycle}は、カットオフのエネルギーがリジディティに比例すると仮定した H\"orandel の poly-gonato モデルを示す。
-この図では、直接観測から外挿した各質量群のスペクトルを合計し、全粒子スペクトルへ適合している。核電荷の小さい群から順に強度が急減し、knee から second knee に至る構造を作る~\cite{Horandel2003}。
-LHAASO の陽子スペクトルに見られる \(3.3\ \mathrm{PeV}\) の急峻化を基準リジディティと仮定すると、鉄に対応するエネルギーは約 \(8.6\times10^{16}\ \mathrm{eV}\) となる。この値は、KASCADE-Grande が報告した電子成分の少ない試料の折れ曲がりと数値的に整合する~\cite{KASCADEGrandeHeavyKnee2011,LHAASOProton2025}。
+この図では、直接観測から外挿した各質量群のスペクトルを合計し、全粒子スペクトルへ適合している。核電荷の小さい群から順に強度が急減し、knee から second knee に至る構造を作る~\cite{Horandel2003}。鉄より重い核種も含むため、鉄成分の軟化と、すべての銀河系内成分の終端は別の特徴となる。このモデルによる成分分解は、各核種のフラックスをそのエネルギーまで個別に測定した結果ではない。
+同じ源集団と共通の特徴剛性を仮定し、LHAASO の陽子スペクトルに見られる \(3.3\ \mathrm{PeV}\) の急峻化を電荷に比例して延長すると、鉄に対応するエネルギーは約 \(8.6\times10^{16}\ \mathrm{eV}\) となる。これは条件付きの概算であり、全粒子スペクトルから鉄の最大剛性を測った結果ではない。この値は、KASCADE-Grande が報告した電子成分の少ない試料の折れ曲がりと数値的に整合する~\cite{KASCADEGrandeHeavyKnee2011,LHAASOProton2025}。
 この対応は Peters cycle の \(Z\) 比例則と整合するが、すべての核種に共通する単一の基準リジディティを示したことにはならない。
 ARGO-YBJ/LHAASO 試作機が測定した陽子・ヘリウム成分の折れ曲がりは約 \(0.7\ \mathrm{PeV}\) にあり、LHAASO の陽子スペクトル自体にも傾きの異なる複数の領域があるためである~\cite{ARGOYBJLHAASOLightKnee2015,LHAASOProton2025}。
 
@@ -615,6 +617,8 @@ ARGO-YBJ/LHAASO 試作機が測定した陽子・ヘリウム成分の折れ曲�
 前者では、式~\eqref{eq:hillas_condition}により最大エネルギーは \(Z\) に比例する。後者では、同じリジディティの粒子が同じ拡散係数をもつ。
 どちらの機構からも似た全粒子スペクトルが生じるため、その形状だけでは加速限界と銀河磁場からの脱出を識別できない。
 核種別スペクトル、\(\langle\ln A\rangle\)、異方性、および近傍 PeVatron が加速できる最高エネルギーを組み合わせれば、折れ曲がりのエネルギーが複数の電荷群で \(Z\) に比例するかを検証できる。
+具体的に、Giacinti らの逃走モデルは、銀河磁場の規則成分と乱流成分を仮定して粒子軌道と逃走時間を求め、knee 以後の核種別スペクトルを説明する~\cite{Giacinti2015Escape}。この場合、核種ごとの軟化は逃走時間のリジディティ依存が変わることから生じ、源の最大リジディティを直接示すわけではない。
+Mollerach と Roulet は、銀河系内の複数核種と低エネルギー側で抑制された銀河系外成分を重ね、knee から second knee の全粒子スペクトルと組成を記述した~\cite{Mollerach2019Knee}。このモデルでは、鉄成分の軟化、軽い核の寄与の減少、銀河系外成分の増加は、合計スペクトルと組成に異なる特徴を作る。核種の軟化位置、全粒子の硬化位置、組成の変化点を同じエネルギーとみなす必要はない。
 相互作用断面積や粒子生成の変化も空気シャワーの再構成量に影響する。しかし、異なる検出手法で類似の構造が観測されているため、単一の検出器効果だけでは knee 系列を説明できない~\cite{PDGCosmicRays}。
 \FloatBarrier
 
@@ -624,59 +628,82 @@ Akeno と Fly's Eye は \((4\)--\(7)\times10^{17}\ \mathrm{eV}\) 付近の緩や
 \(8\times10^{16}\)--\(10^{17}\ \mathrm{eV}\) にも明瞭な構造が測定されており、second knee と呼ばれる特徴エネルギーは解析ごとに異なる。
 
 KASCADE-Grande は観測面積を拡張し、\(10^{16}\)--\(10^{18}\ \mathrm{eV}\) の荷電粒子数とミューオン数を測定した~\cite{KASCADEGrandeDetector2010}。
-電子成分が少なく、重い原子核に対応する試料では、
-\begin{equation}
-  \log_{10}(E/\mathrm{eV})=16.92\pm0.04
-\end{equation}
-付近に有意な急峻化が見いだされた。この観測は、Peters cycle において鉄など電荷の大きい原子核のスペクトルが急減するという解釈を支持する~\cite{KASCADEGrandeDetector2010,KASCADEGrandeHeavyKnee2011}。
-一方、電子成分が多く、軽い原子核に対応する試料では、\(\log_{10}(E/\mathrm{eV})=17.08\pm0.08\) 付近からスペクトルの傾きが緩やかになった~\cite{KASCADEGrandeLightAnkle2013}。
+2011 年の解析は、全荷電粒子数 \(N_{\mathrm{ch}}\) とミューオン数 \(N_\mu\) から質量に感度をもつ指標 \(k\) を構成し、天頂角 \(40^\circ\) 未満の事象を分類した。C と Si の MC 期待値の中間を境界とした重い核に富む試料では、\(\log_{10}(E/\mathrm{eV})=16.92\pm0.04\) に軟化が認められた。同じデータの全粒子スペクトルにも \(16.92\pm0.10\) の軟化があるが、論文による単一べき乗からのずれの有意性は、重い試料で \(3.5\sigma\)、全粒子で \(2.1\sigma\) と異なる~\cite{KASCADEGrandeHeavyKnee2011}。二つを独立した実験結果として数えることはできない。
+2013 年の解析では、軽い核を強調するため、選別境界を He と CNO の間に変更した。その試料では \(\log_{10}(E/\mathrm{eV})=17.08\pm0.08\) に硬化が報告された~\cite{KASCADEGrandeLightAnkle2013}。論文は硬化がない場合の予測と観測事象数を Poisson 確率で比較し、\(5.8\sigma\) と評価している。この硬化は、全粒子スペクトルの second knee とは別の特徴である。
 図~\ref{fig:kascade_grande_components}は、近接したエネルギー領域で、重い原子核に対応する試料が急峻化し、軽い原子核に対応する試料では傾きが緩やかになることを示す。
 
 \begin{figure}[htb]
   \centering
   \includegraphics[width=0.49\hsize]{fig/kascade-grande-heavy-2011-fig4.pdf}\hfill
   \includegraphics[width=0.49\hsize]{fig/kascade-grande-light-2013-fig5.pdf}
-  \caption{KASCADE-Grande が再構成した質量群別エネルギースペクトル。左は全粒子、電子成分の少ない試料、電子成分の多い試料の比較であり、電子成分の少ない試料は約 \(8\times10^{16}\ \mathrm{eV}\) で急峻化する。右では、電子成分の多い試料のスペクトルの傾きが約 \(10^{17.08}\ \mathrm{eV}\) から緩やかになる。左は KASCADE-Grande Collaboration (2011) の Fig.~4、右は同 Collaboration (2013) の Fig.~5 より引用~\cite{KASCADEGrandeHeavyKnee2011,KASCADEGrandeLightAnkle2013}。}
+  \caption{KASCADE-Grande が再構成した質量群別エネルギースペクトル。左は全粒子、電子成分の少ない試料、電子成分の多い試料の比較であり、電子成分の少ない試料は約 \(8\times10^{16}\ \mathrm{eV}\) で急峻化する。右では、電子成分の多い試料のスペクトルの傾きが約 \(10^{17.08}\ \mathrm{eV}\) から緩やかになる。左図の帯は試料の選別条件による系統的不確かさを表し、エネルギー尺度の不確かさ全体を表すものではない。左は KASCADE-Grande Collaboration (2011) の Fig.~4、右は同 Collaboration (2013) の Fig.~5 より引用~\cite{KASCADEGrandeHeavyKnee2011,KASCADEGrandeLightAnkle2013}。}
   \label{fig:kascade_grande_components}
 \end{figure}
 
 TALE は、低エネルギー側では大気チェレンコフ光、高エネルギー側では大気蛍光を利用し、約 \(2\ \mathrm{PeV}\) から \(2\ \mathrm{EeV}\) までを同じ望遠鏡系で測定した。
-そのスペクトルは、\(\log_{10}(E/\mathrm{eV})\simeq16.22\) で傾きが緩やかになり、\(10^{17.1}\ \mathrm{eV}\) 付近で再び急になる。後者が second knee に対応する~\cite{TALESpectrum2018}。
+位置を自由に求めたフィットでは、\(\log_{10}(E/\mathrm{eV})=16.22\pm0.017\) で硬化し、\(17.04\pm0.035\) で再び軟化する。後者の前後で指数は \(2.92\pm0.008\) から \(3.19\pm0.017\) へ変化し、second knee に対応する~\cite{TALESpectrum2018}。
 図~\ref{fig:tale_second_knee}では、同一解析のエネルギースケール上で 2 つの折れ曲がりが示されている。
 
-\begin{figure}[htb]
+\begin{figure}[!htbp]
   \centering
-  \includegraphics[width=0.72\hsize]{fig/tale-spectrum-2018-fig20.pdf}
+  \includegraphics[width=0.64\hsize]{fig/tale-spectrum-2018-fig20.pdf}
   \caption{TALE 単眼解析による \(2\ \mathrm{PeV}\) から \(2\ \mathrm{EeV}\) の全粒子エネルギースペクトル。赤線は折れ曲がりを含む適合、灰色帯は系統的不確かさを表す。TALE Collaboration (2018) の Fig.~20 より引用~\cite{TALESpectrum2018}。}
   \label{fig:tale_second_knee}
 \end{figure}
 
-Tunka-133 の大気チェレンコフ観測と IceTop/IceCube の地表・氷中同時観測も、PeV から EeV にわたるスペクトルおよび組成変化を測定している~\cite{TunkaSpectrum2020,IceTopComposition2019}。
-Pierre Auger Observatory の高密度 \(750\ \mathrm{m}\) 地表アレイは \(10^{17}\ \mathrm{eV}\) 近傍まで閾値を下げ、独立の検出方式で second knee の急峻化を確認した~\cite{AugerSecondKnee2021}。
+IceTop-73 の 2013 年解析は、地表信号から求めた全粒子スペクトルに \(130\pm30\ \mathrm{PeV}\) の軟化を報告した~\cite{IceTopSpectrum2013}。この位置は、別々のエネルギー区間にフィットしたべき乗の交点から求めている。地表と氷中の情報を組み合わせた 2019 年解析は組成も扱うが、観測期間が 2013 年解析と重なるため、独立した位置測定として重複計上しない~\cite{IceTopComposition2019}。
+Tunka-133 は約 \(3\times10^{17}\ \mathrm{eV}\) で指数が \(2.99\pm0.01\) から \(3.29\pm0.09\) へ変わる形状を報告した~\cite{TunkaSpectrum2020}。高い側の位置について誤差を伴う推定値は示されていないため、ここでは概数による形状の報告として扱う。
 
-\begin{table}[htb]
+Auger の \(433\ \mathrm{m}\) 間隔の地表アレイ（SD433）は、位置を自由、平滑化幅を固定したフィットにより、\(230\pm50_{\mathrm{stat}}\pm35_{\mathrm{sys}}\ \mathrm{PeV}\) の軟化を報告した~\cite{AugerSD4332023}。図~\ref{fig:auger433_spectrum}にそのスペクトルを示す。一方、\(750\ \mathrm{m}\) アレイの 2021 年解析は折れ曲がり位置を固定して高い側のスペクトル形状を評価しているため、独立に求めた位置の比較には加えない~\cite{AugerSecondKnee2021}。SD433 の尺度は SD750 を介して蛍光観測へ接続されており、両者の尺度も独立ではない。
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.62\hsize]{fig/auger-sd433-2023-fig5.pdf}
+  \caption{Auger SD433 の全粒子スペクトル（黒点）とフィット（黒線）。橙点は SD750、青点は SD1500 の結果を示す。SD433 の誤差棒と上限は Feldman--Cousins 法による 90\% 信頼区間であり、縦破線は自由に求めた折れ曲がり位置を示す。G. Brichetto Orquera for the Pierre Auger Collaboration, PoS(ICRC2023)398, Fig.~5 より転載~\cite{AugerSD4332023}。\href{https://creativecommons.org/licenses/by-nc-nd/4.0/}{CC BY-NC-ND 4.0}。図の内容は変更していない。}
+  \label{fig:auger433_spectrum}
+\end{figure}
+
+表~\ref{tab:second_knee_results}は全粒子スペクトルの位置推定を比較し、表~\ref{tab:composition_features}は異なる観測量の特徴を分けて示す。エネルギー尺度、分解能、選別、フィット関数が異なるため、全ての位置が同一の物理量を同じ精度で測っているわけではない。
+\begin{table}[!htbp]
   \centering
   \small
-  \caption{Second knee に関係する代表的な観測結果。特徴エネルギーには、各解析のエネルギースケールに固有の系統的不確かさが含まれる。}
+  \caption{全粒子スペクトルの軟化位置の比較。\(x_b=\log_{10}(E_b/\mathrm{eV})\) とし、指数は \(J\propto E^{-\gamma}\) で定義する。TALE と KASCADE-Grande は論文のフィット誤差を示す。IceTop と Auger の指数は統計・系統誤差の順に記す。エネルギー尺度の系統誤差を全ての位置誤差へ加えた表ではない。}
   \label{tab:second_knee_results}
-  \begin{tabular}{@{}p{0.21\hsize}p{0.24\hsize}p{0.45\hsize}@{}}
+  \renewcommand{\arraystretch}{1.45}
+  \begin{tabular}{@{}p{0.17\hsize}p{0.25\hsize}p{0.29\hsize}p{0.19\hsize}@{}}
     \hline
-    実験・解析 & 特徴的エネルギー & 主な観測結果 \\
+    実験・解析 & 軟化位置 & 前後の指数 \(\gamma\) & 推定方法 \\
     \hline
-    Akeno・Fly's Eye & \((4\)--\(7)\times10^{17}\ \mathrm{eV}\) & 全粒子スペクトルの緩やかな急峻化を報告~\cite{AkenoSpectrum1992,FlysEyeSpectrum1994} \\
-    KASCADE-Grande & \(8.3\times10^{16}\ \mathrm{eV}\) & 電子成分の少ない試料のスペクトルが急峻化~\cite{KASCADEGrandeHeavyKnee2011} \\
-    KASCADE-Grande & \(1.2\times10^{17}\ \mathrm{eV}\) & 電子成分の多い試料でスペクトルの傾きが緩やかになる~\cite{KASCADEGrandeLightAnkle2013} \\
-    TALE & 約 \(10^{17.1}\ \mathrm{eV}\) & チェレンコフ・蛍光スペクトルに second knee を観測~\cite{TALESpectrum2018} \\
-    Pierre Auger & 約 \(10^{17}\ \mathrm{eV}\) & 高密度地表アレイでスペクトルの変曲を確認~\cite{AugerSecondKnee2021} \\
+    \raggedright TALE 2018~\cite{TALESpectrum2018} & \raggedright \(x_b=17.04\pm0.035\) & \begin{tabular}[t]{@{}l@{}}\(2.92\pm0.008\) \\ \(\to3.19\pm0.017\)\end{tabular} & \raggedright 位置を自由にフィット \tabularnewline
+    \raggedright KASCADE-Grande 2011~\cite{KASCADEGrandeHeavyKnee2011} & \raggedright \(x_b=16.92\pm0.10\) & \begin{tabular}[t]{@{}l@{}}\(2.95\pm0.05\) \\ \(\to3.24\pm0.08\)\end{tabular} & \raggedright 滑らかな折れ曲がりをフィット \tabularnewline
+    \raggedright IceTop-73 2013~\cite{IceTopSpectrum2013} & \begin{tabular}[t]{@{}l@{}}\(E_b=(130\pm30)\) \\ \(\mathrm{PeV}\)\end{tabular} & \begin{tabular}[t]{@{}l@{}}\(2.903\pm0.010\pm0.03\) \\ \(\to3.374\pm0.069\pm0.08\)\end{tabular} & \raggedright 区間別べき乗の交点 \tabularnewline
+    \raggedright Auger SD433 2023~\cite{AugerSD4332023} & \begin{tabular}[t]{@{}l@{}}\(E_b=230\ \mathrm{PeV}\) \\ \(\pm50_{\mathrm{stat}}\pm35_{\mathrm{sys}}\ \mathrm{PeV}\)\end{tabular} & \begin{tabular}[t]{@{}l@{}}\(3.00\pm0.05\pm0.10\) \\ \(\to3.32\pm0.08\pm0.10\)\end{tabular} & \raggedright 位置は自由、平滑化幅は固定 \tabularnewline
     \hline
   \end{tabular}
 \end{table}
 
-表~\ref{tab:second_knee_results}の特徴エネルギーには、露出量、検出効率、エネルギー分解能、蛍光収量、検出器較正、不可視エネルギー補正に由来する不確かさが含まれる。さらに、電子・ミューオン比や \(X_{\max}\) から求める質量組成は、ハドロン相互作用モデルによって変化する。
-したがって、second knee の起源は、全粒子スペクトルだけでなく、質量群別スペクトル、\(\langle\ln A\rangle\)、\(X_{\max}\) を同じエネルギー範囲で比較して評価される。
+TALE の値は arXiv:1803.01288v1 の Table~5 に従い、同表のフィット誤差を示した。代表的なエネルギー尺度の不確かさ約 14--15\% は別の系統要因である。IceTop の位置誤差 \(30\ \mathrm{PeV}\) は、論文中で統計・系統に分解されていない。Akeno、Fly's Eye、Tunka の概数による報告と、位置を固定した Auger SD750 の解析も、測定方法を区別して比較する必要がある。
 
-\section{銀河系内外遷移と超高エネルギー宇宙線}
-\subsection{銀河系内外遷移のモデル}\label{subsec:galactic_transition}
+\begin{table}[!htbp]
+  \centering
+  \small
+  \caption{全粒子の軟化とは区別する組成に関係した特徴。\(x_b=\log_{10}(E_b/\mathrm{eV})\) とする。KASCADE-Grande の誤差はフィット誤差であり、TALE の位置誤差は統計・系統の順に示す。}
+  \label{tab:composition_features}
+  \renewcommand{\arraystretch}{1.45}
+  \begin{tabular}{@{}p{0.27\hsize}p{0.26\hsize}p{0.39\hsize}@{}}
+    \hline
+    実験・観測量 & 特徴の位置 & 変化と解釈上の条件 \\
+    \hline
+    \raggedright KASCADE-Grande 2011：重い核に富む試料~\cite{KASCADEGrandeHeavyKnee2011} & \raggedright \(x_b=16.92\pm0.04\) & \raggedright 指数 \(2.76\pm0.02\) から \(3.24\pm0.05\) への軟化。全粒子試料とデータを共有する \tabularnewline
+    \raggedright KASCADE-Grande 2013：軽い核に富む試料~\cite{KASCADEGrandeLightAnkle2013} & \raggedright \(x_b=17.08\pm0.08\) & \raggedright 指数 \(3.25\pm0.05\) から \(2.79\pm0.08\) への硬化。2011 年とは選別境界も異なる \tabularnewline
+    \raggedright TALE Hybrid 2026：\(\langle X_{\max}\rangle\)~\cite{TALEMassComposition2026} & \raggedright \(x_b=17.13\pm0.04\) \({}^{+0.05}_{-0.03}\) & \raggedright エロンゲーションレートの増加。全粒子スペクトルの位置測定ではなく、組成への換算は模型に依存する \tabularnewline
+    \hline
+  \end{tabular}
+\end{table}
+\FloatBarrier
+
+\section{銀河系内成分から銀河系外成分への移行と超高エネルギー宇宙線}
+\subsection{銀河系内成分から銀河系外成分への移行のモデル}\label{subsec:galactic_transition}
 Second knee から ankle までの遷移を説明するモデルは複数あり、銀河系内成分が急減するエネルギーと、銀河系外成分が優勢になるエネルギーについて異なる予測を与える。
 Ankle は Volcano Ranch 実験の John Linsley が 1963 年に初めて報告した。Linsley は同じ論文で、スペクトルの傾きが緩やかになるこの変化を、銀河系内成分と銀河系外成分の交差として解釈している~\cite{LinsleyAnkle1963,DelignyAnkle2014}。
 現在、Auger と TA は ankle の位置と形状を大きな露出量で測定している。一方、その原因が銀河系内外成分の交差、対生成 dip、または源から放出される複数成分の重なりのいずれであるかは確定していない~\cite{AugerSpectrum2020,AugerTAEnergyScale2019}。
@@ -684,12 +711,14 @@ Ankle は Volcano Ranch 実験の John Linsley が 1963 年に初めて報告し
 \begin{equation}
   J(E)=J_{\mathrm{G}}(E)+J_{\mathrm{XG}}(E)
 \end{equation}
-として銀河系内成分と銀河系外成分の和で表すと、折れ曲がりは各成分固有の構造だけでなく、両成分の交差によっても生じる。
+として銀河系内成分と銀河系外成分の和で表すと、折れ曲がりは各成分固有の構造だけでなく、両成分の交差によっても生じる。銀河系外成分の出現、\(J_{\mathrm G}=J_{\mathrm{XG}}\) となる等寄与、銀河系内成分が無視できるほど小さくなる移行完了は、一般に異なるエネルギーを指す。全粒子スペクトルの second knee だけでは、これらの段階を一意に指定できない。
 
 \paragraph{銀河系内成分が ankle まで延びるモデル}
 このモデルは、標準的な超新星残骸成分より高い最大リジディティをもつ第 2 の銀河成分、いわゆる component B を導入する。銀河系外成分への主な遷移は ankle 付近に置かれる~\cite{Hillas2005}。
 この第 2 成分は、EeV 近くまで宇宙線を加速できる銀河系内天体と、陽子から重い原子核までを含む組成を前提とする。
 高リジディティ粒子は銀河磁場で強く閉じ込められないため、銀河面方向に予測される異方性の振幅がこのモデルを制約する。
+
+追加銀河成分の組成も自明ではない。Thoudam らは、通常の超新星残骸成分に加え、銀河風の終端衝撃波での再加速や Wolf--Rayet 星の超新星を検討し、全粒子スペクトルと組成を比較した~\cite{Thoudam2016SecondGalactic}。後者では、second knee 付近から上で He や CNO が重要となり、鉄の寄与は小さくなり得る。したがって、追加銀河成分を導入することと、その源や組成を特定することは別の課題である。
 
 \paragraph{Pair-production dip モデル}
 銀河系外陽子は、宇宙マイクロ波背景放射との対生成反応
@@ -697,17 +726,36 @@ Ankle は Volcano Ranch 実験の John Linsley が 1963 年に初めて報告し
   p+\gamma_{\mathrm{CMB}}\rightarrow p+e^++e^-
 \end{equation}
 でエネルギーを失う。この過程によって EeV 領域のスペクトルに dip が形成され、その高エネルギー側が ankle として見える~\cite{BerezinskyDip2006}。
-この場合、銀河系外陽子は ankle より低いエネルギーから寄与し、銀河系内外遷移は second knee と ankle の間で進む。
+この場合、銀河系外陽子は ankle より低いエネルギーから寄与し、銀河系内成分から銀河系外成分への移行は second knee と ankle の間で進む。
 明瞭な dip の形成には、銀河系外成分における陽子の優勢が必要である。質量組成の測定は、この条件を直接検証する。
 
 \paragraph{混合組成・低最大リジディティモデル}
-陽子から重核までを加速する銀河系外源を考える。最大エネルギーが \(E_{\max,Z}=Z\mathcal{R}_{\max}\) に従うモデルでは、源からの脱出と伝搬中の光核分解によって組成は変化する。
+陽子から重核までを加速する銀河系外源を考える。最大エネルギーが \(E_{\max,Z}=Ze\mathcal{R}_{\max}\) に従うモデルでは、源からの脱出と伝搬中の光核分解によって組成は変化する。
 Pierre Auger Observatory の \(5\ \mathrm{EeV}\) 以上のスペクトルと \(X_{\max}\) 分布を一様な源分布で同時適合すると、スペクトル指数の小さい注入スペクトルと比較的低い最大リジディティをもつ解が得られる。ただし、定量的結論は光核反応断面積、源分布、ハドロン相互作用モデルに依存する~\cite{AugerCombinedFit2017}。
 この種のモデルでは、源から放出された二次陽子と一次の重い原子核が同じエネルギー領域へ寄与することによっても、ankle の形状が生じる。
+
+源の周囲での光分解も、ankle 以下の軽成分を作る。Unger らは、加速された原子核が源周囲の光子場で相互作用し、低いエネルギーへ二次核子を供給するモデルを示した~\cite{Unger2015SourceEnvironment}。相互作用と逃走の時間尺度の競合により、ankle 以下の陽子とそれ以上の原子核が同じ源から生じ得るため、軽成分の増加を直ちに独立した一次陽子源の出現と同定することはできない。
+
+\paragraph{Ankle 以下の成分と銀河系外磁場の効果}
+Auger は \(6\times10^{17}\ \mathrm{eV}\) 以上のスペクトルと \(X_{\max}\) 分布を用い、ankle の上下を複数成分で記述した~\cite{Auger2023AcrossAnkle}。低い側の中間質量成分を銀河系内起源とするか銀河系外起源とするかには縮退が残り、スペクトルと組成だけでは一意に決まらない。この解析の下端は second knee の低い側を含まないため、second knee 全域を直接フィットした結果とも区別される。
+銀河系外成分の低エネルギー側は、注入条件だけでなく、源間距離と伝播時間によっても変わる。低リジディティ粒子が磁場中を有限時間で十分に遠くまで伝播できない場合、地球へ到達するフラックスは抑制される。この magnetic-horizon 効果を含めると、スペクトルと組成から推定する源の注入条件が変化し得る~\cite{Auger2024MagneticHorizon}。ただし、結果は磁場と源集団の仮定に依存し、second knee の位置だけから銀河系外磁場を測定したことにはならない。
 
 以上のモデルは排他的とは限らない。
 現実には、複数種の銀河系内源と銀河系外源が同じエネルギー領域へ寄与する場合がある。この場合、second knee、軽い原子核のスペクトルに見られる ankle、全粒子 ankle は異なる遷移段階を表す可能性がある。
 全粒子スペクトルに加えて、質量群別スペクトル、\(X_{\max}\) 分布、ミューオン数、銀河座標に対する異方性を同時に再現できるかどうかが、モデルを識別する鍵となる~\cite{PDGCosmicRays,Cristofari2023}。
+
+\subsection{組成と異方性による移行の制約}\label{subsec:transition_anisotropy}
+到来方向の異方性は、スペクトルと質量組成に加えて宇宙線の起源を制約する。Auger は 2020 年、約 \(0.03\ \mathrm{EeV}\) から \(32\ \mathrm{EeV}\) 以上までの赤経分布を調べ、双極子の赤道面内成分の振幅と位相を報告した~\cite{AugerAnisotropy2020}。これは \(8\ \mathrm{EeV}\) 以上の双極子検出より低いエネルギーにも測定範囲を広げ、移行領域を調べる情報を与える。
+各起源成分の強度を \(J_i(E)\)、双極子ベクトルを \(\boldsymbol d_i(E)\) とすると、強度の和から得られる双極子は
+\begin{equation}
+  \boldsymbol d(E)=\frac{\sum_i J_i(E)\boldsymbol d_i(E)}{\sum_i J_i(E)}
+  \label{eq:dipole_mixture}
+\end{equation}
+と表される。赤道面への投影についても同じ関係が成り立つ。したがって、観測される位相は各成分の強度だけでなく、双極子の大きさと方向にも依存する。異なる成分が部分的に打ち消し合う場合もあり、位相の変化を成分の等寄与点と同一視することはできない。
+有意な振幅が検出されていない領域では、位相の推定値を確定した起源方向として扱うこともできない。Auger の同解析では、等方分布からその振幅以上が生じる確率が \(1\%\) より大きいエネルギー区間に、\(99\%\) 信頼水準の振幅上限を示している~\cite{AugerAnisotropy2020}。起源モデルは、この上限と組成の測定を、源の分布や磁場による偏向を含む予測に対して比較する必要がある。
+
+Giacinti らは、銀河円盤内の源と複数の銀河磁場モデルについて粒子伝播を計算し、EeV 付近で銀河起源陽子が全フラックスを支配すると、予測される大規模異方性が観測上限を超えやすいことを示した~\cite{Giacinti2012Transition}。この制約は源分布と磁場の規則・乱流成分に依存し、重い原子核を含む全ての銀河成分の排除を意味しない。
+Bister らは 2026 年のプレプリントの要旨で、ankle 以下の中間質量の原子核について、検討した定常・過渡的な銀河源モデルでは異方性が過大となり、銀河系外起源なら観測と整合すると報告している~\cite{Bister2026Transition}。また、second knee 付近の重い銀河成分の減少が双極子方向の変化に関係する可能性を論じている。これは検討した源と磁場のモデルに対する制約であり、全ての追加銀河成分が排除されたという一般的な結論ではない。
 
 \subsection{超高エネルギー宇宙線の伝搬と観測}\label{subsec:uhecr_propagation}
 銀河系外を伝搬する超高エネルギー宇宙線は、宇宙膨張による断熱損失に加え、背景光子との相互作用でエネルギーと核種を変える。
@@ -735,7 +783,11 @@ TA と Auger は主に北天と南天をそれぞれ観測しており、露出�
 
 低エネルギーから knee 付近までは銀河系内起源が主要と考えられ、超新星残骸の衝撃波、星団風やスーパーバブル、パルサー関連天体などが候補に挙げられる~\cite{Gabici2019,PDGCosmicRays}。超新星残骸で得られる総エネルギーは銀河宇宙線を維持する供給量を満たすが、個々の残骸が陽子を PeV 領域まで加速できるかは未解決である。超高エネルギー \(\gamma\) 線観測は、銀河系内の PeVatron 候補を制約している~\cite{Cao2023}。
 
-Knee から ankle までの \(0.1\)--\(10\ \mathrm{EeV}\) では、銀河系内成分の上限と銀河系外成分の増加が重なる。Ankle model、dip model、混合組成モデルは、この移行が起こるエネルギーと質量組成について異なる予測を与える~\cite{Cristofari2023,PDGCosmicRays}。TALE による \(10^{16.5}\)--\(10^{18.5}\ \mathrm{eV}\) の組成測定は、この領域を直接測定している~\cite{TALEMassComposition2026}。
+\paragraph{局所的な宇宙線と光子・ニュートリノによる制約}
+地球で測定される荷電宇宙線のスペクトルが、銀河全体の平均と一致するとは限らない。Fang と Halzen は、近傍の限られた PeVatron の寄与によって、数 PeV の knee が局所的な特徴となる可能性を検討している~\cite{Fang2026LocalKnee}。この研究が直接扱うのは最初の knee であるが、地球で測った特徴を全ての銀河源に共通する最大リジディティへ直ちに置き換えないための例となる。
+LHAASO の超高エネルギー光子観測は銀河系内の高エネルギー粒子集団を調べるが、光子の生成がハドロン相互作用によるのか、電子の放射によるのかを識別する必要がある~\cite{Cao2023}。IceCube が報告した銀河面方向のニュートリノ放射は、荷電宇宙線の局所スペクトルと異なる方法でハドロンの存在を制約する~\cite{IceCubeGalacticPlane2023}。ただし、銀河面信号が拡散放射と未分離の点源集団のどちらにどれだけ由来するかは、この検出だけでは決まらない。
+
+Second knee から ankle 付近の \(0.1\)--\(10\ \mathrm{EeV}\) では、銀河系内成分の上限と銀河系外成分の増加が重なる。Ankle model、dip model、混合組成モデルは、この移行が起こるエネルギーと質量組成について異なる予測を与える~\cite{Cristofari2023,PDGCosmicRays}。TALE による \(10^{16.5}\)--\(10^{18.5}\ \mathrm{eV}\) の縦方向発達の測定は、この領域の組成を制約している~\cite{TALEMassComposition2026}。
 
 数 EeV 以上では銀河系外起源が主要と考えられ、約 \(5\ \mathrm{EeV}\) より上の観測結果は重い原子核の寄与を示唆する。候補天体には活動銀河核、電波銀河、ガンマ線バースト、潮汐破壊現象、マグネター、銀河団降着衝撃波、スターバースト銀河などがある~\cite{GlobusBlandford2023}。\(8\ \mathrm{EeV}\) 以上の大規模双極子異方性も銀河系外起源を支持するが、個々の起源天体は同定されていない~\cite{AugerDipole2017,AugerTA2023ArrivalDirections}。
 
@@ -757,12 +809,16 @@ Knee から ankle までの \(0.1\)--\(10\ \mathrm{EeV}\) では、銀河系内�
   \end{tabular}
 \end{table}
 
-次章では、これらの観測量と一次粒子のエネルギー・質量を結び付ける空気シャワー物理を導入する。
+\FloatBarrier
+\section{Second knee の未解決点と TALE-SD の研究目的}\label{sec:thesis_motivation}
+全粒子スペクトルの軟化、質量群別スペクトルの変化、銀河系内起源の成分から銀河系外起源の成分への移行は、相互に関係し得るが、同じ観測事実ではない。軟化の位置だけから鉄成分の終端や起源成分の等寄与点を決めることはできず、その前後の指数と変化の幅を含むスペクトル形状を、組成と異方性の測定に対応づけることが課題となる。
+TALE-SD による測定の目的は、地表粒子信号を用いて second knee をまたぐスペクトルを測り、TALE の光学観測によるスペクトルや縦方向発達と比較することである。同じ観測サイトで異なるシャワー成分を調べることは、共通するスペクトル構造と観測量・較正方法に依存する差を評価するうえで有用である~\cite{TALESpectrum2018,TALEMassComposition2026}。この比較には、検出効率、エネルギー分解能、組成とハドロン相互作用モデルに対する応答を含める必要がある。
+次章では、各観測量と一次粒子のエネルギー・質量を結び付ける空気シャワー物理を導入し、地表信号からのエネルギー推定と較正方法を整理する。
 
 \chapter{空気シャワーの物理と観測}\label{chap:air_shower}
 PeV 以上では宇宙線強度が小さく、直接観測で十分な統計量を得ることが難しい。このため、空気シャワーの電磁成分、ミューオン成分、縦方向発達から一次粒子のエネルギーと質量を推定する。
-本章では、電磁カスケードとハドロンカスケードの基本モデルを導入し、縦方向発達、横方向分布、シャワー曲面と観測量との関係を述べる。
-質量組成の推定では、ハドロン相互作用モデルへの依存とミューオンパズルが主要な系統要因となる。
+本章では、電磁カスケードとハドロンカスケードの基本モデルを導入し、縦方向発達、横方向分布、シャワー前面と観測量との関係を述べる。
+質量組成の推定では、ハドロン相互作用モデルへの依存とミューオン問題が主要な系統要因となる。
 
 \section{空気シャワーとは何か}\label{sec:air_shower_overview}
 エネルギーの高い宇宙線が地球大気に入射すると、大気中の原子核との相互作用によって多数の二次粒子が生成される。
@@ -772,7 +828,7 @@ PeV 以上では宇宙線強度が小さく、直接観測で十分な統計量�
 \begin{itemize}
   \item 大気中で粒子数がどのように増減するかを示す縦方向発達、
   \item 地表で粒子群がシャワー軸のまわりにどのように広がるかを示す横方向分布、
-  \item シャワー軸から離れた粒子が軸付近の粒子よりどれだけ遅れて到来するかを示すシャワー曲面
+  \item シャワー軸から離れた粒子が軸付近の粒子よりどれだけ遅れて到来するかを示すシャワー前面
 \end{itemize}
 
 陽子や原子核の一次宇宙線が大気に入射すると、まず大気中の原子核とのハドロン相互作用を起こす~\cite{PDGCosmicRays,Matthews2005}。
@@ -792,13 +848,7 @@ PeV 以上では宇宙線強度が小さく、直接観測で十分な統計量�
 \]
 とただちに崩壊して電磁成分へエネルギーを移す。
 一方、\(\pi^\pm\) や \(K^\pm\) はハドロン相互作用を継続するか、十分低エネルギーになると崩壊してミューオンとニュートリノを生む~\cite{Matthews2005,Montanus2013}。
-そのため、実際の空気シャワーは
-\begin{itemize}
-  \item ハドロン相互作用がシャワーの骨格を作り、
-  \item \(\pi^0\) を通じて電磁成分が増殖し、
-  \item 荷電中間子の崩壊によってミューオン成分が形成される
-\end{itemize}
-という流れで理解できる。
+このように、ハドロン相互作用で生成された二次粒子がエネルギーを運び、中性パイオンの崩壊が電磁カスケードを生む。荷電中間子の相互作用と崩壊の競合は、電磁成分へ移るエネルギーとミューオン・ニュートリノとして運ばれるエネルギーの割合を変える。
 
 空気シャワーを記述するうえでは、電磁相互作用とハドロン相互作用で異なる長さ尺度が現れる。
 電磁カスケードでは放射長 \(X_0\) を代表尺度とし、電子や光子の増殖・減衰が生じる深さスケールを表す。
@@ -829,7 +879,7 @@ Heitler モデルはハドロン相互作用やパイオン生成を含まず、
 \end{enumerate}
 
 ここで \(X_0\) は放射長、\(d\) はモデルにおける分裂長、\(E^\mathrm{crit}\) は臨界エネルギー（critical energy）である。Heitler モデルでは、分裂長を \(d=X_0\ln 2\) と置く~\cite{Matthews2005,Montanus2013}。
-放射長は、高エネルギー電子が制動放射によってエネルギーを平均で \(1/e\) に失うまでの物質量として定義される。
+放射長は、制動放射によって高エネルギー電子のエネルギーが平均で元の \(1/e\) になるまでの物質量として定義される。
 Particle Data Group（PDG）の \textit{Atomic and Nuclear Properties of Materials} では、乾燥空気（1 気圧）に対する放射長は
 \begin{equation}
   X_0 = 36.62\ \mathrm{g\,cm^{-2}}
@@ -860,84 +910,28 @@ PDG の表では、乾燥空気（1 気圧）に対する電子の臨界エネ�
 \end{equation}
 と与えられている~\cite{PDGAir}。
 \subsubsection{粒子数、極大深さ、エロンゲーションレート}
-一次粒子のエネルギーを \(E_0\) とする。
-\(n\) 世代後の粒子数 \(N_n\) は
+一次粒子のエネルギーを \(E_0\) とすると、\(n\) 世代後の粒子数と一粒子あたりのエネルギーは
 \begin{equation}
-  N_n = 2^n
+  N_n=2^n,\qquad \varepsilon_n=\frac{E_0}{2^n}
 \end{equation}
-であり、各粒子のエネルギー \(\varepsilon_n\) は
+である。増殖が止まる条件 \(\varepsilon_{n_{\max}}=E^{\mathrm{crit}}\) から、最大発達時の世代数と粒子数は
 \begin{equation}
-  \varepsilon_n = \frac{E_0}{2^n}
+  n_{\max}=\frac{\ln(E_0/E^{\mathrm{crit}})}{\ln2},
+  \qquad N_{\max}=\frac{E_0}{E^{\mathrm{crit}}}
 \end{equation}
-となる。
-
-各粒子のエネルギー \(\varepsilon_n\) が臨界エネルギー \(E^\mathrm{crit}\) に達すると、制動放射や電子陽電子対生成による増殖は止まると仮定する。
-シャワーが最大に発達する世代では
-\[
-\varepsilon_n = E^\mathrm{crit}
-\]
-と置く。最大発達時の世代数を \(n_{\max}\) とすると
+となる。分裂長 \(d=X_0\ln2\) を用いれば、極大深さは
 \begin{equation}
-  \frac{E_0}{2^{n_{\max}}} = E^\mathrm{crit}
-\end{equation}
-より、
-\begin{equation}
-  n_{\max} = \log_2\!\left(\frac{E_0}{E^\mathrm{crit}}\right)
-\end{equation}
-である。
-
-このとき最大粒子数は
-\begin{equation}
-  N_{\max} = 2^{n_{\max}}
-  = 2^{\log_2(E_0/E^\mathrm{crit})}
-  = \frac{E_0}{E^\mathrm{crit}}
-\end{equation}
-となる。
-Heitler モデルでは
-\begin{equation}
-  N_{\max}\propto E_0
-\end{equation}
-である~\cite{Heitler1944,PDGCosmicRays}。
-
-極大深さは、1 世代当たりの分裂長 \(d=X_0\ln 2\) を用いて
-\begin{equation}
-  X_{\max}=n_{\max}d
-\end{equation}
-と書ける。これより
-\begin{equation}
-  X_{\max}
-  = X_0\ln 2\,\log_2\!\left(\frac{E_0}{E^\mathrm{crit}}\right)
-  = X_0\ln\!\left(\frac{E_0}{E^\mathrm{crit}}\right)
+  X_{\max}=n_{\max}d=X_0\ln\!\left(\frac{E_0}{E^{\mathrm{crit}}}\right)
   \label{eq:Xmax}
 \end{equation}
-となる。
-この結果、Heitler モデルでは
-\begin{equation}
-  X_{\max}\propto \ln E_0
-\end{equation}
-である~\cite{Heitler1944,PDGCosmicRays}。
+と書ける。この純電磁モデルは、\(N_{\max}\propto E_0\) と \(X_{\max}\propto\ln E_0\) という基本的なスケーリングを与える~\cite{Heitler1944,Matthews2005}。ハドロン相互作用から始まる陽子シャワーの極大深さを、そのまま表す式ではない。
 
-\(X_{\max}\) のエネルギー依存を表す量として、エロンゲーションレート
+\(X_{\max}\) のエネルギー依存を表すエロンゲーションレートを
 \begin{equation}
-  D = \frac{\mathrm{d}X_{\max}}{\mathrm{d}\log_{10}E_0}
+  D_{10}=\frac{\mathrm d X_{\max}}{\mathrm d\log_{10}(E_0/E_{\mathrm{ref}})}
 \end{equation}
-を定義する。
-これは、一次粒子のエネルギーを 10 倍にしたときに、シャワー極大がどれだけ深い位置へ移動するかを表す量である~\cite{PDGCosmicRays,Matthews2005}。
-本稿のエロンゲーションレート \(D\) は、この常用対数による定義に従う。
+と定義する。\(E_{\mathrm{ref}}\) は対数の引数を無次元にする固定した基準エネルギーであり、微分の値はその選択によらない。\(D_{10}\) はエネルギーの常用対数が 1 増えるときの極大深さの変化を表し、大気深さの単位をもつ。式~\eqref{eq:Xmax}から、このモデルでは \(D_{10}=X_0\ln10\) となる。拡散係数 \(D\) とは異なる量である。
 
-Heitler モデルでは
-\begin{equation}
-  X_{\max}=X_0\ln\!\left(\frac{E_0}{E^\mathrm{crit}}\right)
-\end{equation}
-であったから、
-\begin{align}
-  D
-  &= \frac{\mathrm{d}X_{\max}}{\mathrm{d}\log_{10}E_0} \\
-  &= X_0\frac{\mathrm{d}\ln E_0}{\mathrm{d}\log_{10}E_0} \\
-  &= X_0\ln 10
-\end{align}
-となる。
-式から、Heitler モデルのエロンゲーションレートはエネルギーによらず一定となる。これは、\(X_{\max}\) が \(\ln E_0\) に比例することの別表現である~\cite{Heitler1944,PDGCosmicRays}。
 \subsection{Walter Heitler--James Matthews モデル}\label{subsec:heitler_matthews}
 
 \subsubsection{ハドロン相互作用の導入}
@@ -1012,86 +1006,29 @@ Heitler--Matthews モデルでは、各世代のエネルギーが
 粒子数で見ると、\(\pi^0\to\gamma\gamma\) を起点とする電磁カスケードから大量の \(e^\pm\) と \(\gamma\) が生じ、電磁成分はハドロン成分を大きく上回る。
 
 \subsubsection{重ね合わせモデルと質量組成}
-ここで、原子核一次粒子の質量数依存を議論するために、重ね合わせモデルを導入する~\cite{Matthews2005,Montanus2013,Stanev2004}。
-この近似では、全エネルギー \(E_0\) をもつ質量数 \(A\) の原子核を、エネルギー \(E_0/A\) をもつ核子 \(A\) 個が同時に入射したものとして扱う。
-すなわち、原子核 1 個によるシャワーを、より低いエネルギーの核子シャワー \(A\) 個の重ね合わせとして近似する。
-
-最も単純な近似では、質量数 \(A\) の一次宇宙線による空気シャワーの \(X_{\max}\) は
-\[
-  X_{\max}^{(A)}(E_0) \simeq X_{\max}^{(p)}\!\left(\frac{E_0}{A}\right)
-\]
-と書ける。
-ここで \(X_{\max}^{(p)}\) は、陽子を一次粒子とする空気シャワーの極大深さである。
-
-式~\eqref{eq:Xmax}を用いると
-\[
-  X_{\max}^{(p)}(E)=X_0\ln\!\left(\frac{E}{E^\mathrm{crit}}\right)
-\]
-であるから
-\begin{align}
-  X_{\max}^{(A)}(E_0)
-  &\simeq X_0\ln\!\left(\frac{E_0/A}{E^\mathrm{crit}}\right) \\
-  &= X_0\left(\ln\!\left(\frac{E_0}{E^\mathrm{crit}}\right)-\ln A\right) \\
-  &= X_{\max}^{(p)}(E_0)-X_0\ln A
-\end{align}
-となる。
-同じ全エネルギー \(E_0\) では、質量数が大きいほど \(X_{\max}\) は \(\ln A\) に比例して浅くなる。
-
-一方、最大粒子数は
-\[
-  N_{\max}^{(A)}(E_0)
-  \simeq A\times \frac{E_0/A}{E^\mathrm{crit}}
-  = \frac{E_0}{E^\mathrm{crit}}
-\]
-となる。
-最も単純な近似では、\(N_{\max}\) は質量数に依存しない。
-
-上で導いたように、質量数 \(A\) の一次粒子に対しては
+重ね合わせモデルでは、全エネルギー \(E_0\) をもつ質量数 \(A\) の原子核を、エネルギー \(E_0/A\) の核子 \(A\) 個が同時に入射したものとして扱う。これにより、原子核シャワーの極大深さを、より低いエネルギーの陽子シャワーに対応づけて
 \begin{equation}
-  X_{\max}^{(A)}(E_0)
-  \simeq X_{\max}^{(p)}(E_0)-X_0\ln A
+  X_{\max}^{(A)}(E_0)\simeq X_{\max}^{(p)}(E_0/A)
 \end{equation}
-である。
-一次粒子集団が複数の核種からなり、核種 \(i\) の割合を \(f_i\) とする。ただし、\(f_i\geq0\) かつ \(\sum_i f_i=1\) である。
-このとき \(X_{\max}\) の平均は
-\begin{align}
-  \langle X_{\max}\rangle
-  &= \sum_i f_i X_{\max}^{(A_i)}(E_0) \\
-  &\simeq \sum_i f_i\left(X_{\max}^{(p)}(E_0)-X_0\ln A_i\right) \\
-  &= X_{\max}^{(p)}(E_0)-X_0\sum_i f_i\ln A_i \\
-  &= X_{\max}^{(p)}(E_0)-X_0\langle \ln A\rangle
-\end{align}
-となる。
-ここで
-\begin{equation}
-  \langle \ln A\rangle = \sum_i f_i \ln A_i
-\end{equation}
-であり、\(\langle\ln A\rangle\) は \(\ln A\) の平均（mean logarithmic mass）を表す。
+と近似する~\cite{Matthews2005,Montanus2013}。さらに陽子のエネルギー依存に純電磁モデルと同じ対数形を仮定すれば、質量による差は模式的に \(-X_0\ln A\) となる。しかし、実際の陽子シャワーはハドロン相互作用から始まるため、放射長 \(X_0\) を質量に対する応答係数として普遍的に用いることはできない。
 
-実際の空気シャワーでは、陽子シャワーの極大深さ \(X_{\max}^{(p)}(E_0)\) は、最初の相互作用深さや粒子生成多重度などの影響を受ける。これらの効果をエネルギー依存の項 \(C(E_0)\) にまとめ、任意の固定した基準エネルギーを \(E_{\mathrm{ref}}\) とすると、模式的に
+相互作用モデルの質量への応答を区別するため、対象エネルギーで核種ごとの平均を \(\ln A\) の一次式で近似する場合を考える。この仮定の下では、
 \begin{equation}
-  \langle X_{\max}\rangle
-  =
-  C(E_0)+X_0\left(\ln\frac{E_0}{E_{\mathrm{ref}}}-\langle \ln A\rangle\right)
+  \langle X_{\max}\rangle(E)
+  \simeq\langle X_{\max}\rangle_p(E)
+  -F(E)\langle\ln A\rangle(E)
+  \label{eq:xmax_mass_response}
 \end{equation}
-と書ける~\cite{Matthews2005,PDGCosmicRays}。
-ここで \(C(E_0)\) はハドロン相互作用モデルに依存し、基準エネルギーの選び方による定数も含む。
+と表す~\cite{AugerXmaxInterpretation2013}。同論文の係数 \(f_E\) に対して \(F=-f_E\) と定義した。\(\langle X_{\max}\rangle_p\) は陽子シャワーの予測平均、\(F(E)\) は大気深さの次元をもつ質量への応答係数であり、いずれもハドロン相互作用モデルに依存する。検出器の受容と再構成の影響も、比較する測定に合わせて扱う必要がある。係数を数値的に用いる場合は、そのモデルの評価範囲を確認し、低いエネルギーへ無条件に外挿しない。
 
-平均 \(X_{\max}\) に対するエロンゲーションレートも同様に \(\log_{10}E_0\) に関して定義すると、
+\(x=\log_{10}(E/E_{\mathrm{ref}})\) とし、\(D_{10,p}=\mathrm d\langle X_{\max}\rangle_p/\mathrm dx\) を定義すると、
 \begin{equation}
-  D = \frac{\mathrm{d}\langle X_{\max}\rangle}{\mathrm{d}\log_{10}E_0}
+  D_{10}=D_{10,p}-\frac{\mathrm dF}{\mathrm dx}\langle\ln A\rangle
+  -F\frac{\mathrm d\langle\ln A\rangle}{\mathrm dx}
 \end{equation}
-は
-\begin{equation}
-  D = \frac{\mathrm{d}C}{\mathrm{d}\log_{10}E_0}
-  + X_0\left(\ln 10-\frac{\mathrm{d}\langle \ln A \rangle}{\mathrm{d}\log_{10}E_0}\right)
-\end{equation}
-となる。
-エネルギーとともに組成が軽くなる場合は、\(\mathrm{d}\langle\ln A\rangle/\mathrm{d}\log_{10}E_0<0\) である。
-このとき、エロンゲーションレート \(D\) は質量組成が一定の場合より大きくなる。
-逆に、\(\mathrm{d}\langle\ln A\rangle/\mathrm{d}\log_{10}E_0>0\) なら、組成はエネルギーとともに重くなり、エロンゲーションレートは小さくなる~\cite{Matthews2005,PDGCosmicRays}。
+を得る。\(F>0\) なら、他の条件が同じとき、組成が軽くなる変化は最後の項を通じてエロンゲーションレートを増やす。ただし、陽子の予測と \(F\) 自体のエネルギー依存も関係するため、測定された傾きだけでは組成変化を一意に決められない。
 
-エロンゲーションレートは \(X_{\max}\) のエネルギー依存を通じて質量組成の変化を反映する量である。ただし、\(C(E_0)\) とそのエネルギー依存はハドロン相互作用モデルに依存するため、エロンゲーションレートだけで質量組成を一意に決めることはできない~\cite{Matthews2005,Montanus2013,PDGCosmicRays}。
+純電磁モデルの最大粒子数を各核子へ形式的に適用すれば、重ね合わせによって \(N_{\max}^{(A)}\simeq A(E_0/A)/E^{\mathrm{crit}}=E_0/E^{\mathrm{crit}}\) となる。この単純化では最大粒子数の質量依存が消えるが、実際の最大電子数の規格化と粒子の定義は次項で区別する。
 
 図~\ref{fig:xmax_pdg}に、複数の実験で測定された \(\langle X_{\max}\rangle\) とその揺らぎを示す。
 軽い一次粒子は平均的に深い \(X_{\max}\) をもち、重い一次粒子は浅い \(X_{\max}\) をもつ。
@@ -1115,18 +1052,8 @@ Heitler モデルでは、電磁シャワーの最大粒子数 \(N_{\max}^{\math
   N_{\max}^{\mathrm{em}}\simeq 12.5\,\frac{E_0}{\mathrm{GeV}}
 \]
 となる。
-しかし、Heitler--Matthews モデルでは、エネルギーはまずハドロンカスケードに入り、
-各世代でその一部だけが \(\pi^0\) を通じて電磁成分へ移る。
-このため、観測される最大電子数は Heitler のモデルよりかなり小さくなる~\cite{Matthews2005,Stanev2004}。
-
-最大電子数については、空気シャワーの経験的な見積もりとして
-\begin{equation}
-  N_e^{\max}\simeq 0.6\,\frac{E_0}{\mathrm{GeV}}
-\end{equation}
-が用いられる~\cite{Stanev2004}。
-係数はモデルや電子数の定義に依存するが、\(N_e^{\max}\) は \(E_0\) にほぼ比例する。
-これは Heitler モデルの \(E_0/E^\mathrm{crit}\) をそのまま使ったものではなく、
-ハドロンカスケードを経た後に電磁成分として観測される電子数の半経験的な近似である~\cite{Matthews2005,Montanus2013}。
+ここでの \(N_{\max}^{\mathrm{em}}\) は、電子・陽電子と光子を区別しない Heitler モデルの粒子数である。実際の最大電子数 \(N_e^{\max}\) と比較するには、電子・陽電子を数えるエネルギーしきい値と、電子数が最大となる深さを定義する必要がある。
+ハドロンシャワーでは、異なる深さで生成される電磁サブシャワーの重なりと、ハドロン・ミューオン成分へのエネルギー分配が電子数に影響する。\(N_e^{\max}\) が一次エネルギーにほぼ比例するという関係は有用だが、その比例係数は粒子の定義とモデル条件に依存する~\cite{Matthews2005,Montanus2013}。純電磁モデルとの係数の差を、エネルギー分配だけに帰属させることはできない。
 
 Heitler--Matthews モデルでは、十分低エネルギーになった荷電パイオンがハドロン相互作用を継続せず、崩壊してミューオンを生成する。
 荷電パイオンのエネルギーが臨界エネルギー \(E_\pi^{\mathrm{crit}}\) まで下がると、
@@ -1187,36 +1114,27 @@ Matthews の単純モデルと同様に \(N_{\mathrm{ch}}=10\)、\(N_{\mathrm{to
 となる~\cite{Matthews2005,Montanus2013}。
 同じ全エネルギー \(E_0\) の空気シャワーでは、重い原子核ほどミューオン数が多くなる~\cite{Matthews2005,Montanus2013}。
 
-\subsection{ミューオンパズルと組成解析への影響}\label{subsec:muon_puzzle}
+\subsection{ミューオン問題とエネルギー・組成の推定}\label{subsec:muon_puzzle}
 Heitler--Matthews モデルが示すように、地上ミューオン数は一次エネルギーと質量の双方に感度をもつ。
 現実の解析では、LHC データを用いて調整したハドロン相互作用モデルを空気シャワーシミュレーションへ外挿する。
 しかし、複数の実験では、\(X_{\max}\) などと整合する質量組成を仮定しても、モデル予測が観測されたミューオン量に届かない。
-この系統的な不一致をミューオンパズル、または muon deficit problem と呼ぶ~\cite{DembinskiMuon2019,AlbrechtMuonPuzzle2022}。
+この系統的な不一致をミューオン問題、または muon deficit problem と呼ぶ~\cite{DembinskiMuon2019,AlbrechtMuonPuzzle2022}。
 Auger は 2015 年、ハイブリッド観測から UHECR シャワーの平均ミューオン数を求めた。\(X_{\max}\) と整合する質量組成を仮定しても、観測値は現行モデルの予測を上回った~\cite{AugerMuon2015}。
 8 実験による共通尺度のメタ解析は、この不一致が特定の実験だけに現れるのではなく、エネルギーとともに増大することを示した~\cite{DembinskiMuon2019}。
 
-異なる実験と相互作用モデルを比較するため、平均ミューオン数を
+実験間の比較では、検出器応答を通したミューオン量 \(N_\mu^{\mathrm{det}}\) を、同じ条件の陽子と鉄の予測を用いて
 \begin{equation}
-  z
-  =
-  \frac{
-    \ln\langle N_\mu\rangle
-    -\ln\langle N_{\mu,p}^{\mathrm{MC}}\rangle
-  }{
-    \ln\langle N_{\mu,\mathrm{Fe}}^{\mathrm{MC}}\rangle
-    -\ln\langle N_{\mu,p}^{\mathrm{MC}}\rangle
-  }
+  z=\frac{\ln N_\mu^{\mathrm{det}}-\ln N_{\mu,p}^{\mathrm{det}}}
+  {\ln N_{\mu,\mathrm{Fe}}^{\mathrm{det}}-\ln N_{\mu,p}^{\mathrm{det}}}
   \label{eq:muon_z}
 \end{equation}
-と規格化する方法が用いられる~\cite{DembinskiMuon2019}。
-ここで \(N_{\mu,p}^{\mathrm{MC}}\) と \(N_{\mu,\mathrm{Fe}}^{\mathrm{MC}}\) は、それぞれ同じ相互作用モデルによる陽子および鉄シャワーの予測である。
-モデルが正しく、組成を陽子から鉄までの範囲に置くと、概ね \(0\leq z\leq 1\) となる。
-重ね合わせモデルでは近似的に
+と規格化する~\cite{DembinskiMuon2019}。データと両核種の予測で、用いるミューオン量、選別、平均の取り方を一致させる必要がある。特に \(\ln\langle N_\mu\rangle\) と \(\langle\ln N_\mu\rangle\) は一般に異なる。
+重ね合わせモデルの \(N_\mu\propto A^{1-\beta}E^\beta\) は、固定エネルギーにおいて \(\langle\ln N_\mu\rangle\) が \(\langle\ln A\rangle\) の一次式となることを示す。この近似に基づく組成の基準値は
 \begin{equation}
-  z_{\mathrm{mass}}\simeq\frac{\langle\ln A\rangle}{\ln 56}
+  z_{\mathrm{mass}}\simeq\frac{\langle\ln A\rangle}{\ln56}
 \end{equation}
-であるため、\(X_{\max}\) から得た \(z_{\mathrm{mass}}\) とミューオン観測から得た \(z\) を比較できる。
-ミューオンパズルとは、\(X_{\max}\) などで制約された質量組成から期待される値よりも、観測されたミューオン指標が系統的に大きいという不一致である。
+である。一方、平均してから対数を取る場合には、\(\kappa=1-\beta\) として \(\ln\langle A^\kappa\rangle/(\kappa\ln56)\) が現れ、組成分布の幅にも依存する。実際の比較にはシャワーの揺らぎ、エネルギービンの幅、検出器応答が関係するため、\(z_{\mathrm{mass}}\) を全ての実験の \(z\) と厳密に同じ量とみなすことはできない。
+ミューオン問題とは、\(X_{\max}\) などで制約された質量組成から期待される値よりも、観測されたミューオン指標が系統的に大きいという不一致である。
 
 このメタ解析によると、約 \(10\ \mathrm{PeV}\) より上では、データと LHC の測定結果に基づいて調整された相互作用モデルとの差がエネルギーとともに増大した。その傾きは EPOS-LHC と QGSJetII-04 の双方に対して有意であった~\cite{DembinskiMuon2019}。
 図~\ref{fig:muon_meta_analysis}は、質量組成から期待される \(z_{\mathrm{mass}}\) を差し引いた \(\Delta z=z-z_{\mathrm{mass}}\) が、両モデルに対してエネルギーとともに増加することを示す。
@@ -1229,7 +1147,7 @@ Auger は 2015 年、ハイブリッド観測から UHECR シャワーの平均�
 \end{figure}
 
 Auger の \(6\)--\(16\ \mathrm{EeV}\) のハイブリッド事象では、縦方向発達をデータに合わせても、地表のハドロン由来信号を EPOS-LHC に対して \(1.33\pm0.16\) 倍、QGSJetII-04 に対して \(1.61\pm0.21\) 倍に増やす必要があった~\cite{AugerHadronic2016}。
-レビューは、不一致が顕在化するシャワーエネルギーを約 \(40\ \mathrm{PeV}\) と見積もり、これが核子間重心系エネルギー約 \(8\ \mathrm{TeV}\) に対応すると整理している~\cite{AlbrechtMuonPuzzle2022}。
+レビューは、不一致が顕在化するシャワーエネルギーを約 \(40\ \mathrm{PeV}\) と整理している~\cite{AlbrechtMuonPuzzle2022}。陽子を一次粒子とし、静止核子との衝突に高エネルギー近似 \(\sqrt{s_{NN}}\simeq\sqrt{2m_pc^2E_0}\) を用いると、これは核子間重心系エネルギー約 \(8\)--\(9\ \mathrm{TeV}\) に対応する。ここで \(m_p\) は陽子質量である。質量数 \(A\) の原子核では、核子あたりのエネルギー \(E_0/A\) を用いる必要がある。不一致が顕在化する一次エネルギーを、個々のハドロン衝突における新しい反応の厳密なしきい値と同一視することはできない。
 核子間重心系エネルギーが LHC の到達範囲にあっても、空気シャワーでは、加速器実験で十分に制約されていない超前方粒子生成が各世代で繰り返される。このため、衝突エネルギーだけではモデルの信頼性を保証できない。
 
 各ハドロン相互作用から電磁成分へ移るエネルギー割合が減ると、ハドロンカスケードの残存エネルギーは増え、地上のミューオン数も増加する。
@@ -1237,9 +1155,20 @@ Auger の \(6\)--\(16\ \mathrm{EeV}\) のハイブリッド事象では、縦方
 Heitler--Matthews モデルの関係 \(N_\mu\propto N_{\mathrm{ch}}^{n_c}\) が示すように、1 回の相互作用における小さなエネルギー分配差でも、世代ごとに累積してミューオン数の大きな差となりうる。
 ただし、ミューオン数だけを合わせる修正が \(X_{\max}\)、その揺らぎ、地上電磁信号、加速器データを同時に再現するとは限らない。
 
-この問題は second knee の解釈に直接影響する。
-KASCADE-Grande のような解析は、電子・ミューオン比を用いて試料を軽い原子核と重い原子核に対応する群へ分類する。シミュレーションがミューオン数を過小評価すれば、データから推定される質量組成は実際より重くなる。また、組成に依存する地表信号の補正を通じて、エネルギースケールも変化しうる。
-このため、second knee 付近の質量群別スペクトルの解釈は、相互作用モデルだけでなく、\(X_{\max}\)、地表電磁成分、異なるしきい値で測定したミューオン成分との整合性にも依存する。
+Second knee に近い領域では、Auger の地下ミューオン検出器（UMD）が \(2\times10^{17}\)--\(2\times10^{18}\ \mathrm{eV}\) のミューオン密度を直接測定した。基準角に換算した密度と \(\langle X_{\max}\rangle\) を組み合わせると、EPOS-LHC と QGSJetII-04 の予測は測定値を同時には再現しない~\cite{AugerUMD2020}。この測定が扱うのはミューオン密度であり、シンチレータの全信号や \(S_{600}\) の倍率ではない。
+図~\ref{fig:auger_umd_xmax}は、基準角 \(35^\circ\) へ換算した軸距離 \(450\ \mathrm{m}\) のミューオン密度 \(\rho_{35}\) と平均 \(X_{\max}\) の比較である。ミューオン観測と蛍光観測の結果を同じエネルギーで比較しており、全て同一事象の同時測定を示す図ではない。
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.49\hsize]{fig/auger-umd-2020-fig12.pdf}
+  \caption{Auger UMD の \(\langle\ln(\rho_{35}/\mathrm{m^{-2}})\rangle\) と蛍光観測の \(\langle X_{\max}\rangle\) の比較。上は \(10^{17.5}\ \mathrm{eV}\)、下は \(10^{18}\ \mathrm{eV}\) に対応する。黒点と誤差棒は測定値と統計誤差、括弧は系統誤差を示す。色点は p、He、N、Fe の予測で、丸・破線は EPOS-LHC、四角・点線は QGSJetII-04 を表す。A. Aab et al., Eur. Phys. J. C 80, 751 (2020), Fig.~12 より転載~\cite{AugerUMD2020}。\href{https://creativecommons.org/licenses/by/4.0/}{CC BY 4.0}。図の内容は変更していない。}
+  \label{fig:auger_umd_xmax}
+\end{figure}
+
+Bellido らは、SUGAR と Auger が同じ南天の宇宙線スペクトルを測ると仮定し、Auger のエネルギースケールを基準に、\(10^{17}\)--\(10^{18.5}\ \mathrm{eV}\) における SUGAR のミューオン数とエネルギーの関係を求めた。その比較では、MC に対するミューオン量のずれにエネルギー依存が認められた~\cite{BellidoSUGAR2018}。これはスペクトルの対応から換算関係を制約した結果であり、同一事象のミューオン数を両実験で比較したものではない。
+
+この問題は second knee の解釈に影響する。
+KASCADE-Grande のような解析は、荷電粒子数とミューオン数の相関を用いて試料を軽い原子核と重い原子核に対応する群へ分類する。シミュレーションがミューオン数を過小評価すれば、この相関に基づく質量の推定が重い側へ偏り得る。また、組成に依存する地表信号の補正を通じて、エネルギースケールも変化しうる。
+このため、second knee 付近の質量群別スペクトルの解釈は、相互作用モデルだけでなく、\(X_{\max}\)、地表電磁成分、異なるしきい値で測定したミューオン成分との整合性にも依存する。地表信号のエネルギー換算への影響は、検出器中のミューオン信号の割合を通じて評価する必要があり、第\ref{sec:energy_calibration}節でその関係を述べる。
 
 \subsection{縦方向発達の経験関数}\label{subsec:gh}
 
@@ -1252,12 +1181,12 @@ KASCADE-Grande のような解析は、電子・ミューオン比を用いて�
   \label{eq:GH}
 \end{equation}
 がよく用いられる。
-通常の GH 関数では、パラメータ \(X_0\) と放射長 \(X_0\) に同じ記号を用いる。本稿では両者を区別するため、前者を \(X_0^{\mathrm{GH}}\) と表す。定義域は \(X_{\max}>X_0^{\mathrm{GH}}\)、\(\Lambda>0\) とする。
+通常の GH 関数では、パラメータ \(X_0\) と放射長 \(X_0\) に同じ記号を用いる。本稿では両者を区別するため、前者を \(X_0^{\mathrm{GH}}\) と表す。パラメータは \(X_{\max}>X_0^{\mathrm{GH}}\)、\(\Lambda>0\) を満たし、関数を用いる領域は \(X>X_0^{\mathrm{GH}}\) とする。
 図~\ref{fig:GH}に代表的な縦方向プロファイルを示す。
 \begin{figure}[htb]
     \centering
     \includegraphics[width=0.75\hsize]{fig/gh.pdf}
-    \caption{Gaisser--Hillas 関数の例。\(N_{\max}=10^6\)、\(X_{\max}=700\ \mathrm{g\,cm^{-2}}\)、\(X_0^{\mathrm{GH}}=-50\ \mathrm{g\,cm^{-2}}\)、\(\Lambda=70\ \mathrm{g\,cm^{-2}}\) とした。}
+    \caption{Gaisser--Hillas 関数の例。黒実線は \(N(X)\)、青点線は式~\eqref{eq:GH}のべき乗項 \(R(X)\) を \(N_{\max}\) 倍したもの、橙破線は指数関数項 \(F(X)\) を \(N_{\max}\) 倍したものを示す。\(N_{\max}=10^6\)、\(X_{\max}=700\ \mathrm{g\,cm^{-2}}\)、\(X_0^{\mathrm{GH}}=-50\ \mathrm{g\,cm^{-2}}\)、\(\Lambda=70\ \mathrm{g\,cm^{-2}}\) とした。}
     \label{fig:GH}
 \end{figure}
 
@@ -1268,94 +1197,15 @@ KASCADE-Grande のような解析は、電子・ミューオン比を用いて�
   \item[\(\Lambda\)] プロファイルの幅を決める形状パラメータであり、大きいほど分布は広くなる。
 \end{description}
 
-\subsubsection{極大構造の理解}
-GH 関数を
+\subsubsection{極大構造と観測量}
+式~\eqref{eq:GH}を \(X>X_0^{\mathrm{GH}}\) で対数微分すると、
 \begin{equation}
-  N(X)=N_{\max}\,R(X)\,F(X)
+  \frac{\mathrm d\ln N}{\mathrm dX}
+  =\frac{X_{\max}-X}{\Lambda(X-X_0^{\mathrm{GH}})}
+  \label{eq:dGH}
 \end{equation}
-と分解する。
-ただし
-\begin{align}
-  R(X)
-  &=\left(\frac{X-X_0^{\mathrm{GH}}}{X_{\max}-X_0^{\mathrm{GH}}}\right)^{\alpha_{\mathrm{GH}}}, \\
-  F(X)
-  &=\exp\!\left(\frac{X_{\max}-X}{\Lambda}\right), \\
-  \alpha_{\mathrm{GH}}
-  &=\frac{X_{\max}-X_0^{\mathrm{GH}}}{\Lambda}
-\end{align}
-である。
-
-\paragraph{\texorpdfstring{\(R(X)\)}{R(X)}：立ち上がりを与える項}
-\[
-R(X)=\left(\frac{X-X_0^{\mathrm{GH}}}{X_{\max}-X_0^{\mathrm{GH}}}\right)^{\alpha_{\mathrm{GH}}}
-\]
-は \(X=X_0^{\mathrm{GH}}\) で 0 となり、
-\(X_0^{\mathrm{GH}}<X<X_{\max}\) で 0 から 1 へ増加する。
-この項が \(X_0^{\mathrm{GH}}\) からの立ち上がりを作る。
-
-ただし、\(X>X_{\max}\) でもこの項自体は増加し続ける。
-また、\(X<X_0^{\mathrm{GH}}\) ではべき乗の底が負になるため、一般には実数として定義できない。
-GH 関数は通常、\(X>X_0^{\mathrm{GH}}\) の領域で用いる。
-
-\paragraph{\texorpdfstring{\(F(X)\)}{F(X)}：深い側での減衰を与える項}
-\[
-F(X)=\exp\!\left(\frac{X_{\max}-X}{\Lambda}\right)
-\]
-は \(X\) に関して全域で単調減少する。
-実際、
-\begin{equation}
-  \frac{\mathrm{d}F}{\mathrm{d}X}
-  =-\frac{1}{\Lambda}\exp\!\left(\frac{X_{\max}-X}{\Lambda}\right)
-  =-\frac{1}{\Lambda}F(X)<0
-\end{equation}
-である。
-
-この項は、\(X_{\max}\) を越えた後の指数的減衰を保証する。
-
-式~\eqref{eq:GH}は、単調増加する項 \(R(X)\) と単調減少する項 \(F(X)\) の積で構成される。図~\ref{fig:GH}に示すように、\(X=X_{\max}\) で最大値 \(N_{\max}\) を取ることは、次の微分から確認できる。
-
-式~\eqref{eq:GH}の両辺の対数をとると
-\begin{equation}
-  \ln N(X)
-  =
-  \ln N_{\max}
-  + \alpha_{\mathrm{GH}} \ln\!\left(\frac{X-X_0^{\mathrm{GH}}}{X_{\max}-X_0^{\mathrm{GH}}}\right)
-  + \frac{X_{\max}-X}{\Lambda}
-\end{equation}
-である。
-これを \(X\) で微分すると、
-\begin{align}
-  \frac{\mathrm{d}}{\mathrm{d}X}\ln N(X)
-  &=
-  \alpha_{\mathrm{GH}} \frac{\mathrm{d}}{\mathrm{d}X}\ln(X-X_0^{\mathrm{GH}})
-  + \frac{\mathrm{d}}{\mathrm{d}X}\left(\frac{X_{\max}-X}{\Lambda}\right) \\
-  &=
-  \frac{\alpha_{\mathrm{GH}}}{X-X_0^{\mathrm{GH}}} - \frac{1}{\Lambda}
-\end{align}
-が得られる。ここに
-\[
-\alpha_{\mathrm{GH}}=\frac{X_{\max}-X_0^{\mathrm{GH}}}{\Lambda}
-\]
-を代入して整理すると
-\begin{equation}
-  \frac{\mathrm{d}}{\mathrm{d}X}\ln N(X)
-  =
-  \frac{1}{\Lambda}
-  \left(
-    \frac{X_{\max}-X_0^{\mathrm{GH}}}{X-X_0^{\mathrm{GH}}}-1
-  \right)\label{eq:dGH}
-\end{equation}
-となる。
-ここで
-\[
-\frac{\mathrm{d}}{\mathrm{d}X}\ln N(X)=\frac{1}{N(X)}\frac{\mathrm{d}N}{\mathrm{d}X}
-\]
-であるから、
-\(N(X)>0\) の範囲では \(\ln N\) の増減と \(N\) の増減は同じである。
-
-式~\eqref{eq:GH}および式~\eqref{eq:dGH}は、\(N(X)\) が \(X_0^{\mathrm{GH}}<X<X_{\max}\) で単調増加し、\(X=X_{\max}\) で最大値 \(N_{\max}\) を取り、\(X>X_{\max}\) で単調減少することを示す。
-言い換えると、GH 関数の単峰形状は、\(R(X)\) による立ち上がりと \(F(X)\) による深部側の減衰との積として現れる。
-前半では、立ち上がり項の増加が指数項の減少を上回る。後半では指数項の減少が支配的となり、両者の境界は \(X_{\max}\) に一致する。
+となる。分母は正なので、\(X<X_{\max}\) で増加し、\(X>X_{\max}\) で減少する。\(X=X_{\max}\) を式~\eqref{eq:GH}へ代入すると \(N=N_{\max}\) となり、単峰の形状を確認できる。
+この関数は縦方向プロファイルの形を表す経験式である。蛍光観測で再構成する量は粒子数そのものではなく大気へのエネルギー付与 \(\mathrm dE/\mathrm dX\) であり、そのプロファイルにも同じ関数形を用いる。
 
 \subsection{大気蛍光とチェレンコフ光による縦方向発達の観測}\label{subsec:fluorescence}
 空気シャワー中の荷電粒子は大気中の窒素分子を励起し、紫外域の蛍光を放出させる。
@@ -1367,11 +1217,13 @@ Fly's Eye は 1981 年に観測を開始し、大気蛍光法による宇宙線�
 
 空気シャワーは蛍光だけでなく、チェレンコフ光も放出する。
 チェレンコフ光は、荷電粒子の速度が大気中における光の位相速度を超えたときに生じ、シャワー進行方向の近くに集中する。蛍光は、これとは異なり、ほぼ等方的に放出される。
-縦方向発達の再構成では、直接チェレンコフ光と大気中で散乱されたチェレンコフ光の寄与を評価し、蛍光によるエネルギー付与プロファイルから分離する~\cite{PDGPassage,PDGCosmicRays,TALEMassComposition2026}。
+縦方向発達の再構成では、蛍光、直接チェレンコフ光、大気中で散乱されたチェレンコフ光の寄与を光の伝搬とともに評価する。TALE では、チェレンコフ光を多く含む事象についても、その光量と角度依存を縦方向発達の情報として利用する~\cite{TALESpectrum2018,TALEMassComposition2026}。
 
-この方法では、望遠鏡の視線方向と光の到来時刻からシャワー軸の位置と方向を決める。次に、大気中での吸収・散乱とチェレンコフ光の寄与を補正し、縦方向プロファイルを再構成する。
+この方法では、望遠鏡の視線方向と光の到来時刻からシャワー軸の位置と方向を決める。次に、大気中での吸収・散乱と各発光成分の寄与を含むモデルから、縦方向プロファイルを再構成する。蛍光収量は単位エネルギー付与あたりの蛍光光子数であり、発光量をエネルギー付与へ換算する基準となる。
 再構成されたエネルギー付与プロファイルを大気深さにわたって積分すると、シャワーが大気中に失ったカロリメトリックエネルギーが得られる。
-そこにミューオンやニュートリノが運び去る不可視エネルギーの補正を加えることで、一次粒子エネルギーが推定される~\cite{PDGCosmicRays,Stanev2004,TALEMassComposition2026}。
+そこに大気へのエネルギー付与として回収されない不可視エネルギーの補正を加えることで、一次粒子エネルギーが推定される~\cite{PDGCosmicRays,Stanev2004,TALEMassComposition2026}。
+不可視エネルギーにはニュートリノや地表へ到達する粒子が運ぶエネルギーが関係するが、ミューオンが大気中に付与したエネルギーまで不可視とするわけではない。
+Tunka-133 の非結像型チェレンコフ観測では、地表の光密度と時間情報からエネルギーと発達を推定する。結像型の蛍光測定と同じ積分・較正手順ではなく、観測量と尺度の接続は表~\ref{tab:cosmic_ray_experiments}のように区別される~\cite{TunkaSpectrum2020}。
 縦方向発達の記述では、簡略モデルと経験関数が異なる役割を担う。
 Heitler モデルは、純粋な電磁シャワーに対して
 \begin{equation}
@@ -1382,12 +1234,12 @@ Heitler モデルは、純粋な電磁シャワーに対して
 というスケーリングの物理的直観を与える~\cite{Heitler1944,PDGCosmicRays}。
 Heitler--Matthews モデルは、これをハドロンシャワーへ拡張し、電子数、ミューオン数、質量組成への依存を半経験的に記述する~\cite{Matthews2005,Montanus2013}。
 これらが物理的解釈を与える簡略モデルであるのに対し、Gaisser--Hillas 関数は観測された縦方向プロファイル全体を表す経験的なフィット関数である~\cite{GaisserHillas1977}。
-\section{空気シャワーの横方向分布とシャワー曲面}\label{sec:lateral_structure}
+\section{空気シャワーの横方向分布とシャワー前面}\label{sec:lateral_structure}
 地上アレイでは、シャワー軸まわりの粒子分布と、粒子群の到来時刻から得られる時間構造を観測する。
-前者を横方向分布、後者をシャワー曲面として記述する。
+前者を横方向分布として記述する。後者では、代表的な到来時刻から定める面をシャワー前面と呼び、その曲率と各位置での到来時刻分布の幅を区別する。
 
 \subsection{横方向分布の定義と物理的起源}\label{subsec:lateral_definition}\label{subsec:why_lateral}
-地上の観測面において、シャワー軸からの距離を \(r\) とする。
+以下の軸対称な分布式では、シャワー軸に垂直な面での軸からの距離を \(r\) とし、面密度もこの面の単位面積あたりで定義する。鉛直シャワーでは地表面と一致するが、傾斜したシャワーでは投影と大気中の減衰を考慮して地表の観測量に対応づける必要がある。
 このとき、半径 \(r\) における単位面積あたりの粒子密度を、一般に
 \begin{equation}
   \rho(r)
@@ -1400,7 +1252,7 @@ Heitler--Matthews モデルは、これをハドロンシャワーへ拡張し�
   \mathrm{d}N = 2\pi r\,\rho(r)\,\mathrm{d}r
 \end{equation}
 と表される。
-後述する NKG 型関数と AGASA の経験式は、全粒子数そのものではなく、地上の粒子密度分布 \(\rho(r)\) を記述する~\cite{KamataNishimura1958,Greisen1960,Yoshida1994}。
+後述する NKG 型関数と AGASA の経験式は、全粒子数そのものではなく、観測面での定義を対応づけた粒子密度分布 \(\rho(r)\) を記述する~\cite{KamataNishimura1958,Greisen1960,Yoshida1994}。
 
 空気シャワーの横方向広がりを生む主因は、粒子種ごとに次のように整理できる。
 \begin{itemize}
@@ -1410,7 +1262,7 @@ Heitler--Matthews モデルは、これをハドロンシャワーへ拡張し�
 \end{itemize}
 電磁シャワーの横方向広がりは、主として低エネルギー電子のクーロン散乱で決まり、その代表尺度には Gert Moli\`ere に由来するモリエール半径が用いられる~\cite{PDGPassage,PDGCosmicRays}。
 一方、ミューオン成分は生成時の横運動量を反映してより平坦な分布をもち、シャワー軸から遠い領域では電磁成分に対する割合が増す~\cite{Cazon2004}。
-この違いは、後述するシャワー曲面の構造にも影響する~\cite{Cazon2004}。
+この違いは、後述するシャワー前面の構造にも影響する~\cite{Cazon2004}。
 
 \subsection{モリエール半径}\label{subsec:moliere_radius}
 モリエール半径は、電磁シャワーの横方向の代表スケールである。
@@ -1423,7 +1275,7 @@ Heitler--Matthews モデルは、これをハドロンシャワーへ拡張し�
 \begin{equation}
   r_{\mathrm{M}}=\frac{R_{\mathrm{M}}^{(X)}}{\rho_{\mathrm{air}}}
 \end{equation}
-となる。平均的には、電磁シャワーのエネルギーの約 90\% が半径 \(r_{\mathrm{M}}\) の円柱内に、約 99\% が \(3.5r_{\mathrm{M}}\) の内側に含まれる~\cite{PDGPassage}。
+となる。一様な物質中の電磁シャワーでは平均的に、エネルギーの約 90\% が半径 \(r_{\mathrm{M}}\) の円柱内に、約 99\% が \(3.5r_{\mathrm{M}}\) の内側に含まれる~\cite{PDGPassage}。
 
 第\ref{sec:longitudinal}節で述べたように、放射長 \(X_0\) は縦方向発達の代表尺度である。
 これに対して、モリエール半径は横方向広がりの代表尺度であり、電磁成分の横方向分布を記述する際の自然なスケールを与える。
@@ -1439,7 +1291,7 @@ AGASA では、横方向分布式の半径スケールとして、Akeno 観測�
 としている~\cite{Yoshida1994,Takeda2003}。
 幾何学的長さで表したモリエール半径は、観測高度に依存する。
 
-ただし、モリエール半径はあくまで電磁成分の代表スケールである。
+ただし、大気中では密度が高度とともに変わるため、局所密度から求めた半径一つでシャワー全体を厳密に表せるわけではない。モリエール半径は電磁成分の代表スケールとして用いる。
 実際の空気シャワー全体の横方向分布には、ハドロン成分やミューオン成分が混ざり、さらに実験では検出器応答も重なる。
 したがって、空気シャワー全体の横方向分布はモリエール半径だけでは決まらず、実験では検出器応答を含む経験的な分布関数が用いられる~\cite{Yoshida1994,Takeda2003}。
 
@@ -1489,7 +1341,7 @@ AGASA では、荷電粒子密度に対して John Linsley に由来する修正
   &= (3.97\pm0.13) - (1.79\pm0.62)(\sec\theta-1) \nonumber
 \end{align}
 が用いられる~\cite{Teshima1986,Yoshida1994}。
-ここで \(A\) は規格化を決めるフィットパラメータであり、\(R_M\) は Akeno で定義されたモリエール単位である。
+ここで \(A\) は規格化を決めるフィットパラメータであり、一次粒子の質量数とは異なる。\(R_M\) は Akeno で定義されたモリエール単位である。これらの係数は AGASA の観測条件に基づく歴史的な具体例であり、TALE-SD の分布関数を規定する値ではない。
 
 この式は、シャワー軸近傍から地上アレイが実際にサンプリングする遠距離側まで、荷電粒子密度を安定に記述する。
 とくに
@@ -1506,7 +1358,7 @@ AGASA では、この分布をフィットして \(r=600\ \mathrm{m}\) におけ
 このため、理論的な電子密度 \(\rho_e(r)\) は、実験で扱う \(S(r)\) や \(\rho_{\mathrm{ch}}(r)\) と一般には一致しない。
 地上アレイで用いられる横方向分布式は、純粋な電磁成分ではなく、検出器が実際に記録する信号の分布を表す~\cite{Teshima1986,Yoshida1994,Takeda2003,Cazon2004}。
 
-\subsection{シャワー曲面と到来方向再構成}\label{subsec:shower_front}
+\subsection{シャワー前面と到来方向再構成}\label{subsec:shower_front}
 地上アレイでは、粒子密度に加えて到来時刻がシャワーの幾何を制約する。
 シャワー前面は理想化すれば平面に近いが、実際には曲率と有限の時間幅をもつ。
 AGASA 型の解析では、接平面の伝播時刻 \(T_f\) に対する平均遅れ \(T_d\) と、時間分布の幅 \(T_s\) を用いて前面構造を表す~\cite{LinsleyScarsi1962,Teshima1986,Takeda2003}。
@@ -1520,10 +1372,77 @@ AGASA 型の解析では、接平面の伝播時刻 \(T_f\) に対する平均�
 
 ミューオンは比較的高エネルギーで直進性が高く、生成後の散乱も小さいため、シャワー前面の早い部分を形成しやすい。
 これに対して、電子・光子成分は散乱と電磁カスケードの影響を強く受け、時間幅が大きくなりやすい。
-そのため、遠距離や大天頂角ではミューオン優勢となり、シャワー曲面の見え方も変化する~\cite{Cazon2004}。
+そのため、遠距離や大天頂角ではミューオン優勢となり、シャワー前面の見え方も変化する~\cite{Cazon2004}。
 
-地上アレイ解析では、横方向分布を主としてコア位置とシャワーサイズの推定に、シャワー曲面の時間構造を主として到来方向の再構成に用いる。
+地上アレイ解析では、横方向分布を主としてコア位置とシャワーサイズの推定に、シャワー前面の時間構造を主として到来方向の再構成に用いる。
 実際の再構成では、この 2 つを同時に用いて、イベントの幾何とエネルギーを決める~\cite{Takeda2003}。
+
+\section{一次エネルギーの推定と較正方法}\label{sec:energy_calibration}
+\subsection{観測量とエネルギーへの換算}
+地表検出器が測る信号 \(S(r)\)、地表でのチェレンコフ光密度、光学観測で再構成する縦方向発達は、いずれも一次エネルギーそのものではない。エネルギーの推定には、観測量からエネルギーへの写像と、その尺度を定める較正が必要となる。写像の形を実測から求める方法と、モンテカルロシミュレーション（MC）から与える方法では、観測データによって制約する部分が異なる。
+地表信号の大きさは、同じエネルギーでも天頂角と発達段階によって変化する。まずこの依存性を扱い、その後に信号と一次エネルギーを対応づける、という二つの操作を区別する。
+
+\subsection{CIC による天頂角補正と実測による較正}
+Constant intensity cut（CIC）法は、到来強度がほぼ等方的であると仮定し、同じ積分強度に対応する信号を天頂角ごとに比較して減衰曲線を求める方法である。これにより地表信号を基準角に換算するが、CIC だけで絶対エネルギースケールを定めるわけではない。
+Auger SD433 では、軸から \(300\ \mathrm m\) の信号 \(S(300)\) を天頂角 \(30^\circ\) へ補正した \(S_{30}\) を用いる。その後、SD750 と同時に観測した事象を用いて
+\begin{equation}
+  E=A_{\mathrm{cal}}\left(\frac{S_{30}}{S_0}\right)^{B_{\mathrm{cal}}}
+  \label{eq:measured_energy_calibration}
+\end{equation}
+という関係を適合する。\(S_0\) は基準信号、\(A_{\mathrm{cal}}\) はエネルギーの次元をもつ規格化、\(B_{\mathrm{cal}}\) は無次元の指数である。SD750 のエネルギーは蛍光検出器（FD）に較正されているため、SD433 の尺度も SD750 を介して FD へ接続される~\cite{AugerSD4332023}。
+この解析では \(S_0=30\ \mathrm{VEM}\) に対して、\(A_{\mathrm{cal}}=(117.0\pm0.4)\ \mathrm{PeV}\)、\(B_{\mathrm{cal}}=0.963\pm0.003\) が得られている。VEM は鉛直に通過するミューオンに対応する信号の単位である。適合には両アレイの分解能、スペクトル形状、\(E_{750}>100\ \mathrm{PeV}\) の選択条件と信号間の相関が含まれる~\cite{AugerSD4332023}。規格化に加えて傾きもデータから求める点が、次に述べる定数係数のみの較正とは異なる。
+FD に接続した尺度にも、蛍光収量、大気透過、検出器の光学較正、不可視エネルギー補正などの不確かさが残る~\cite{AugerSecondKnee2021}。CIC と実測の較正を行ったことだけから、ハドロン相互作用モデルに対する依存がすべて消えるとはいえない。
+
+図~\ref{fig:auger433_calibration}は、この実測による較正を示す。指数 \(B_{\mathrm{cal}}\neq1\) は信号とエネルギーという異なる量の関係を表し、それだけで再構成エネルギーの非線形な偏りを意味するわけではない。
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.62\hsize]{fig/auger-sd433-2023-fig4.pdf}
+  \caption{Auger SD433 と SD750 の同時観測による \(S_{30}\) とエネルギーの較正。青点は \(E_{750}>100\ \mathrm{PeV}\) の較正事象、灰色点はその閾値より下の事象、橙線は規格化と指数を求めた適合を示す。緑線は基準信号とそれに対応するエネルギーを表す。これは CIC 曲線ではなく、その補正後の信号をエネルギーへ換算する関係である。G. Brichetto Orquera for the Pierre Auger Collaboration, PoS(ICRC2023)398, Fig.~4 より転載~\cite{AugerSD4332023}。\href{https://creativecommons.org/licenses/by-nc-nd/4.0/}{CC BY-NC-ND 4.0}。図の内容は変更していない。}
+  \label{fig:auger433_calibration}
+\end{figure}
+
+\subsection{MC による換算関係と定数係数の較正}
+MC で作成した対応表や関数からエネルギーを求め、その全体に定数を掛ける方法は、例えば
+\begin{equation}
+  E_{\mathrm{rec}}=C\,F_{\mathrm{MC}}(S_{600},\theta)
+  \label{eq:mc_lookup_calibration}
+\end{equation}
+と書ける。ここで \(S_{600}\) は軸から \(600\ \mathrm m\) の信号、\(\theta\) は天頂角、\(F_{\mathrm{MC}}\) はエネルギーの次元をもつ MC の換算関係、\(C\) は無次元の定数である。この式は方法を比較するための一般形である。
+同時観測などから \(C\) を決めると、比較範囲における平均的な尺度の差を補正できる。しかし、信号に対する傾きや曲率は \(F_{\mathrm{MC}}\) に由来するため、較正範囲内でもエネルギーに依存する残差があり得る。平均エネルギー差が小さいことと、スペクトル形状が正しく再構成されることは、異なる検証を要する。
+陽子と鉄を仮定した推定結果の比較は、その二つの組成仮定に対する感度を調べるものである。両者が近いだけでは、両仮定に共通するハドロン相互作用や検出器応答の誤差まで小さいとは結論できない。
+
+\subsection{ミューオン信号の差が残すエネルギー依存}
+地表の全信号を電磁成分とミューオン成分の和として考える。固定した幾何条件と組成について、電磁信号は MC が正しく記述し、ミューオン信号だけが異なると仮定すると、
+\begin{equation}
+  h(E)\equiv\frac{S_{\mathrm{data}}(E)}{S_{\mathrm{MC}}(E)}
+  =1+f_\mu(E)\{r_\mu(E)-1\}
+  \label{eq:muon_signal_ratio}
+\end{equation}
+となる。ここで \(f_\mu=S_{\mu,\mathrm{MC}}/S_{\mathrm{MC}}\) は MC の全信号に占めるミューオン信号の割合、\(r_\mu=S_{\mu,\mathrm{data}}/S_{\mu,\mathrm{MC}}\) はその実測と MC の比である。これらは粒子数やミューオン密度の比とは一般に異なる。
+対象範囲で \(S_{\mathrm{MC}}\propto E^\alpha\)（\(\alpha>0\)）とし、基準エネルギー \(E_*\) で定数較正を行うと、逆関数による換算から
+\begin{equation}
+  \frac{E_{\mathrm{rec}}}{E}
+  \simeq\left[\frac{h(E)}{h(E_*)}\right]^{1/\alpha}
+  \label{eq:residual_energy_bias}
+\end{equation}
+を得る。\(f_\mu\) または \(r_\mu\) がエネルギーによって変われば、定数較正後にも差が残る。この式は仮定を限定した説明用の近似であり、特定の検出器で測定した信号割合を与えるものではない。実際の応答には、組成、天頂角、軸からの距離、電磁成分の模型差も関係する。
+
+\subsection{エネルギーの換算とスペクトル形状}
+分解能を省き、エネルギー間の写像 \(E_{\mathrm{rec}}=g(E)\) が単調増加であるとする。同じ露出で事象数を保存すると、微分強度は
+\begin{equation}
+  J_{\mathrm{rec}}(E_{\mathrm{rec}})
+  =J(E)\frac{\mathrm dE}{\mathrm dE_{\mathrm{rec}}}
+  \label{eq:spectrum_energy_mapping}
+\end{equation}
+と変換される。定数倍率 \(E_{\mathrm{rec}}=kE\) の場合にも、\(J_{\mathrm{rec}}(E_{\mathrm{rec}})=J(E_{\mathrm{rec}}/k)/k\) である。純粋なべき乗則なら同じ表示エネルギーでの強度比は一定になるが、折れ曲がりを含むスペクトルでは一般に一定にならない。したがって、実験間の強度比がエネルギーによって変化することだけでは、エネルギー換算の非線形性は証明できない。一方、定数係数を較正したことだけから非線形な差を除外することもできない。
+実測では、検出効率とエネルギー分解能を含めて期待事象数を評価する。方向と時間を積分した有効露出を \(\mathcal E(E)\)、選択された事象の条件付き応答を \(P(E_{\mathrm{rec}}\mid E)\) とすると、
+\begin{equation}
+  \frac{\mathrm dN}{\mathrm dE_{\mathrm{rec}}}
+  =\int J(E)\,\mathcal E(E)\,P(E_{\mathrm{rec}}\mid E)\,\mathrm dE
+  \label{eq:spectrum_response}
+\end{equation}
+と書ける。\(\mathcal E\) は検出・選択効率を含み、単位は \(\mathrm{m^2\,sr\,s}\) である。\(P\) は \(E_{\mathrm{rec}}\) について規格化した確率密度で、エネルギーの逆数の単位をもつ。\(J\) を \(\mathrm{eV^{-1}\,m^{-2}\,s^{-1}\,sr^{-1}}\) で表せば、両辺は \(\mathrm{eV^{-1}}\) となる。これらの量は必要に応じて核種ごとに評価し、強度を重みとして合計する。
+検出閾値付近の効率変化とエネルギー区間間の事象移動は、折れ曲がりの位置と鋭さの推定に影響する。Auger SD433 では応答を通したスペクトルの予測をデータへ適合しており~\cite{AugerSD4332023}、TALE-SD と光学測定の比較でも、尺度と形状の双方について応答を考慮することが重要となる。
 
 \backmatter
 \cleardoublepage
